@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/07 16:09:09 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/07 18:06:16 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ void print_err(char *s);
 int	check_file_cub(char *file);
 void readfile(int fd);
 void dir_parse(t_map *map);
+// void map_parse(t_map * map, t_direc *direc);
 void map_parse(t_map * map);
 #endif

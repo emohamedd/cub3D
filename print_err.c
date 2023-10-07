@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:29:48 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/07 13:11:42 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/07 17:59:17 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,5 @@ void print_err(char *s)
 {
     write(2, "Error\n", 6);
     ft_putstr_fd(s, 2);
+    exit(1);
 }
