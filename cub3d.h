@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/07 13:31:40 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/07 16:09:09 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,23 @@
 
 typedef struct s_map
 {
-	char	**map;
+	char	**all_map;
     int    rows;
+    char    **direc;
+    char    **map;
 
 }			t_map;
+
+typedef struct s_direc
+{
+    char    *key;
+    char   *value;
+
+}			t_direc;
 
 void print_err(char *s);
 int	check_file_cub(char *file);
 void readfile(int fd);
-
+void dir_parse(t_map *map);
+void map_parse(t_map * map);
 #endif

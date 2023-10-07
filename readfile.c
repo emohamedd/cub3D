@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:56:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/07 15:18:15 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/07 16:09:31 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void readfile(int fd)
     char *line;
     char *next_line;
     int i  = 0;
-    int j = 0;
     t_map map;
 
     line = get_next_line(fd);   
@@ -43,12 +42,9 @@ void readfile(int fd)
         i++;
     }
     map.rows = i;
-    map.map = ft_split(next_line, '\n');
-    while ( j < map.rows)
-    {
-        printf("%s\n", map.map[j]);
-        j++;
-    }
+    map.all_map = ft_split(next_line, '\n');
+    dir_parse(&map);
+    map_parse(&map);
     close(fd);
     free(line);
 }
