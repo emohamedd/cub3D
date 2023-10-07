@@ -6,7 +6,7 @@
 #    By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 11:16:03 by emohamed          #+#    #+#              #
-#    Updated: 2023/10/07 12:07:21 by emohamed         ###   ########.fr        #
+#    Updated: 2023/10/07 12:47:12 by emohamed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
 
-SRCS = *.c
+SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
 
 NAME = cub3D

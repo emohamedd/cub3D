@@ -6,13 +6,13 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:26:28 by emohamed          #+#    #+#             */
-/*   Updated: 2022/12/11 22:45:47 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/07 12:43:27 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strlen(char *s)
+int	ft_strlene(char *s)
 {
 	int	i;
 
@@ -26,17 +26,17 @@ int	ft_strlen(char *s)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoine(char *s1, char *s2)
 {
 	size_t	i;
 	size_t	j;
 	char	*ptr;
 	size_t	k;
 
-	k = ft_strlen(s1);
+	k = ft_strlene(s1);
 	i = 0;
 	j = 0;
-	ptr = malloc(sizeof(char) * (k + ft_strlen(s2) + 1));
+	ptr = malloc(sizeof(char) * (k + ft_strlene(s2) + 1));
 	if (!ptr)
 		return (NULL);
 	while (s1 && i < k)
@@ -44,14 +44,14 @@ char	*ft_strjoin(char *s1, char *s2)
 		ptr[i] = s1[i];
 		i++;
 	}
-	while (s2 && i < ft_strlen(s2) + k)
+	while (s2 && i < ft_strlene(s2) + k)
 		ptr[i++] = s2[j++];
 	ptr[i] = '\0';
 	free(s1);
 	return (ptr);
 }
 
-char	*ft_strchr(char *string, char nl)
+char	*ft_strchre(char *string, char nl)
 {
 	int		i;
 	int		j;
@@ -67,11 +67,11 @@ char	*ft_strchr(char *string, char nl)
 	}
 	if (!string[i] || (string[i] == nl && string[i + 1] == '\0'))
 		return (NULL);
-	save = malloc(sizeof(char) * ((ft_strlen(string) - i) + 1));
+	save = malloc(sizeof(char) * ((ft_strlene(string) - i) + 1));
 	if (!save)
 		return (NULL);
 	i++;
-	while (i < ft_strlen(string))
+	while (i < ft_strlene(string))
 		save[j++] = string[i++];
 	save[j] = '\0';
 	return (save);

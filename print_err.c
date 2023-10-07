@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_err.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/07 11:14:58 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/07 12:44:27 by emohamed         ###   ########.fr       */
+/*   Created: 2023/10/07 12:29:48 by emohamed          #+#    #+#             */
+/*   Updated: 2023/10/07 12:47:22 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int main (int ac , __unused char **av)
+void print_err(char *s)
 {
-    if (ac != 2)
-        print_err("Wrong number of arguments\n");
+    write(2, "Error\n", 6);
+    ft_putstr_fd(s, 2);
+
 }
