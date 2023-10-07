@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:56:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/07 13:33:39 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/07 15:18:15 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void readfile(int fd)
     line = get_next_line(fd);   
     check_map(fd, line);
     i = 0;
+    next_line = ft_strdup("");
     while(line)
     {
         next_line = ft_strjoin(next_line, line);
@@ -41,7 +42,6 @@ void readfile(int fd)
         line = get_next_line(fd);
         i++;
     }
-    // printf("****%s\n", next_line);
     map.rows = i;
     map.map = ft_split(next_line, '\n');
     while ( j < map.rows)
