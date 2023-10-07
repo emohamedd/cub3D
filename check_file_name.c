@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_err.c                                        :+:      :+:    :+:   */
+/*   check_file_name.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/07 12:29:48 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/07 13:11:42 by emohamed         ###   ########.fr       */
+/*   Created: 2023/10/07 13:09:59 by emohamed          #+#    #+#             */
+/*   Updated: 2023/10/07 13:20:44 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void print_err(char *s)
+int	check_file_cub(char *file)
 {
-    write(2, "Error\n", 6);
-    ft_putstr_fd(s, 2);
+	int	len;
+
+	len = ft_strlen(file);
+	if (ft_strncmp(file + (len - 4), ".cub", 4) == 0)
+		return (1);
+	else
+	{
+        print_err("The string does not end with .cub");
+		exit(1);
+	}
+	return (0);
 }
