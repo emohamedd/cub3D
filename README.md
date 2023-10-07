@@ -9,8 +9,6 @@
 - [Usage](#usage)
 - [Controls](#controls)
 - [Features](#features)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
@@ -89,35 +87,27 @@ Compile the project using the Makefile:
 shell
 Copy code
 make
-<span style="color:blue">Usage</span>
-To run the Cub3D game, execute the following command:
+
+### <span style="color:blue">Usage</span>
+2. To run the Cub3D game, execute the following command:
 
 shell
 Copy code
 ./cub3D path_to_map.cub
 Replace path_to_map.cub with the path to your map file. The map file contains information about the game's configuration, such as the map layout, textures, and colors.
 
-<span style="color:blue">Controls</span>
-W: Move forward
-A: Rotate left
-S: Move backward
-D: Rotate right
-Right Arrow: Rotate camera right
-Left Arrow: Rotate camera left
-Esc: Exit the game
-<span style="color:blue">Features</span>
-Raycasting engine for rendering 3D environments
-Wall collision detection
-Texture mapping for walls and sprites
-Player movement and controls
-Configurable map layouts and textures
-<span style="color:blue">Contributing</span>
-We welcome contributions to the Cub3D project. If you have any improvements, bug fixes, or new features to add, please follow these steps:
+### <span style="color:blue">Controls</span>
+   ## W: Move forward
+   ## A: Rotate left
+   ## S: Move backward
+   ## D: Rotate right
+   ## Right Arrow: Rotate camera right
+   ## Left Arrow: Rotate camera left
+   ## Esc: Exit the game
 
-Fork the project.
-Create a new branch for your changes.
-Make your changes and test them thoroughly.
-Submit a pull request with a clear description of your changes.
-<span style="color:blue">License</span>
-This project is licensed under the MIT License - see the LICENSE file for details.
-
+### <span style="color:blue">Features</span>
+   Raycasting engine for rendering 3D environments
+   Wall collision detection
+   Texture mapping for walls and sprites
+   Player movement and controls
+   Configurable map layouts and textures
