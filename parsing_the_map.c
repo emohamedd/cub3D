@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parsing_the_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/07 11:14:58 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/07 19:46:46 by emohamed         ###   ########.fr       */
+/*   Created: 2023/10/08 10:00:37 by emohamed          #+#    #+#             */
+/*   Updated: 2023/10/08 10:00:48 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int main (int ac , char **av)
+void map_parse(t_map * map)
 {
-    t_map map;
-    t_direc dir;
-    int fd;
-    if (ac != 2)
-        print_err("Wrong number of arguments\n");
-    else
+    int i = 6;
+    map->map = ft_split(map->all_map[i], '\n');
+    while(map->all_map && map->all_map[i])
     {
-        fd = open(av[1], O_RDONLY);
-         check_file_cub(av[1]);
-        if (fd == -1)
-        {
-            print_err("File not found\n");
-            exit(1);
-        }
-        else
-            readfile(fd, &map, &dir);
+        map->map[i] =  map->all_map[i];
+        printf("%s\n", map->map[i]);
+        i++;
     }
+      map->map[i] = NULL;
+    
+
+    map->map[i] = NULL;
 }
