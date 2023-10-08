@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:56:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/08 13:49:03 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/08 21:13:42 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,10 @@ void readfile(int fd, t_map *map, t_direc *dir)
     // printf("\n");
     // printf(" *** THE MAP *** : \n\n");
     map_parse(map);
-    // if (valid_map(map) == 0)
-    //     print_err("ERROR : Invalid MAP\n");
+    if (valid_map(map) == 0)
+        print_err("ERROR : Invalid MAP\n");
+    if (check_map_char(map) == 0)
+        print_err("ERROR : Invalid Num Player\n");
     close(fd);
     free(line);
 }

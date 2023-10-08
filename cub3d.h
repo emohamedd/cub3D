@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/08 13:37:43 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/08 21:14:46 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,5 @@ void map_parse(t_map * map);
 int valid_map(t_map *map);
 // int map_surrendred_by_1(t_map *map);
 int	ft_strcmp(char *s1,  char *s2);
-char **allocat_2d_array_with_lenght(char *s, int len);
+int check_map_char(t_map *map);
 #endif
