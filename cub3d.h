@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/08 10:01:02 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/08 12:19:02 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,5 @@ void readfile(int fd, t_map *map, t_direc *dir);
 void dir_parse(t_map *map, t_direc *direc);
 // void map_parse(t_map * map, t_direc *direc);
 void map_parse(t_map * map);
+int	ft_strcmp(char *s1,  char *s2);
 #endif

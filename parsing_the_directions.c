@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:33:48 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/08 11:50:35 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/08 12:19:35 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void check_key_color_range(t_direc *dir)
 {
     int i = 0;
     int j = 0;
-    printf("---> dir->value = %s\n", dir->value);
+    // printf("---> dir->value = %s\n", dir->value);
     while(dir->value[i])
     {
       if (dir->value[i] == ',')
@@ -52,22 +52,21 @@ void check_key_color_range(t_direc *dir)
 }
 int check_key_directions(t_direc *dir)
 {
-    int len = ft_strlen(dir->key);
 
-    if (ft_strncmp(dir->key, "NO", len) == 0)
+    if (ft_strcmp(dir->key, "NO") == 0)
         return (1);
-    else if (ft_strncmp(dir->key, "SO", len) == 0)
+    else if (ft_strcmp(dir->key, "SO") == 0)
         return (1);
-    else if (ft_strncmp(dir->key, "WE", len) == 0)
+    else if (ft_strcmp(dir->key, "WE") == 0)
         return (1);
-    else if (ft_strncmp(dir->key, "EA", len) == 0)
+    else if (ft_strcmp(dir->key, "EA") == 0)
         return (1);
-    else if (ft_strncmp(dir->key, "F", len) == 0)
+    else if (ft_strcmp(dir->key, "F") == 0)
     {
         check_key_color_range(dir);
         return (1);
     }
-    else if (ft_strncmp(dir->key, "C", len) == 0)
+    else if (ft_strcmp(dir->key, "C") == 0)
     {
         check_key_color_range(dir);
         return (1);
