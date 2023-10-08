@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:56:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/08 11:55:45 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/08 13:49:03 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void readfile(int fd, t_map *map, t_direc *dir)
         line = get_next_line(fd);
         i++;
     }
-    map->rows = i;
+    map->all_rows = i;
     map->all_map = ft_split(next_line, '\n');
     // printf("\n");
     // printf(" *** THE DIRECTIONS *** : \n\n");
@@ -48,6 +48,8 @@ void readfile(int fd, t_map *map, t_direc *dir)
     // printf("\n");
     // printf(" *** THE MAP *** : \n\n");
     map_parse(map);
+    // if (valid_map(map) == 0)
+    //     print_err("ERROR : Invalid MAP\n");
     close(fd);
     free(line);
 }

@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:15:22 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/08 12:18:46 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/08 13:54:48 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,10 @@ int	ft_strcmp(char *s1,  char *s2)
 	}
 	return (0);
 }
+
+// char **allocat_2d_array_with_lenght(char *s, int len)
+// {
+//     char **new_array;
+//     new_array = malloc(sizeof(char *) * len + 1);
+//     return (new_array);
+// }

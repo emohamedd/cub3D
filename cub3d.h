@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/08 12:19:02 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/08 13:37:43 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@
 typedef struct s_map
 {
 	char	**all_map;
-    int    rows;
+    int     all_rows;
     char    **direc;
     char    **map;
+    int     dir_len;
 
 }			t_map;
 
@@ -50,5 +51,8 @@ void readfile(int fd, t_map *map, t_direc *dir);
 void dir_parse(t_map *map, t_direc *direc);
 // void map_parse(t_map * map, t_direc *direc);
 void map_parse(t_map * map);
+int valid_map(t_map *map);
+// int map_surrendred_by_1(t_map *map);
 int	ft_strcmp(char *s1,  char *s2);
+char **allocat_2d_array_with_lenght(char *s, int len);
 #endif
