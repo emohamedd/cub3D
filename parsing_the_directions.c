@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:33:48 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/08 13:31:11 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/09 10:53:00 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,8 @@ void dir_parse(t_map *map, t_direc *dir)
     while (i < map->dir_len)
     {
         new_array = ft_split(map->direc[i], 16);
+        if (new_array[2])
+            print_err("ERROR : Wrong number of directions arguments\n");
         dir->key = new_array[0];
         dir->value = new_array[1];
         if (check_key_directions(dir) == 0)
