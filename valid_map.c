@@ -6,42 +6,50 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:36:44 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/09 16:57:50 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/09 17:18:17 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int valid_map(t_map *map)
+int	lenght_count(char *str)
 {
-    int i = 0;
-    int j;
-    while(map->map[i])
-    {
-        j = 0;
-        while(map->map[i][j])
-        {
-            // printf("%c\n", map->map[i][j]);
-            if (map->map[i][j] == '0')
-            {
-                // printf("%c", map->map[i][j]);
-                if ((map->map[i][j - 1] && map->map[i][j - 1] == ' ' )||
-                 (map->map[i][j - 1] && map->map[i][j - 1] == '\0') ||
-                ( map->map[i][j + 1] && map->map[i][j + 1] == ' ') ||
-                 (map->map[i][j + 1] && map->map[i][j + 1] == '\0') ||
-                  (map->map[i - 1] && map->map[i - 1][j] == ' ') ||
-                   (map->map[i - 1] && map->map[i - 1][j] == '\0') ||
-                    (map->map[i + 1] && map->map[i + 1][j] == ' ') ||
-                     (map->map[i + 1] && map->map[i + 1][j] == '\0'))
-    
-                    return (0);
-            }
-                j++;
-        }
-        i++;
-    }
-    return (1);
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
+
+int	valid_map(t_map *map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (map->map[i])
+	{
+		j = 0;
+		while (map->map[i][j])
+		{
+			if (map->map[i][j] == '0')
+			{
+				if ((j > 0 && map->map[i][j - 1] == ' ') || (j == 0)
+					|| (j < lenght_count(map->map[i]) - 1 && map->map[i][j
+						+ 1] == ' ') || (j == lenght_count(map->map[i]) - 1)
+					|| (i > 0 && map->map[i - 1][j] == ' ') || (i == 0)
+					|| (map->map[i + 1] && map->map[i + 1][j] == ' ')
+					|| (!map->map[i + 1] && i > 0))
+					return (0);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
+
 int	is_valid_char(char c)
 {
 	return (c == '0' || c == '1' || c == 'N' || c == 'S' || c == 'E' || c == 'W'
