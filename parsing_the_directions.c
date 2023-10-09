@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:33:48 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/09 10:53:00 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/09 11:03:13 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void check_key_color_range(t_direc *dir)
 {
     int i = 0;
     int j = 0;
-    // printf("---> dir->value = %s\n", dir->value);
+
     while(dir->value[i])
     {
       if (dir->value[i] == ',')
@@ -45,7 +45,7 @@ void check_key_color_range(t_direc *dir)
         print_err("ERROR : Wrong color format\n");
     while(new_array[i])
     {
-        if (ft_atoi(new_array[i]) < 0 || ft_atoi(new_array[i]) > 255)
+        if (new_atoi(new_array[i]) < 0 || new_atoi(new_array[i]) > 255)
             print_err("ERROR : Wrong color range\n");
         i++;
     }
