@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:36:44 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/09 10:32:06 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/09 10:44:20 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int check_map_char(t_map *map)
         }
         i++;
     }
-    if ((n_count > 1 || s_count > 1 || e_count > 1 || w_count > 1) || all_count > 1)
+    if ((n_count != 1 || s_count != 1 || e_count != 1 || w_count != 1) && all_count != 1)
         return (0);
     return (1);
 }
