@@ -3,6 +3,7 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Project Description](#project-description)
+- [Parsing The MAP](#Parsing)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -24,6 +25,10 @@ Cub3D is a network project that involves creating a raycasting game engine from 
 This project covers various fundamental concepts of computer graphics and game development, such as raycasting, texture mapping, and player controls. By completing Cub3D, you will gain a solid understanding of how graphics engines work and develop strong programming skills in C.
 
 ---
+
+
+## <span style="color:blue">Parsing</span>
+The first part of the project involves parsing the map file that contains information about the game's configuration, such as the map layout, textures, and colors. The parsing process involves reading the map file, validating its contents, and storing the information in a data structure that can be used by the game engine.
 
 ## Getting Started
 

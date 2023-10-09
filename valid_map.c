@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:36:44 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/08 21:15:54 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/09 10:32:06 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,15 @@ int valid_map(t_map *map)
             if (map->map[i][j] == '0')
             {
                 // printf("%c", map->map[i][j]);
-                if ((map->map[i][j - 1] == ' ' || map->map[i][j - 1] == '\0') || 
-                    (map->map[i][j + 1] == ' ' || map->map[i][j + 1] == '\0') || 
-                    (map->map[i - 1][j] == ' ' || map->map[i - 1][j] == '\0') || 
-                    (map->map[i + 1][j] == ' ' || map->map[i + 1][j] == '\0'))
+                if ((map->map[i][j - 1] && map->map[i][j - 1] == ' ' )||
+                 (map->map[i][j - 1] && map->map[i][j - 1] == '\0') ||
+                ( map->map[i][j + 1] && map->map[i][j + 1] == ' ') ||
+                 (map->map[i][j + 1] && map->map[i][j + 1] == '\0') ||
+                  (map->map[i - 1] && map->map[i - 1][j] == ' ') ||
+                   (map->map[i - 1] && map->map[i - 1][j] == '\0') ||
+                    (map->map[i + 1] && map->map[i + 1][j] == ' ') ||
+                     (map->map[i + 1] && map->map[i + 1][j] == '\0'))
+    
                     return (0);
             }
                 j++;
