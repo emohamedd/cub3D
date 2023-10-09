@@ -6,13 +6,13 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:15:22 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/09 11:08:00 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/09 16:04:12 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	ft_strcmp(char *s1,  char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
@@ -28,9 +28,9 @@ int	ft_strcmp(char *s1,  char *s2)
 
 int	new_atoi(const char *str)
 {
-	int	i;
-	int	stock;
-	int	sign;
+	int		i;
+	int		stock;
+	int		sign;
 
 	i = 0;
 	stock = 0;
@@ -44,7 +44,8 @@ int	new_atoi(const char *str)
 		stock = (stock * 10) + (str[i] - '0');
 		i++;
 	}
-	if (str[i] && ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')))
+	if (str[i] && ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A'
+				&& str[i] <= 'Z')))
 		print_err("color is not valid\n");
 	return (stock);
 }
