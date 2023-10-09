@@ -9,7 +9,6 @@
   - [Installation](#installation)
 - [Usage](#usage)
 - [Controls](#controls)
-- [Features](#features)
 
 ---
 
@@ -74,25 +73,6 @@ Cub3D is a network project that involves creating a raycasting game engine from 
 This project covers various fundamental concepts of computer graphics and game development, such as raycasting, texture mapping, and player controls. By completing Cub3D, you will gain a solid understanding of how graphics engines work and develop strong programming skills in C.
 
 ---
-
-## Getting Started
-
-### <span style="color:blue">Prerequisites</span>
-Before you start working on the Cub3D project, ensure you have the following prerequisites installed on your system:
-- **C Compiler**: A C compiler like GCC.
-- **Make**: The `make` build tool.
-- **MinilibX**: The graphical library provided by 42 for this project.
-
-### <span style="color:blue">Installation</span>
-1. Clone the Cub3D repository to your local machine:
-   ```shell
-   git clone https://github.com/your-username/cub3d.git
-   cd cub3d
-Compile the project using the Makefile:
-shell
-Copy code
-make
-
 ### <span style="color:blue">Usage</span>
 2. To run the Cub3D game, execute the following command:
 
@@ -109,10 +89,3 @@ Replace path_to_map.cub with the path to your map file. The map file contains in
    ## Right Arrow: Rotate camera right
    ## Left Arrow: Rotate camera left
    ## Esc: Exit the game
-
-### <span style="color:blue">Features</span>
-   Raycasting engine for rendering 3D environments
-   Wall collision detection
-   Texture mapping for walls and sprites
-   Player movement and controls
-   Configurable map layouts and textures
