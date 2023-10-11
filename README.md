@@ -106,19 +106,17 @@ Here's how it works:
 
 1. **Ray Casting Algorithm**: Rays are cast from the player's viewpoint in various directions. These rays intersect with walls and other objects in the map.
 
-   - [Image: Ray Casting Algorithm - put your image here]
+![1oapoiwhmzna](https://github.com/emohamedd/cub3D/assets/102475281/ce414e3c-b38a-4fef-a5c6-c34c0cfa7f13)
 
 2. **Collision Detection**: When a ray intersects with an object (typically a wall), the point of intersection is determined.
-
-   - [Image: Collision Detection - put your image here]
+![images](https://github.com/emohamedd/cub3D/assets/102475281/e8e9cc54-f3cc-445f-95e1-e237e6406503)
 
 3. **Texture Mapping**: The texture of the wall at the point of intersection is applied to create the 3D effect.
-
-   - [Image: Texture Mapping - put your image here]
+![images](https://github.com/emohamedd/cub3D/assets/102475281/3a0972ab-bc62-4ae3-9415-42269c6a31c6)
 
 4. **Depth and Distance**: The distance to the intersected object is used to calculate the height and position on the screen, creating the illusion of depth.
 
-   - [Image: Depth and Distance Calculation - put your image here]
+![figure13](https://github.com/emohamedd/cub3D/assets/102475281/c0561843-0be6-4c20-b187-4fece179bc62)
 
 5. **Rendering**: The final result is rendered on the screen, giving the appearance of a 3D world.
 
