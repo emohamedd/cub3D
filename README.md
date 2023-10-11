@@ -109,9 +109,12 @@ Here's how it works:
 ![1oapoiwhmzna](https://github.com/emohamedd/cub3D/assets/102475281/ce414e3c-b38a-4fef-a5c6-c34c0cfa7f13)
 
 2. **Collision Detection**: When a ray intersects with an object (typically a wall), the point of intersection is determined.
+
+
 ![images](https://github.com/emohamedd/cub3D/assets/102475281/e8e9cc54-f3cc-445f-95e1-e237e6406503)
 
 3. **Texture Mapping**: The texture of the wall at the point of intersection is applied to create the 3D effect.
+
 ![images](https://github.com/emohamedd/cub3D/assets/102475281/3a0972ab-bc62-4ae3-9415-42269c6a31c6)
 
 4. **Depth and Distance**: The distance to the intersected object is used to calculate the height and position on the screen, creating the illusion of depth.
