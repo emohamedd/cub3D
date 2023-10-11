@@ -6,7 +6,7 @@
 #    By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 11:16:03 by emohamed          #+#    #+#              #
-#    Updated: 2023/10/10 23:01:33 by emohamed         ###   ########.fr        #
+#    Updated: 2023/10/11 12:21:50 by emohamed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ NAME = cub3D
 
 GREEN = \033[0;32m
 RESET = \033[0m
-
+GLFW = $(shell brew --prefix glfw)
+FRAMEWORKS = /Users/emohamed/Desktop/MLX42/build/libmlx42.a -Iinclude -lglfw -L $(GLFW)/lib/ -framework Cocoa -framework OpenGL -framework IOKit
 all: $(NAME)
 
 %.o: %.c
@@ -31,7 +32,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@make -C libft
 	@make -C get_line
-	@$(CC) $(CFLAGS) $(OBJS) libft/libft.a get_line/get_next_line.a -o $(NAME) 
+	@$(CC) $(CFLAGS) $(OBJS) libft/libft.a get_line/get_next_line.a  $(FRAMEWORKS) -o $(NAME) 
 	@echo "$(GREEN)✅  CUB3D : Compilation successful!$(RESET)"
 
 clean:

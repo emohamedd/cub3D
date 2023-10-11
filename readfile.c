@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:56:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/09 17:11:26 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/11 13:51:11 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	readfile(int fd, t_map *map, t_direc *dir)
 	while (line)
 	{
 		next_line = ft_strjoin(next_line, line);
-		free(line);
+		// free(line);
 		line = get_next_line(fd);
 		i++;
 	}
@@ -50,5 +50,5 @@ void	readfile(int fd, t_map *map, t_direc *dir)
 		print_err("ERROR : Invalid Num Player\n");
 	dir_parse(map, dir);
 	close(fd);
-	free(line);
+	// free(line);
 }
