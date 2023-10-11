@@ -11,7 +11,6 @@
   - [Mathematical Formulas](#Mathematical-Formulas)
 - [Usage](#usage)
 - [Controls](#controls)
-- [Features](#features)
 
 ---
 
@@ -163,10 +162,3 @@ Replace path_to_map.cub with the path to your map file. The map file contains in
    ## Right Arrow: Rotate camera right
    ## Left Arrow: Rotate camera left
    ## Esc: Exit the game
-
-### <span style="color:blue">Features</span>
-   Raycasting engine for rendering 3D environments
-   Wall collision detection
-   Texture mapping for walls and sprites
-   Player movement and controls
-   Configurable map layouts and textures
