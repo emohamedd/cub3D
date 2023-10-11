@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/09 16:09:44 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/11 11:33:50 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct s_map
 	char	**direc;
 	char	**map;
 	int		dir_len;
+	int 	width;
+	int 	height;
 
 }			t_map;
 

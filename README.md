@@ -7,6 +7,8 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+  - [Raycasting Concept](#Raycasting-Concept)
+  - [Mathematical Formulas](#Mathematical-Formulas)
 - [Usage](#usage)
 - [Controls](#controls)
 - [Features](#features)
@@ -92,6 +94,58 @@ Compile the project using the Makefile:
 shell
 Copy code
 make
+
+## <span style="color:blue">Raycasting Concept</span>
+
+Raycasting is a fundamental technique used in computer graphics to simulate 3D environments in a 2D space. In the context of Cub3D, raycasting is used to create the illusion of a 3D world within a 2D map. Here's a brief explanation of how raycasting works and where you can find related images and formulas in your project:
+
+### How Raycasting Works
+
+Raycasting works by simulating the path of light rays from the player's viewpoint to objects in the virtual world. In the context of Cub3D, it involves casting rays from the player's position to determine which parts of the 2D map need to be rendered as 3D.
+
+Here's how it works:
+
+1. **Ray Casting Algorithm**: Rays are cast from the player's viewpoint in various directions. These rays intersect with walls and other objects in the map.
+
+   - [Image: Ray Casting Algorithm - put your image here]
+
+2. **Collision Detection**: When a ray intersects with an object (typically a wall), the point of intersection is determined.
+
+   - [Image: Collision Detection - put your image here]
+
+3. **Texture Mapping**: The texture of the wall at the point of intersection is applied to create the 3D effect.
+
+   - [Image: Texture Mapping - put your image here]
+
+4. **Depth and Distance**: The distance to the intersected object is used to calculate the height and position on the screen, creating the illusion of depth.
+
+   - [Image: Depth and Distance Calculation - put your image here]
+
+5. **Rendering**: The final result is rendered on the screen, giving the appearance of a 3D world.
+
+### Mathematical Formulas
+
+## <span style="color:blue">Mathematical Formulas</span>
+In your Cub3D project, you will encounter mathematical formulas that are used for raycasting. Here are some key formulas:
+
+- **Distance to Wall**: The distance from the player to the wall can be calculated using trigonometry and is crucial for rendering the correct perspective. This distance often involves using the Pythagorean theorem.
+
+  - Formula: `distance_to_wall = distance_to_point * cos(player_angle - ray_angle)`
+
+- **Wall Height**: To determine the height of the wall on the screen, you can use the following formula:
+
+  - Formula: `wall_height_on_screen = (wall_height / distance_to_wall) * projection_plane_distance`
+
+- **Texture Mapping**: When applying textures to the walls, you'll use texture coordinates to sample the textures accurately.
+
+  - Formula: `texture_x = (int)(wall_x * texture_width)`
+
+- **Wall Columns**: The screen is divided into columns, and each column corresponds to a ray. The angle of each ray can be calculated using the following formula:
+
+  - Formula: `ray_angle = player_angle - (FOV / 2) + (column / num_columns) * FOV`
+
+In your project, you'll implement these concepts and formulas to achieve the raycasting effect, allowing you to render a 3D environment within the 2D map.
+
 
 ### <span style="color:blue">Usage</span>
 2. To run the Cub3D game, execute the following command:

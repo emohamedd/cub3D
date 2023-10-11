@@ -6,10 +6,9 @@
 #    By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 11:16:03 by emohamed          #+#    #+#              #
-#    Updated: 2023/10/09 10:22:15 by emohamed         ###   ########.fr        #
+#    Updated: 2023/10/10 23:01:33 by emohamed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra #-fsanitize=address
