@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:36:44 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/11 11:31:31 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/12 10:12:04 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ int	valid_map(t_map *map)
 		{
 			if (map->map[i][j] == '0')
 			{
-				if ((j > 0 && map->map[i][j - 1] == ' ') || (j == 0)
-					|| (j < lenght_count(map->map[i]) - 1 && map->map[i][j
-						+ 1] == ' ') || (j == lenght_count(map->map[i]) - 1)
-					|| (i > 0 && map->map[i - 1][j] == ' ') || (i == 0)
-					|| (map->map[i + 1] && map->map[i + 1][j] == ' ')
-					|| (!map->map[i + 1] && i > 0))
+				if (i - 1 < 0 || i + 1 >= map->height)
 					return (0);
+				if ((map->map[i][j - 1] == ' ' || map->map[i][j - 1] == '\0') ||
+					(map->map[i][j + 1] == ' ' || map->map[i][j + 1] == '\0') ||
+					( map->map[i - 1][j] == ' ' || map->map[i - 1][j] == '\0') ||
+					(map->map[i + 1][j] == ' ' || map->map[i + 1][j] == '\0'))
+				return (0);
 			}
 			j++;
 		}

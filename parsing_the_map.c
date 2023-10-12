@@ -6,12 +6,35 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 10:00:37 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/11 11:37:55 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/12 08:41:31 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+
+int lenght_of_the_long_line_in_map(t_map * map)
+{
+	int i;
+	int j;
+	int max;
+
+	i = 0;
+	j = 0;
+	max = 0;
+	while (map->all_map[i])
+	{
+		j = 0;
+		while (map->all_map[i][j])
+		{
+			j++;
+		}
+		if (j > max)
+			max = j;
+		i++;
+	}
+	return (max);
+}
 
 int only_size_of_map(char **s)
 {
@@ -41,7 +64,7 @@ void map_parse(t_map *map)
 		i++;
 		j++;
 	}
-	map->width = ft_strlen(map->map[0]);
+	map->width = lenght_of_the_long_line_in_map(map);
 	map->height = len;
 	map->map[i] = NULL;
 
