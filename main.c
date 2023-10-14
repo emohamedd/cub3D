@@ -3,33 +3,93 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/07 11:14:58 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/09 16:05:32 by emohamed         ###   ########.fr       */
+/*   Created: 2023/10/13 13:02:58 by houattou          #+#    #+#             */
+/*   Updated: 2023/10/14 17:06:07 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
 
-int	main(int ac, char **av)
+#include "./include/cub3d.h"
+# include <stdio.h>
+# include <string.h>
+
+
+
+
+int32_t ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a)
 {
-	t_map	map;
-	t_direc	dir;
-	int		fd;
+    return (r << 24 | g << 16 | b << 8 | a);
+}
 
-	if (ac != 2)
-		print_err("Wrong number of arguments\n");
-	else
-	{
-		fd = open(av[1], O_RDONLY);
-		check_file_cub(av[1]);
-		if (fd == -1)
-		{
-			print_err("File not found\n");
-			exit(1);
-		}
-		else
-			readfile(fd, &map, &dir);
-	}
+
+
+int mymap[11][15] = {
+    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1},
+    {1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+};
+void    draw( mlx_t *mlx, mlx_image_t *img)
+{
+    int        i;
+    int        j;
+    int        x;
+    int        y;
+
+ 
+
+    i = 0;
+    while (i < 11)
+    {
+        j = 0;
+        while (j < 15)
+        {
+            y = i * SIZE_TITLE;
+            while (y < (SIZE_TITLE * i) + SIZE_TITLE)
+            {
+                x = j * SIZE_TITLE;
+                while (x < (SIZE_TITLE * j) + SIZE_TITLE)
+                {
+                    if (mymap[i][j] == 1)
+                        mlx_put_pixel(img, x, y, ft_pixel(89, 63, 98, 255));
+                    else if (mymap[i][j] == 0)
+                        mlx_put_pixel(img, x, y, ft_pixel(132, 153, 177, 255));
+                    x++;
+                }
+                y++;
+            }
+            j++;
+        }
+        i++;
+    }
+}
+
+
+
+int main()
+{
+   
+    mlx_image_t *img;
+    mlx_t *mlx = mlx_init(WIDTH, HEIGHT, "MLX42", true);
+    if (mlx == NULL)
+        exit(EXIT_FAILURE);
+    // Creates a whole new image.
+    img = mlx_new_image(mlx, WIDTH, HEIGHT);
+    // Creates a new instance/copy of an already existing image.
+    mlx_image_to_window(mlx, img, 0, 0);
+    draw(mlx, img);
+	mlx_loop(mlx);
+    // mlx_terminate(mlx);
+
+
+    return EXIT_SUCCESS;
 }

@@ -3,54 +3,65 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/09 16:09:44 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/10/14 16:43:41 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
+#define SIZE_TITLE 40
+#define WIDTH 15 * SIZE_TITLE
+#define HEIGHT 11 *SIZE_TITLE
+#include "/Users/houattou/Desktop/MLX42/include/MLX42/MLX42.h"
 
-# define RED "\033[0;31m"
-# define GREEN "\033[0;32m"
-# define YELLOW "\033[0;33m"
-# define RESET "\033[0m"
-# define END "\033[0m"
-
-// # include "mlx/mlx.h"
-# include "get_line/get_next_line.h"
-# include "libft/libft.h"
-# include <fcntl.h>
 # include <math.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+#include <stdio.h>
+#include<string.h>
+
+
+typedef struct s_data
+{
+	void *img;
+	char *addr;
+	int bits_per_pixel;
+	int line_length;
+	int endian;
+}
+t_data;
+
+typedef struct s_mlx
+{
+	void *mlx;
+	void *mlx_win;
+}
+t_mlx;
+typedef struct s_player
+{
+	double x;
+	double y;
+	double dir;
+	double plane;
+}t_player;
 
 typedef struct s_map
 {
-	char	**all_map;
-	char	**direc;
-	char	**map;
-	int		dir_len;
-
-}			t_map;
-
-typedef struct s_direc
+	int start_height;
+	int start_width;
+	int end_height;
+	int end_width;
+}				t_map;
+typedef struct s_all_data
 {
-	char	*key;
-	char	*value;
+	t_mlx *mlx;
+	t_data *data;
+	t_player *player;
+}t_all_data;
 
-}			t_direc;
 
-void		print_err(char *s);
-int			check_file_cub(char *file);
-void		readfile(int fd, t_map *map, t_direc *dir);
-void		dir_parse(t_map *map, t_direc *direc);
-void		map_parse(t_map *map);
-int			valid_map(t_map *map);
-int			ft_strcmp(char *s1, char *s2);
-int			check_map_char(t_map *map);
-int			new_atoi(const char *str);
 #endif
