@@ -1,8 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: houattou <houattou@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/10/15 11:51:02 by houattou          #+#    #+#              #
+#    Updated: 2023/10/15 16:50:06 by houattou         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC = cc
-CFLAGS = #-Wall -Werror -Wextra #-fsanitize=address
+CFLAGS = #-Wall -Werror -Wextra -fsanitize=address
 
 
-SRCS = ./src/raycasting/t.c main.c
+SRCS = ./src/raycasting/draw_map.c ./src/raycasting/draw_player.c    main.c test.c
 OBJS = $(SRCS:.c=.o)
 
 NAME = cub3D
@@ -18,17 +30,17 @@ all: $(NAME)
 	@echo "$(GREEN)✅ Compiled: $<$(RESET)"
 
 $(NAME): $(OBJS)
-	
-	@$(CC) $(CFLAGS) $(OBJS) $(FRAMEWORKS) -o $(NAME) 
+	@make -C libft
+	@$(CC) $(CFLAGS) $(OBJS) libft/libft.a  $(FRAMEWORKS) -o $(NAME) 
 	@echo "$(GREEN)✅  CUB3D : Compilation successful!$(RESET)"
 
 clean:
-	
+	@make -C libft/ clean
 	@rm -f $(OBJS)
 	@echo "$(GREEN)✅ Cleaned up object files$(RESET)"
 
 fclean: clean
-	
+	@make -C libft/ fclean
 	@rm -f $(NAME)
 	@echo "$(GREEN)✅ Cleaned up $(NAME)$(RESET)"
 

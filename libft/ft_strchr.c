@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t.c                                                :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 15:44:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/10/13 10:09:03 by houattou         ###   ########.fr       */
+/*   Created: 2022/10/02 23:16:11 by houattou          #+#    #+#             */
+/*   Updated: 2022/10/27 23:37:06 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "libft.h"
 
-// int ft(int a)
-// {
-//     return(a);
-// }
+char	*ft_strchr(const char *s, int c)
+{
+	int	i;
+
+	i = 0;
+	c = (char)c;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+			return (((char *)s) + i);
+		i++;
+	}
+	if (s[i] == c)
+		return ((char *)s + i);
+	return (NULL);
+}
