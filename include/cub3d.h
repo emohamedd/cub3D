@@ -6,15 +6,21 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/18 10:19:49 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/19 12:57:30 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 #define SIZE_TITLE 60
-#define WIDTH 15 * SIZE_TITLE
-#define HEIGHT 11 *SIZE_TITLE
+#define MAP_MUM_ROWS 13
+#define MAP_MUM_COLS 20
+#define FPS 30
+#define WIDTH   SIZE_TITLE *(MAP_MUM_COLS)
+#define HEIGHT  SIZE_TITLE *(MAP_MUM_ROWS)
+#define FOV_ANGLE (60 * M_PI / 180)
+#define MUM_RAYS WINDOW_WIDH
+#define MINIMAP_SCAL_FACTOR 0.10
 #include "/Users/houattou/Desktop/MLX42/include/MLX42/MLX42.h"
 
 # include "../libft/libft.h"
@@ -43,12 +49,15 @@ typedef struct s_player
 	double x;
 	double y;
 	double radius;
-	double turn_direction;
-	double wlk_direction;
+	int turn_direction;
+	int  wlk_direction;
 	double rotation_angle;
 	double move_speed;
 	double rotation_speed;
-	mlx_t* mlx;
+	float wlk_speed;
+	float turn_speed;
+	double width;
+	double heigth;
    
 }t_player;
 
