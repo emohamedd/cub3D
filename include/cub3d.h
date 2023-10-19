@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/19 12:57:30 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/19 13:53:50 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,11 @@ typedef struct s_all_data
 /*----------------*RayCasting functions:----------------------------------------------*/
 void    draw_map( mlx_t *mlx, mlx_image_t *img);
 int32_t ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a);
-// void initialize_player(t_all_data *data);
-// void draw_player(void *param);
+void initialize_player(t_all_data *data);
+void draw_player(t_all_data *data);
+void ratate_player(mlx_key_data_t keydata, t_all_data *data);
+void update_player(t_all_data *mlx, mlx_key_data_t keydata);
+void	my_keyhook(mlx_key_data_t keydata, void *param);
+void draw_line(t_all_data *data);
+
 #endif

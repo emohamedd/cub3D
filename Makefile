@@ -6,7 +6,7 @@
 #    By: houattou <houattou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by houattou          #+#    #+#              #
-#    Updated: 2023/10/18 17:34:48 by houattou         ###   ########.fr        #
+#    Updated: 2023/10/19 13:53:06 by houattou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ CC = cc
 CFLAGS = #-Wall -Werror -Wextra -fsanitize=address
 
 
-SRCS = ./src/raycasting/draw_map.c ./src/raycasting/draw_player.c    main.c 
+SRCS = ./src/raycasting/draw_map.c ./src/raycasting/draw_player.c  main.c ./src/raycasting/update_player.c
+		 
 OBJS = $(SRCS:.c=.o)
 
 NAME = cub3D
