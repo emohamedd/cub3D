@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:44:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/10/20 15:14:36 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:49:19 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,15 @@ bool    check_if_have_wall(t_all_data *data, float x, float y)
 {
     int map_grid_x;
     int map_grid_y;
+    int old_x;
+    int old_y;
     map_grid_x = floor(x /SIZE_TITLE);
     map_grid_y = floor(y / SIZE_TITLE);
-    printf("map_x here is %d\n", map_grid_x );
-    printf("map_y is %d\n", map_grid_y);
+    old_x = floor(data->player->x /SIZE_TITLE);
+    old_y = floor(data->player->y / SIZE_TITLE);
+  
+    if(mymap[map_grid_x][old_y] == 0 || mymap[old_x][map_grid_y] == 0)
+        return(FALSE);
     if(map_grid_y >= HEIGHT_MAP || map_grid_x >= WIDTH_MAP || map_grid_x < 0 || map_grid_y < 0 || x <= 0 || y <= 0)
         return (FALSE);
     if(mymap[map_grid_y][map_grid_x] == 1)
@@ -71,7 +76,7 @@ void    draw_map( mlx_t *mlx, mlx_image_t *img)
                 while (x < (SIZE_TITLE * j) + SIZE_TITLE)
                 {
                     if (mymap[i][j] == 1)
-                        mlx_put_pixel(img, x, y, ft_pixel(89, 63, 98, 255));
+                        mlx_put_pixel(img, x, y, ft_pixel(0, 0, 0, 255));
                     else if (mymap[i][j] == 0)
                         mlx_put_pixel(img, x, y, ft_pixel(255, 255, 255, 255));
                     x++;

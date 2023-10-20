@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by houattou          #+#    #+#             */
-/*   Updated: 2023/10/20 15:17:19 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:16:19 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void draw_line(t_all_data *data)
    y = MINIMAP_SCAL_FACTOR *data->player->y;
    new_x = x + cos(data->player->rotation_angle)*40;
    new_y = y + sin(data->player->rotation_angle)*40;
-    mlx_put_pixel(data->img, new_x, new_y,ft_pixel(255, 255, 0, 255));
+    mlx_put_pixel(data->img, new_x, new_y,ft_pixel(133, 13, 77, 255));
 }
 
 
