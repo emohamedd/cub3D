@@ -6,12 +6,13 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:44:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/10/15 14:50:19 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:14:36 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/cub3d.h"
-
+#define WIDTH_MAP 15
+#define HEIGHT_MAP 11
 int32_t ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a)
 {
     return (r << 24 | g << 16 | b << 8 | a);
@@ -30,10 +31,28 @@ int mymap[11][15] = {
     {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
 };
+
+
+
+bool    check_if_have_wall(t_all_data *data, float x, float y)
+{
+    int map_grid_x;
+    int map_grid_y;
+    map_grid_x = floor(x /SIZE_TITLE);
+    map_grid_y = floor(y / SIZE_TITLE);
+    printf("map_x here is %d\n", map_grid_x );
+    printf("map_y is %d\n", map_grid_y);
+    if(map_grid_y >= HEIGHT_MAP || map_grid_x >= WIDTH_MAP || map_grid_x < 0 || map_grid_y < 0 || x <= 0 || y <= 0)
+        return (FALSE);
+    if(mymap[map_grid_y][map_grid_x] == 1)
+        return (FALSE);
+    return(TRUE);
+ 
+}
 void    draw_map( mlx_t *mlx, mlx_image_t *img)
 {
-    int        i;
-    int        j;
+    int       i;
+    int       j;
     int        x;
     int        y;
 
@@ -54,7 +73,7 @@ void    draw_map( mlx_t *mlx, mlx_image_t *img)
                     if (mymap[i][j] == 1)
                         mlx_put_pixel(img, x, y, ft_pixel(89, 63, 98, 255));
                     else if (mymap[i][j] == 0)
-                        mlx_put_pixel(img, x, y, ft_pixel(132, 153, 177, 255));
+                        mlx_put_pixel(img, x, y, ft_pixel(255, 255, 255, 255));
                     x++;
                 }
                 y++;

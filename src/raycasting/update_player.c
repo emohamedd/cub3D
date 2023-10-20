@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:43:54 by houattou          #+#    #+#             */
-/*   Updated: 2023/10/19 13:47:28 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:26:42 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@
 
 void ratate_player(mlx_key_data_t keydata, t_all_data *data)
 {
-    printf("dkhlt \n");
-    if(keydata.key == MLX_KEY_DOWN)
+    if(keydata.key == MLX_KEY_UP)
         data->player->rotation_angle = -M_PI /2;
-    else if(keydata.key == MLX_KEY_UP)
+    else if(keydata.key == MLX_KEY_DOWN)
         data->player->rotation_angle = M_PI /2;
     else if(keydata.key == MLX_KEY_LEFT)
         data->player->rotation_angle -= 0.1;
@@ -51,13 +50,16 @@ void update_player(t_all_data *mlx, mlx_key_data_t keydata)
         new_x = mlx->player->x - mlx->player->move_speed * cos(mlx->player->rotation_angle);
         new_y = mlx->player->y - mlx->player->move_speed * sin(mlx->player->rotation_angle);
     }
-
-    mlx->player->x = new_x;
-    mlx->player->y = new_y;
-
+    if( (check_if_have_wall(mlx, new_x, new_y)) == TRUE )
+    {
+  
+        mlx->player->x = new_x;
+        mlx->player->y = new_y;
+    }
     draw_map(mlx->mlx, mlx->img);
     draw_player(mlx);
     draw_line(mlx);
+    
 }
 
 void	my_keyhook(mlx_key_data_t keydata, void *param)
@@ -72,6 +74,13 @@ void	my_keyhook(mlx_key_data_t keydata, void *param)
 			|| keydata.key == MLX_KEY_S || keydata.key == MLX_KEY_D)
                  update_player(mlx, keydata);
     else
-        ratate_player(keydata, mlx);             
+    {
+        ratate_player(keydata, mlx);
+        draw_line(mlx);             
+        
+    }
 
 }
+
+
+

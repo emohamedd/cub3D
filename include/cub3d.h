@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/19 13:53:50 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/19 20:03:13 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@
 #define FPS 30
 #define WIDTH   SIZE_TITLE *(MAP_MUM_COLS)
 #define HEIGHT  SIZE_TITLE *(MAP_MUM_ROWS)
-#define FOV_ANGLE (60 * M_PI / 180)
+#define FOV_ANGLE (40 * M_PI / 180)
 #define MUM_RAYS WINDOW_WIDH
-#define MINIMAP_SCAL_FACTOR 0.10
+#define MINIMAP_SCAL_FACTOR 1.0
+
+#define TRUE 1
+#define FALSE 0
 #include "/Users/houattou/Desktop/MLX42/include/MLX42/MLX42.h"
 
 # include "../libft/libft.h"
@@ -85,5 +88,6 @@ void ratate_player(mlx_key_data_t keydata, t_all_data *data);
 void update_player(t_all_data *mlx, mlx_key_data_t keydata);
 void	my_keyhook(mlx_key_data_t keydata, void *param);
 void draw_line(t_all_data *data);
+bool    check_if_have_wall(t_all_data *data, float x, float y);
 
 #endif

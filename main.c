@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by houattou          #+#    #+#             */
-/*   Updated: 2023/10/19 13:45:09 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:17:19 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,19 @@
 #include "./include/cub3d.h"
 
 
-
 void draw_line(t_all_data *data)
 {
- 
     float x;
     float y;
     float new_x;
     float new_y;
    x = MINIMAP_SCAL_FACTOR *data->player->x;
    y = MINIMAP_SCAL_FACTOR *data->player->y;
-   new_x = x + cos(data->player->rotation_angle) * 40;
-   new_y = y + sin(data->player->rotation_angle) * 40;
-   mlx_put_pixel(data->img, new_x, new_y, ft_pixel(76, 59, 255, 255));
+   new_x = x + cos(data->player->rotation_angle)*40;
+   new_y = y + sin(data->player->rotation_angle)*40;
+    mlx_put_pixel(data->img, new_x, new_y,ft_pixel(255, 255, 0, 255));
 }
+
 
 int main()
 {
