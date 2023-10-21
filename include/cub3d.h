@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/19 20:03:13 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/21 16:36:37 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,16 @@
 #define FPS 30
 #define WIDTH   SIZE_TITLE *(MAP_MUM_COLS)
 #define HEIGHT  SIZE_TITLE *(MAP_MUM_ROWS)
-#define FOV_ANGLE (40 * M_PI / 180)
-#define MUM_RAYS WINDOW_WIDH
-#define MINIMAP_SCAL_FACTOR 1.0
+#define FOV_ANGLE (60 * M_PI / 180)
+#define WALL_STRIO_WIDTH 4
+#define MUM_RAYS WIDTH/ 4
+#define   MINIMAP_SCAL_FACTOR 1.0
 
 #define TRUE 1
 #define FALSE 0
+
+
+#define WALL_STRIO_WIDTH 4
 #include "/Users/houattou/Desktop/MLX42/include/MLX42/MLX42.h"
 
 # include "../libft/libft.h"
@@ -35,17 +39,9 @@
 #include <stdio.h>
 #include<string.h>
 #include<errno.h>
+#include<limits.h>
 
 
-typedef struct s_data
-{
-	void *img;
-	char *addr;
-	int bits_per_pixel;
-	int line_length;
-	int endian;
-}
-t_data;
 
 typedef struct s_player
 {
@@ -64,19 +60,27 @@ typedef struct s_player
    
 }t_player;
 
-
-typedef struct s_map
+typedef struct rays
 {
-	int start_height;
-	int start_width;
-	int end_height;
-	int end_width;
-}				t_map;
+	float rays_angle;
+	float wall_hits_x;
+	float wall_hits_y;
+	float distance;
+	int hit_vertical;
+	float hit_horizantal;
+	int is_ray_facing_up;
+	int is_ray_facing_down;
+	int is_ray_facing_left;
+	int is_ray_facing_right;
+	int wall_hit_content;
+}t_rays;
+
 typedef struct s_all_data
 {
 	mlx_t *mlx;
 	mlx_image_t *img;
 	t_player *player;
+	t_rays *rays;
 }t_all_data;
 
 /*----------------*RayCasting functions:----------------------------------------------*/
@@ -89,5 +93,11 @@ void update_player(t_all_data *mlx, mlx_key_data_t keydata);
 void	my_keyhook(mlx_key_data_t keydata, void *param);
 void draw_line(t_all_data *data);
 bool    check_if_have_wall(t_all_data *data, float x, float y);
+float normalize_angle(float angle);
+
+void cast_all_rays(t_all_data *data);
+
+void cast_ray(t_all_data *data,float angle_ray, int i);
+void render_rays(t_all_data *data);
 
 #endif
