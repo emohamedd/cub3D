@@ -6,18 +6,18 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:44:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/10/23 10:45:26 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:55:47 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/cub3d.h"
-#define WIDTH_MAP 15
-#define HEIGHT_MAP 11
+
+int is_game_running = FALSE;
+
 int32_t ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a)
 {
     return (r << 24 | g << 16 | b << 8 | a);
 }
-
 int mymap[11][15] = {
     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
     {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
@@ -31,9 +31,20 @@ int mymap[11][15] = {
     {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
     {1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1}
 };
+ 
 
-
-
+bool	check_wall(t_all_data *mlx, float x, float y)
+{
+	if (x < 0 || x > WIDTH_MAP || y < 0 || y > HEIGHT_MAP)
+		return (TRUE);
+	x = floor(x / SIZE_TITLE);
+	y = floor(y / SIZE_TITLE);
+	if (x < 0 || x >= 25 || y < 0 || y >= 11)
+		return (FALSE);
+	if (mymap[(int)y][(int)x] == 1)
+		return (TRUE);
+	return (FALSE);
+}
 bool    check_if_have_wall(t_all_data *data, float x, float y)
 {
     int map_grid_x;
@@ -54,6 +65,7 @@ bool    check_if_have_wall(t_all_data *data, float x, float y)
     return(TRUE);
  
 }
+
 
 void    draw_map( mlx_t *mlx, mlx_image_t *img)
 {

@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:44:34 by houattou          #+#    #+#             */
-/*   Updated: 2023/10/23 10:25:30 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/23 18:14:58 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void initialize_player(t_all_data *data)
     data->player->radius = 3;
     data->player->turn_direction = 0;
     data->player->wlk_direction = 0;
-    data->player->rotation_angle = (M_PI/ 2);
+    data->player->rotation_angle = (3 * M_PI/ 2);
     data->player->move_speed = 2;
     data->player->rotation_speed = 3* (M_PI / 180);
 
@@ -32,7 +32,6 @@ void initialize_player(t_all_data *data)
 
 void draw_player(t_all_data *data)
 {
-
    int center_x;
    int center_y;
    int radius;
@@ -52,4 +51,7 @@ void draw_player(t_all_data *data)
         }
         x++;
     } 
+    render_rays(data);
+    draw_line(data->img, data->player->x, data->player->y, data->player->x + cos(data->player->rotation_angle)*40, \
+    data->player->y + sin(data->player->rotation_angle)*40,   ft_pixel(255, 255, 255, 0));
 }
