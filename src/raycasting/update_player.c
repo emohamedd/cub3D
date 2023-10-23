@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:43:54 by houattou          #+#    #+#             */
-/*   Updated: 2023/10/21 16:49:51 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/23 10:33:06 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,33 +36,8 @@ float normalize_angle(float angle)
     return(angle);    
 }
 
-// void cast_all_rays(t_all_data *data)
-// {
-//     int strip_id ;
-//     float ray_angle;
-    
-//     ray_angle = data->player->rotation_angle - (FOV_ANGLE  / 2);
-//     strip_id = 0;
-//     while(strip_id < (WIDTH /2))
-//     {
-//         cast_ray(data,ray_angle, strip_id);
-//         ray_angle += FOV_ANGLE /MUM_RAYS;
-//         strip_id++;
-        
-//     }
-// }
 
-void cast_all_rays(t_all_data *data)
-{
-    for (int i = 0; i < WIDTH; i++)
-    {
-        // Calculate the ray angle based on the player's angle
-        float ray_angle = data->player->rotation_angle - (FOV_ANGLE / 2) + (i * FOV_ANGLE / WIDTH);
 
-        // Cast the ray for the current angle
-        cast_ray(data, ray_angle, i);
-    }
-}
 
 void update_player(t_all_data *mlx, mlx_key_data_t keydata)
 {
@@ -88,6 +63,7 @@ void update_player(t_all_data *mlx, mlx_key_data_t keydata)
         new_x = mlx->player->x - mlx->player->move_speed * cos(mlx->player->rotation_angle);
         new_y = mlx->player->y - mlx->player->move_speed * sin(mlx->player->rotation_angle);
     }
+    
     if( (check_if_have_wall(mlx, new_x, new_y)) == TRUE )
     {
   
@@ -96,7 +72,7 @@ void update_player(t_all_data *mlx, mlx_key_data_t keydata)
     }
     draw_map(mlx->mlx, mlx->img);
     draw_player(mlx);
-    draw_line(mlx);
+    draw_line(mlx->img, mlx->player->x, mlx->player->y, mlx->player->x + cos(mlx->player->rotation_angle)*40, mlx->player->y + sin(mlx->player->rotation_angle)*40);
 }
 
 
@@ -114,7 +90,9 @@ void	my_keyhook(mlx_key_data_t keydata, void *param)
     else
     {
         ratate_player(keydata, mlx);
-        draw_line(mlx);             
+        draw_map(mlx->mlx, mlx->img);
+        draw_player(mlx);
+        draw_line(mlx->img, mlx->player->x, mlx->player->y, mlx->player->x + cos(mlx->player->rotation_angle)*40, mlx->player->y + sin(mlx->player->rotation_angle)*40);             
         
     }
 

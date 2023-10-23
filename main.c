@@ -6,26 +6,13 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by houattou          #+#    #+#             */
-/*   Updated: 2023/10/21 16:47:36 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/23 10:46:49 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "./include/cub3d.h"
 
-
-void draw_line(t_all_data *data)
-{
-    float x;
-    float y;
-    float new_x;
-    float new_y;
-   x = MINIMAP_SCAL_FACTOR *data->player->x;
-   y = MINIMAP_SCAL_FACTOR *data->player->y;
-   new_x = x + cos(data->player->rotation_angle)*40;
-   new_y = y + sin(data->player->rotation_angle)*40;
-    mlx_put_pixel(data->img, new_x, new_y,ft_pixel(133, 13, 77, 255));
-}
 
 
 int main()
@@ -39,17 +26,12 @@ int main()
     data->mlx = mlx_init(WIDTH, HEIGHT, "MLX42", true);
     data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
     mlx_key_hook(data->mlx, &my_keyhook, data);
-    while(1)
-    {
-        cast_all_rays(data);
-        draw_map(data->mlx, data->img);
-        draw_player(data);
-        draw_line(data);
-        mlx_image_to_window(data->mlx, data->img, 0, 0);
-        
-        mlx_loop(data->mlx);
-    }
-    
+    mlx_image_to_window(data->mlx, data->img, 0, 0);
+    draw_map(data->mlx, data->img);
+    draw_player(data);
+    // cast_all_rays(data);
+    draw_line(data->img, data->player->x, data->player->y, data->player->x + cos(data->player->rotation_angle)*40, data->player->y + sin(data->player->rotation_angle)*40);
+    mlx_loop(data->mlx);
 
     printf("mlx_key_hook\n");
     mlx_terminate(data->mlx);
