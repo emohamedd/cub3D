@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:43:54 by houattou          #+#    #+#             */
-/*   Updated: 2023/10/23 18:13:20 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/25 14:49:12 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void ratate_player(mlx_key_data_t keydata, t_all_data *data)
 
 void update_player(t_all_data *mlx, mlx_key_data_t keydata)
 {
-    float new_x;
-    float new_y;
+    float new_x = 0;
+    float new_y = 0;
     if (keydata.key == MLX_KEY_S)
     {
         new_x = mlx->player->x + mlx->player->move_speed * cos(mlx->player->rotation_angle);

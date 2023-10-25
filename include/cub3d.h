@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/24 22:51:08 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:53:10 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void ratate_player(mlx_key_data_t keydata, t_all_data *data);
 void update_player(t_all_data *mlx, mlx_key_data_t keydata);
 void draw_line(mlx_image_t *image, float x1, float y1, float x2, float y2, int color);
 void	my_keyhook(mlx_key_data_t keydata, void *param);
-
+bool	is_has_wall(t_all_data *mlx, float x, float y);
 bool    check_if_have_wall(t_all_data *data, float x, float y);
 float normalize_angle(float angle);
 

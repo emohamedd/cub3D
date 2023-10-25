@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:46:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/10/23 18:04:44 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/25 11:04:28 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ void draw_line(mlx_image_t* img, float X0, float Y0, float X1, float Y1, int col
     float X = X0; 
     float Y = Y0; 
     for (int i = 0; i <= steps; i++) { 
-        mlx_put_pixel(img, X, Y,color); // put pixel at (X,Y) 
+        mlx_put_pixel(img, X, Y,color); 
+        if(img == NULL)
+            break;// put pixel at (X,Y) 
         X += Xinc; // increment in x at each step 
         Y += Yinc; // increment in y at each step 
     } 
