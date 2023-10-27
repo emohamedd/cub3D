@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/25 10:53:10 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/27 11:05:26 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@
 #include<string.h>
 #include<errno.h>
 #include<limits.h>
+#include<string.h>
 
 typedef struct s_cord
 {
@@ -110,5 +111,8 @@ void cast_all_rays(t_all_data *data);
 
 void cast_ray(t_all_data *data,float angle_ray, int i);
 void render_rays(t_all_data *data);
+
+void draw_vertical_intersection(t_all_data *mlx, float ray_angle);
+void	draw_horizontal_intersection(t_all_data *mlx, float ray_angle);
 
 #endif
