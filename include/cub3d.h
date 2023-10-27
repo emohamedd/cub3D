@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/27 16:22:11 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/27 20:00:00 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,10 @@ typedef struct s_cord
 {
 	int xstep;
 	int ystep;
+	int xstep_v;
+	int xstep_h;
+	int ystep_h;
+	int ystep_v;
 
 }t_cord;
 
@@ -83,7 +87,7 @@ typedef struct rays
 	int is_ray_facing_left;
 	int is_ray_facing_right;
 	int wall_hit_content;
-}t_rays[];
+}t_rays;
 
 typedef struct s_all_data
 {
@@ -112,7 +116,7 @@ void cast_all_rays(t_all_data *data);
 void cast_ray(t_all_data *data,float angle_ray, int i);
 void render_rays(t_all_data *data);
 
-void draw_vertical_intersection(t_all_data *mlx, float ray_angle);
-void	draw_horizontal_intersection(t_all_data *mlx, float ray_angle);
+t_all_data* draw_vertical_intersection(t_all_data *mlx, float ray_angle);
+t_all_data*	draw_horizontal_intersection(t_all_data *mlx, float ray_angle);
 
 #endif

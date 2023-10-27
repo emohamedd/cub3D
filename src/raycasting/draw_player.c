@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:44:34 by houattou          #+#    #+#             */
-/*   Updated: 2023/10/27 16:36:07 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/27 19:16:18 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void initialize_player(t_all_data *data)
     data->player->radius = 3;
     data->player->turn_direction = 0;
     data->player->wlk_direction = 0;
-    data->player->rotation_angle = (3 * M_PI /2 );
+    data->player->rotation_angle = (3 * M_PI / 2);
     data->player->move_speed = 8;
     data->player->rotation_speed = 3* (M_PI / 180);
 
