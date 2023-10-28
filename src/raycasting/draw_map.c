@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:44:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/10/27 21:07:41 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/28 19:22:24 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,18 @@ int mymap[11][15] = {
 
 bool	is_has_wall(t_all_data *mlx, float x, float y)
 {
-    (void)mlx;
-    int old_x;
-    int old_y;
-	if (x < 0 || x > WIDTH|| y < 0 || y > HEIGHT)
+	if (x < 0 || x > WIDTH || y < 0 || y > HEIGHT)
 		return (TRUE);
+ 
+    
 	x = floor(x / SIZE_TITLE);
 	y = floor(y / SIZE_TITLE);
-    old_x = floor(mlx->player->x /SIZE_TITLE);
-    old_y = floor(mlx->player->y / SIZE_TITLE);
-    // if((mymap[(int)y][old_x] == 1) || mymap[old_y][(int)x] == 1)
-    //     return(TRUE);
-	if (x < 0 || x >= 25 || y < 0 || y >= 11)
+	if (x < 0 || x >=  WIDTH_MAP|| y < 0 || y >= HEIGHT_MAP)
 		return (FALSE);
 	if (mymap[(int)y][(int)x] == 1)
 		return (TRUE);
 	return (FALSE);
+
 }
 bool    check_if_have_wall(t_all_data *data, float x, float y)
 {

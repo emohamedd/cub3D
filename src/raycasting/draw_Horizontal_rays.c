@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 20:06:20 by houattou          #+#    #+#             */
-/*   Updated: 2023/10/27 20:32:29 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:33:55 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ t_all_data*	draw_horizontal_intersection(t_all_data *mlx, float ray_angle)
  
 	while ((mlx->cord->xstep_h >= 0 && mlx->cord->xstep_h < WIDTH && mlx->cord->ystep_h >= 0 && mlx->cord->ystep_h < HEIGHT))
 	{
-        if((is_has_wall(mlx, mlx->cord->xstep_h, mlx->cord->ystep_h - SIZE_TITLE) &&( is_ray_facing_up)) || \
-         (!is_ray_facing_up && (is_has_wall(mlx, mlx->cord->xstep_h, mlx->cord->ystep_h)) || \
-         (is_has_wall(mlx, mlx->cord->xstep_h, mlx->cord->ystep_h))) || (!is_ray_facing_up && is_has_wall(mlx, mlx->cord->xstep_h, mlx->cord->ystep_h - SIZE_TITLE)))
+        if((is_has_wall(mlx, mlx->cord->xstep_h - 1, mlx->cord->ystep_h ) && is_ray_facing_up )|| (!is_ray_facing_up && (is_has_wall(mlx, mlx->cord->xstep_h - 1, mlx->cord->ystep_h))) || 
+        (is_has_wall(mlx, mlx->cord->xstep_h , mlx->cord->ystep_h - SIZE_TITLE) && is_ray_facing_up )|| (!is_ray_facing_up && (is_has_wall(mlx, mlx->cord->xstep_h, mlx->cord->ystep_h))))
+         
                  break;
      
 		

@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/27 20:00:00 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/28 19:17:51 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@
 
 typedef struct s_cord
 {
-	int xstep;
-	int ystep;
-	int xstep_v;
-	int xstep_h;
-	int ystep_h;
-	int ystep_v;
+	float xstep;
+	float ystep;
+	float xstep_v;
+	float xstep_h;
+	float ystep_h;
+	float ystep_v;
 
 }t_cord;
 

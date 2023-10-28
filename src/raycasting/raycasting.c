@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:54:28 by houattou          #+#    #+#             */
-/*   Updated: 2023/10/27 20:55:11 by houattou         ###   ########.fr       */
+/*   Updated: 2023/10/28 18:14:52 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void draw_rays(t_all_data *data, float ray_angle)
 {
     t_all_data *ptr;
    float angle =normalize_angle(ray_angle);
-   printf("ray angle %f\n", ray_angle);
-   printf("angle : %f\n", angle);
+//    printf("ray angle %f\n", ray_angle);
+//    printf("angle : %f\n", angle);
    data = draw_horizontal_intersection(data, ray_angle);
    ptr = draw_vertical_intersection(data, angle);
    
@@ -59,8 +59,8 @@ void draw_rays(t_all_data *data, float ray_angle)
    }
    draw_line(data->img, data->player->x, data->player->y, data->cord->xstep, data->cord->ystep, ft_pixel(255, 0, 255, 255));
     
-   printf("div_v %f\n", dis_v);
-   printf("div_h %f\n", dis_h);
+//    printf("div_v %f\n", dis_v);
+//    printf("div_h %f\n", dis_h);
 
     
 }
