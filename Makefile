@@ -6,7 +6,7 @@
 #    By: houattou <houattou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by houattou          #+#    #+#              #
-#    Updated: 2023/10/27 11:04:07 by houattou         ###   ########.fr        #
+#    Updated: 2023/11/01 15:14:19 by houattou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CFLAGS = #-Wall -Werror -Wextra -fsanitize=address
 SRCS = ./src/raycasting/draw_map.c ./src/raycasting/draw_player.c  main.c ./src/raycasting/update_player.c \
 	   ./src/raycasting/draw_line.c ./src/raycasting/check_wall.c ./src/raycasting/raycasting.c \
 	   ./src/raycasting/draw_Horizontal_rays.c  ./src/raycasting/draw_vertical_rays.c \
+	   ./src/raycasting/draw_projection_wall.c \
 		 
 OBJS = $(SRCS:.c=.o)
 

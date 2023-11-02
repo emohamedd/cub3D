@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/28 19:17:51 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/02 13:48:29 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,16 @@
 #define MAP_MUM_ROWS 25
 #define MAP_MUM_COLS 11
 #define FPS 30
-#define WIDTH   (SIZE_TITLE *(MAP_MUM_ROWS))
-#define HEIGHT  (SIZE_TITLE *(MAP_MUM_COLS))
-#define FOV_ANGLE (60 * (M_PI / 180))
-#define WALL_STRIO_WIDTH 4
-#define MUM_RAYS WIDTH/ 4
-#define   MINIMAP_SCAL_FACTOR 1.0
-
 #define WIDTH_MAP 25
 #define HEIGHT_MAP 11
+#define WIDTH    1200
+#define HEIGHT   1000
+#define FOV_ANGLE (60 * (M_PI / 180))
+#define WALL_STRIP_WIDTH 1
+#define WALL_STRIO_WIDTH 4
+#define MUM_RAYS WIDTH/ 4
+#define   MINIMAP_SCAL_FACTOR 0.2
+
 
 #define TRUE 1
 #define FALSE 0
@@ -51,26 +52,29 @@ typedef struct s_cord
 	float ystep;
 	float xstep_v;
 	float xstep_h;
-	float ystep_h;
-	float ystep_v;
+	float   ystep_h;
+    float   ystep_v;
+	float	distance;
+	bool is_vertical;
+	bool is_horizontal;
 
 }t_cord;
 
 
 typedef struct s_player
 {
-	double x;
-	double y;
-	double radius;
+	float x;
+	float y;
+	float radius;
 	int turn_direction;
 	int  wlk_direction;
-	double rotation_angle;
-	double move_speed;
-	double rotation_speed;
-	float wlk_speed;
+	float rotation_angle;
+	float move_speed;
+	float rotation_speed;
+    float wlk_speed;
 	float turn_speed;
-	double width;
-	double heigth;
+	float width;
+	float heigth;
    
 }t_player;
 
@@ -96,10 +100,20 @@ typedef struct s_all_data
 	t_player *player;
 	t_rays *rays;
 	t_cord *cord;
+
+    mlx_image_t		*img_3d;
+	mlx_texture_t	*no_text;
+	mlx_texture_t	*ea_text;
+	mlx_texture_t	*we_text;
+	mlx_texture_t	*so_text;
+	mlx_texture_t	*wall_text;
+
 }t_all_data;
 
 /*----------------*RayCasting functions:----------------------------------------------*/
 void    draw_map(mlx_t *mlx, mlx_image_t *img);
+
+void generate3d_projection(t_all_data *data);
 int32_t ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void initialize_player(t_all_data *data);
 void draw_player(t_all_data *data);
@@ -113,8 +127,10 @@ float normalize_angle(float angle);
 
 void cast_all_rays(t_all_data *data);
 
-void cast_ray(t_all_data *data,float angle_ray, int i);
 void render_rays(t_all_data *data);
+
+void cast_ray(t_all_data *data,float angle_ray, int i);
+t_all_data *draw_rays(t_all_data *data, int id, float ray_angle);
 
 t_all_data* draw_vertical_intersection(t_all_data *mlx, float ray_angle);
 t_all_data*	draw_horizontal_intersection(t_all_data *mlx, float ray_angle);

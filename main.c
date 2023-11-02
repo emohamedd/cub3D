@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by houattou          #+#    #+#             */
-/*   Updated: 2023/10/27 18:25:14 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/02 11:54:37 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,14 @@ int main()
     data->mlx = mlx_init(WIDTH, HEIGHT, "MLX42", true);
     data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
     draw_map(data->mlx, data->img);
+ 
     draw_player(data);
+    // generate3d_projection(data);
+
     mlx_key_hook(data->mlx, &my_keyhook, data);
     mlx_image_to_window(data->mlx, data->img, 0, 0);
 
     mlx_loop(data->mlx);
-
     mlx_terminate(data->mlx);
     return EXIT_SUCCESS;
 }
