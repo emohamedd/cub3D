@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:54:28 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/02 14:09:33 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:55:28 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,26 @@ float normalize_angle(float angle)
     return(angle);
 }
 
-
+void drawing(t_all_data *data)
+{
+    int i;
+    int j;
+    i = 0;
+    while(i < HEIGHT)
+    {
+        j = 0;
+        while(j < WIDTH)
+        {
+            if( i < HEIGHT / 2)
+                mlx_put_pixel(data->img, j, i,ft_pixel(200, 0, 30, 100));
+            else
+                mlx_put_pixel(data->img, j, i,ft_pixel(100, 0, 30, 200));
+            j++;    
+                    
+        }
+        i++;
+    }
+}
 t_all_data *draw_rays(t_all_data *data, int id, float ray_angle)
 {
     t_all_data *ptr;
@@ -57,16 +76,32 @@ float new_distance =  data->cord->distance  * cos(ray_angle - data->player->rota
 //    data->cord->distance = distance_between_points(data->player->x, data->player->y, data->cord->xstep, data->cord->ystep);
 //    printf("small distance %f\n", data->cord->distance);
 
-   float wall_height = (SIZE_TITLE/ new_distance) * (WIDTH/ 2)/ tan(FOV_ANGLE /2);
+   int wall_height = (SIZE_TITLE/ new_distance) * (WIDTH/ 2)/ tan(FOV_ANGLE /2);
    if(wall_height > HEIGHT)
           wall_height = HEIGHT;
-   printf("wall_height is %f\n", wall_height);
+ 
 
-   float y_start = (WIDTH / 2) - (wall_height/2);
-   float y_end = (WIDTH / 2) + (wall_height /2);
+   int y_start = (WIDTH / 2) - (wall_height/2);
+   int  y_end = (WIDTH / 2) + (wall_height /2);
 
-   
-   draw_line(data->img, id, y_start, id, y_end, ft_pixel(255, 255, 255, 255) );
+   if(dis_v > dis_h)
+   { printf("hello\n");
+    draw_line(data->img, id, y_start, id, y_end, 0x0000FF00 );
+    
+    
+   }
+    else
+    {
+        printf("ana hna\n");
+        // if(ray_angle >= 90 && ray_angle <= 270)
+        //     draw_line(data->img, id, y_start, id, y_end, ft_pixel(255, 0, 255, 255) );
+        // else
+        if(ray_angle >= 0 && ray_angle <= 180)
+            draw_line(data->img, id, y_start, id, y_end, ft_pixel(255,0,255,255));
+        else
+        draw_line(data->img, id, y_start, id, y_end, 0xFF0000FF);
+            
+    }
    return(data);
 }
 

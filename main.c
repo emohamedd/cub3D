@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/02 14:09:49 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:28:19 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main()
     data->mlx = mlx_init(WIDTH, HEIGHT, "MLX42", true);
     data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
     draw_map(data->mlx, data->img);
+    drawing(data);
  
     draw_player(data);
     // generate3d_projection(data);

@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/02 14:07:19 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:32:21 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ typedef struct s_all_data
 
 /*----------------*RayCasting functions:----------------------------------------------*/
 void    draw_map(mlx_t *mlx, mlx_image_t *img);
+void drawing(t_all_data *data);
 
 void generate3d_projection(t_all_data *data);
 int32_t ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a);
