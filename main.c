@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/02 19:09:38 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/02 20:03:16 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 #include "./include/cub3d.h"
 
 
-
-int main()
+void raycasting()
 {
-    t_all_data *data = (t_all_data*)malloc(sizeof(t_all_data));
+     t_all_data *data = (t_all_data*)malloc(sizeof(t_all_data));
     data->player = (t_player *)malloc(sizeof(t_player));
     data->cord = (t_cord *)malloc(sizeof(t_cord));
     initialize_player(data);
@@ -34,6 +33,11 @@ int main()
 
     mlx_loop(data->mlx);
     mlx_terminate(data->mlx);
+    
+}
+int main()
+{
+   raycasting();
     return EXIT_SUCCESS;
 }
 

@@ -6,11 +6,12 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:03:35 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/02 18:33:55 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:46:17 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../../include/cub3d.h"
+#include "../../libft/libft.h"
 
 
 t_all_data*	draw_vertical_intersection(t_all_data *mlx, float ray_angle)
@@ -47,6 +48,7 @@ t_all_data*	draw_vertical_intersection(t_all_data *mlx, float ray_angle)
 		mlx->cord->xstep_v += sign * SIZE_TITLE;
 		mlx->cord->ystep_v += sign * SIZE_TITLE * tan(ray_angle);
 	}
+
 // 	  printf(" here :data->cord->xstep : %d\n", mlx->cord->xstep_v);
 //    printf(" here :data->cord->ystep : %d\n", mlx->cord->ystep_v);
 	return(mlx);

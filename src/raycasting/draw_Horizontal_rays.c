@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 20:06:20 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/02 18:30:32 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:55:20 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ t_all_data*	draw_horizontal_intersection(t_all_data *mlx, float ray_angle)
         mlx->cord->xstep_h +=  sign *SIZE_TITLE / tan(ray_angle);
         mlx->cord->ystep_h += sign * SIZE_TITLE;
 	}
+ 
     //   draw_line(mlx->img, mlx->player->x, mlx->player->y,mlx->cord->xstep_h, mlx->cord->ystep_h, ft_pixel(255, 255, 0, 255));
     return(mlx);
 }

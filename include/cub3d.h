@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/02 18:30:17 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:52:47 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@
 #define WALL_STRIO_WIDTH 4
 #include "/Users/houattou/Desktop/MLX42/include/MLX42/MLX42.h"
 
-# include "../libft/libft.h"
 
+// # include "../../get_line/get_next_line.h"
 # include <math.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -46,6 +46,41 @@
 #include<limits.h>
 #include<string.h>
 
+//this partie for parsing :
+
+typedef struct s_map
+{
+	char	**all_map;
+	char	**direc;
+	char	**map;
+	int		dir_len;
+	int 	width;
+	int 	height;
+
+}			t_map;
+
+typedef struct s_direc
+{
+	char	*key;
+	char	*value;
+
+}			t_direc;
+
+void		print_err(char *s);
+int			check_file_cub(char *file);
+void		readfile(int fd, t_map *map, t_direc *dir);
+void		dir_parse(t_map *map, t_direc *direc);
+void		map_parse(t_map *map);
+int			valid_map(t_map *map);
+int			ft_strcmp(char *s1, char *s2);
+int			check_map_char(t_map *map);
+int			new_atoi(const char *str);
+
+void	readfile(int fd, t_map *map, t_direc *dir);
+
+
+void	readfile(int fd, t_map *map, t_direc *dir);
+//this part for raycasting:
 typedef struct s_cord
 {
 	float xstep;

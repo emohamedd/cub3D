@@ -6,7 +6,7 @@
 #    By: houattou <houattou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by houattou          #+#    #+#              #
-#    Updated: 2023/11/01 15:14:19 by houattou         ###   ########.fr        #
+#    Updated: 2023/11/02 19:57:01 by houattou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,9 @@ SRCS = ./src/raycasting/draw_map.c ./src/raycasting/draw_player.c  main.c ./src/
 	   ./src/raycasting/draw_line.c ./src/raycasting/check_wall.c ./src/raycasting/raycasting.c \
 	   ./src/raycasting/draw_Horizontal_rays.c  ./src/raycasting/draw_vertical_rays.c \
 	   ./src/raycasting/draw_projection_wall.c \
+	   ./src/parsing/check_file_name.c ./src/parsing/cub_utils.c ./src/parsing/parsing_the_directions.c \
+	   ./src/parsing/parsing_the_map.c ./src/parsing/print_err.c \
+	   ./src/parsing/valid_map.c  ./src/parsing/readfile.c \
 		 
 OBJS = $(SRCS:.c=.o)
 
