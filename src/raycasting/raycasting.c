@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:54:28 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/02 13:56:01 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:09:33 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,15 @@ t_all_data *draw_rays(t_all_data *data, int id, float ray_angle)
         data->cord->ystep = data->cord->ystep_v;
         data->cord->distance = dis_v;
    }
+  
+float new_distance =  data->cord->distance  * cos(ray_angle - data->player->rotation_angle);
    draw_line(data->img, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMAP_SCAL_FACTOR, data->cord->xstep*MINIMAP_SCAL_FACTOR, data->cord->ystep*MINIMAP_SCAL_FACTOR, ft_pixel(255, 0, 255, 255));
 //    printf("distance virtcal %f\n", dis_v);
 //       printf("distance horizontal %f\n", dis_h);
 //    data->cord->distance = distance_between_points(data->player->x, data->player->y, data->cord->xstep, data->cord->ystep);
 //    printf("small distance %f\n", data->cord->distance);
 
-   float wall_height = (SIZE_TITLE/ data->cord->distance) * (WIDTH/ 2)/ tan(FOV_ANGLE /2);
+   float wall_height = (SIZE_TITLE/ new_distance) * (WIDTH/ 2)/ tan(FOV_ANGLE /2);
    if(wall_height > HEIGHT)
           wall_height = HEIGHT;
    printf("wall_height is %f\n", wall_height);

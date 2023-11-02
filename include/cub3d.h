@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/02 13:48:29 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:07:19 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,13 +100,6 @@ typedef struct s_all_data
 	t_player *player;
 	t_rays *rays;
 	t_cord *cord;
-
-    mlx_image_t		*img_3d;
-	mlx_texture_t	*no_text;
-	mlx_texture_t	*ea_text;
-	mlx_texture_t	*we_text;
-	mlx_texture_t	*so_text;
-	mlx_texture_t	*wall_text;
 
 }t_all_data;
 
