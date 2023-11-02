@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:03:35 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/01 15:48:01 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/02 18:33:55 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,13 @@ t_all_data*	draw_vertical_intersection(t_all_data *mlx, float ray_angle)
 	mlx->cord->xstep_v = ceil(mlx->player->x / SIZE_TITLE) * SIZE_TITLE;
 	if (is_ray_facing_left)
 	{
+		mlx->player->is_ray_facing_left = TRUE;
 		mlx->cord->xstep_v -= SIZE_TITLE;
 		sign = -1;
 	}
+	if(!is_ray_facing_left)
+		mlx->player->is_ray_facing_left = FALSE;
+		
 	mlx->cord->ystep_v = mlx->player->y - (mlx->player->x - mlx->cord->xstep_v) * tan(ray_angle);
 	while ((mlx->cord->xstep_v >= 0 && mlx->cord->xstep_v < WIDTH && mlx->cord->ystep_v >= 0 && mlx->cord->ystep_v < HEIGHT))
 	{

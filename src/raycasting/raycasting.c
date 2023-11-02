@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:54:28 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/02 16:55:28 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:09:22 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ void drawing(t_all_data *data)
         while(j < WIDTH)
         {
             if( i < HEIGHT / 2)
-                mlx_put_pixel(data->img, j, i,ft_pixel(200, 0, 30, 100));
+                mlx_put_pixel(data->img, j, i,ft_pixel(0, 119, 190, 255));
             else
-                mlx_put_pixel(data->img, j, i,ft_pixel(100, 0, 30, 200));
+                mlx_put_pixel(data->img, j, i,ft_pixel(0, 100, 0, 255));
             j++;    
                     
         }
@@ -70,11 +70,8 @@ t_all_data *draw_rays(t_all_data *data, int id, float ray_angle)
    }
   
 float new_distance =  data->cord->distance  * cos(ray_angle - data->player->rotation_angle);
-   draw_line(data->img, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMAP_SCAL_FACTOR, data->cord->xstep*MINIMAP_SCAL_FACTOR, data->cord->ystep*MINIMAP_SCAL_FACTOR, ft_pixel(255, 0, 255, 255));
-//    printf("distance virtcal %f\n", dis_v);
-//       printf("distance horizontal %f\n", dis_h);
-//    data->cord->distance = distance_between_points(data->player->x, data->player->y, data->cord->xstep, data->cord->ystep);
-//    printf("small distance %f\n", data->cord->distance);
+draw_line(data->img, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMAP_SCAL_FACTOR, data->cord->xstep*MINIMAP_SCAL_FACTOR, data->cord->ystep*MINIMAP_SCAL_FACTOR, ft_pixel(255, 0, 255, 255));
+
 
    int wall_height = (SIZE_TITLE/ new_distance) * (WIDTH/ 2)/ tan(FOV_ANGLE /2);
    if(wall_height > HEIGHT)
@@ -84,22 +81,21 @@ float new_distance =  data->cord->distance  * cos(ray_angle - data->player->rota
    int y_start = (WIDTH / 2) - (wall_height/2);
    int  y_end = (WIDTH / 2) + (wall_height /2);
 
-   if(dis_v > dis_h)
-   { printf("hello\n");
-    draw_line(data->img, id, y_start, id, y_end, 0x0000FF00 );
-    
-    
+   if(dis_v >dis_h)
+   {
+     if(data->player->is_ray_facing_up == TRUE)
+            draw_line(data->img, id, y_start, id, y_end,ft_pixel(128, 0, 128, 255));
+            
+     else
+         draw_line(data->img, id, y_start, id, y_end, ft_pixel(204, 204, 255, 255) );
    }
     else
     {
-        printf("ana hna\n");
-        // if(ray_angle >= 90 && ray_angle <= 270)
-        //     draw_line(data->img, id, y_start, id, y_end, ft_pixel(255, 0, 255, 255) );
-        // else
-        if(ray_angle >= 0 && ray_angle <= 180)
-            draw_line(data->img, id, y_start, id, y_end, ft_pixel(255,0,255,255));
+      
+        if(data->player->is_ray_facing_left == TRUE)
+            draw_line(data->img, id, y_start, id, y_end, ft_pixel(120, 120, 120, 0));
         else
-        draw_line(data->img, id, y_start, id, y_end, 0xFF0000FF);
+             draw_line(data->img, id, y_start, id, y_end, ft_pixel( 238, 130, 238, 0));
             
     }
    return(data);

@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/02 16:32:21 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/02 18:30:17 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,11 @@ typedef struct s_player
 	float turn_speed;
 	float width;
 	float heigth;
+
+	bool is_ray_facing_up;
+	bool is_ray_facing_down;
+	bool is_ray_facing_left;
+	bool is_ray_facing_right;
    
 }t_player;
 
@@ -86,10 +91,7 @@ typedef struct rays
 	float distance;
 	int hit_vertical;
 	float hit_horizantal;
-	int is_ray_facing_up;
-	int is_ray_facing_down;
-	int is_ray_facing_left;
-	int is_ray_facing_right;
+
 	int wall_hit_content;
 }t_rays;
 
