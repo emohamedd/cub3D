@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_the_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 10:00:37 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/12 08:41:31 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:48:57 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
-
+#include "../../include/cub3d.h"
 
 int lenght_of_the_long_line_in_map(t_map * map)
 {

@@ -3,79 +3,89 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 16:21:49 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/17 12:36:13 by emohamed         ###   ########.fr       */
+/*   Created: 2022/10/17 19:35:33 by houattou          #+#    #+#             */
+/*   Updated: 2022/10/29 21:25:04 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_s_lenght(const char *s, char c)
+size_t	ft_countchar(char const *str, char sep)
 {
-	int	i;
-	int	j;
+	size_t	count;
+	size_t	j;
 
-	i = 0;
+	count = 0;
 	j = 0;
-	while (s[i])
+	while (str[j] && str[j] != sep)
 	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (s[i])
-			j++;
-		while (s[i] && s[i] != c)
-			i++;
+		count++;
+		j++;
 	}
-	return (j);
+	return (count);
 }
 
-char	*allocat_s(const char *s, char c)
+int	ft_countword(char *str, char sep)
 {
-	int		i;
-	int		len;
-	char	*p;
+	int	wordc;
+	int	i;
 
 	i = 0;
-	len = 0;
-	while (s[len] && s[len] != c)
-		len++;
-	p = malloc(sizeof(char) * len + 1);
-	if (!p)
-		return (NULL);
-	while (i < len)
+	wordc = 0;
+	while (*str)
 	{
-		p[i] = s[i];
-		i++;
+		if (*str != sep && (str[i + 1] == sep || str[i + 1] == '\0'))
+			wordc++;
+		str++;
 	}
-	p[i] = '\0';
-	return (p);
+	return (wordc);
+}
+
+int	ft_repeatedsep(char *s, char sep)
+{
+	int	count;
+	int	i;
+
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		while (s[0] == sep)
+		{
+			count++;
+			s++;
+		}
+		break ;
+	}
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**p;
-	int		i;
-	int		j;
+	int		numberwords;
+	int		count;
+	char	*str;
+	char	**result;
 
-	i = 0;
-	j = 0;
-	p = malloc(sizeof(char *) * count_s_lenght(s, c) + 1);
-	if (!p)
+	if (!s)
 		return (NULL);
-	while (s[i])
+	str = (char *)s;
+	numberwords = ft_countword(str, c);
+	result = ft_calloc(numberwords + 1, sizeof(char *));
+	if (!result)
+		return (NULL);
+	count = 0;
+	while (count < numberwords)
 	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (s[i])
-		{
-			p[j] = allocat_s(&s[i], c);
-			j++;
-		}
-		while (s[i] && s[i] != c)
-			i++;
+		str += ft_repeatedsep(str, c);
+		if (str[0] && str[0] != c)
+			result[count] = ft_substr(str, 0, ft_countchar(str, c));
+		if (!result[count])
+			return (NULL);
+		str += ft_countchar(str, c);
+		count++;
 	}
-	p[j] = NULL;
-	return (p);
+	return (result);
 }

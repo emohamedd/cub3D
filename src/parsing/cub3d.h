@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/11 14:42:26 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:31:33 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+// #ifndef CUB3D_H
+// # define CUB3D_H
 
 # define RED 0x00FF0000FF
 # define GREEN 0x0000FF00FF
@@ -31,31 +31,5 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct s_map
-{
-	char	**all_map;
-	char	**direc;
-	char	**map;
-	int		dir_len;
-	int 	width;
-	int 	height;
 
-}			t_map;
-
-typedef struct s_direc
-{
-	char	*key;
-	char	*value;
-
-}			t_direc;
-
-void		print_err(char *s);
-int			check_file_cub(char *file);
-void		readfile(int fd, t_map *map, t_direc *dir);
-void		dir_parse(t_map *map, t_direc *direc);
-void		map_parse(t_map *map);
-int			valid_map(t_map *map);
-int			ft_strcmp(char *s1, char *s2);
-int			check_map_char(t_map *map);
-int			new_atoi(const char *str);
-#endif
+// #endif

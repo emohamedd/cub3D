@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 10:39:39 by emohamed          #+#    #+#             */
-/*   Updated: 2023/05/17 12:39:43 by emohamed         ###   ########.fr       */
+/*   Created: 2022/10/15 22:12:35 by houattou          #+#    #+#             */
+/*   Updated: 2022/10/28 23:07:13 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,29 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*p;
+	char	*sub;
 	size_t	i;
+	size_t	j;
+	size_t	len_s;
 
 	if (!s)
 		return (NULL);
-	i = 0;
-	if (ft_strlen(s) < len)
-		p = malloc((ft_strlen(s) + 1) * sizeof(char));
-	else
-		p = malloc ((len + 1) * sizeof(char));
-	if (!p)
+	len_s = ft_strlen(s);
+	i = -1;
+	j = 0;
+	if (len > len_s)
+		len = len_s;
+	sub = (char *)malloc(sizeof(char) * (len + 1));
+	if (!sub)
 		return (NULL);
-	if (start <= ft_strlen(s))
+	while (s[++i])
 	{
-		while (s[start] && i < len)
+		if (i >= start && j < len)
 		{
-			p[i] = s[start];
-			i++;
-			start++;
+			sub[j] = s[i];
+			j++;
 		}
 	}
-	p[i] = '\0';
-	return (p);
+	sub[j] = '\0';
+	return (sub);
 }

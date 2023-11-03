@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   cub_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:15:22 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/09 16:04:12 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:48:09 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../../include/cub3d.h"
+#include "../../libft/libft.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {

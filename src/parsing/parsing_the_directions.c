@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_the_directions.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:33:48 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/09 16:05:52 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:48:39 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../../include/cub3d.h"
+#include "../../libft/libft.h"
 
 void	check_key_color_range(t_direc *dir)
 {

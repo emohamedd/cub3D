@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   print_err.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:29:48 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/09 16:07:38 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:49:12 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../../include/cub3d.h"
+#include "../../libft/libft.h"
 
 void	print_err(char *s)
 {
