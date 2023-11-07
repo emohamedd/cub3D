@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/07 12:07:35 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/07 14:46:20 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,10 +153,10 @@ void cast_all_rays(t_all_data *data);
 void render_rays(t_all_data *data);
 
 void cast_ray(t_all_data *data,float angle_ray, int i);
-t_all_data *draw_rays(t_all_data *data, int id, float ray_angle);
+t_all_data *draw_rays(t_all_data *data, int id, float ray_angle, mlx_texture_t *texture, mlx_texture_t *texture1, mlx_texture_t *texture2, mlx_texture_t *texture3);
 
 t_all_data* draw_vertical_intersection(t_all_data *mlx, float ray_angle);
 t_all_data*	draw_horizontal_intersection(t_all_data *mlx, float ray_angle);
-void draw_wall_with_texture(t_all_data *data, int id, float ray_angle, float hor_intercept_x, float vert_intercept_y);
+void draw_wall_with_texture(t_all_data *data, int id, float ray_angle, float hor_intercept_x, float vert_intercept_y, float xtx, mlx_texture_t *texture);
 
 #endif

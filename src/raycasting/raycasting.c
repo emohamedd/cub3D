@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:54:28 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/07 12:14:27 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/07 14:52:53 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ float normalize_angle(float angle)
 }
 
 
-t_all_data *draw_rays(t_all_data *data, int id, float ray_angle)
+t_all_data *draw_rays(t_all_data *data, int id, float ray_angle, mlx_texture_t *texture, mlx_texture_t *texture1, mlx_texture_t *texture2, mlx_texture_t *texture3)
 {
    float angle =normalize_angle(ray_angle);
 
@@ -50,7 +50,15 @@ t_all_data *draw_rays(t_all_data *data, int id, float ray_angle)
         data->cord->ystep = data->cord->ystep_v;
         data->cord->distance = dis_v;
    }
-  
+   float xtx;
+   if (data->cord->is_vertical == TRUE)
+   {
+       xtx = (int)data->cord->ystep % SIZE_TITLE;
+   }
+   else
+   {
+       xtx = (int)data->cord->xstep % SIZE_TITLE;
+   }
 float new_distance =  data->cord->distance  * cos(ray_angle - data->player->rotation_angle);
 draw_line(data->img, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMAP_SCAL_FACTOR, data->cord->xstep*MINIMAP_SCAL_FACTOR, data->cord->ystep*MINIMAP_SCAL_FACTOR, ft_pixel(125, 125, 255, 255));
 
@@ -63,19 +71,18 @@ draw_line(data->img, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMA
    int y_start = ((SIZE_TITLE * data->map->height)/ 2) - (wall_height/2);
    int  y_end = ((SIZE_TITLE * data->map->height)/ 2) + (wall_height /2);
 
-
    if(dis_v > dis_h)
    {
      if(data->player->is_ray_facing_up == TRUE)
      {
-              draw_line(data->img, id, y_start, id, y_end, ft_pixel(0, 0, 0, 255));
-              draw_wall_with_texture(data, id, ray_angle,  data->cord->xstep, data->cord->ystep);
+            //   draw_line(data->img, id, y_start, id, y_end, ft_pixel(0, 0, 0, 255));
+              draw_wall_with_texture(data, id, ray_angle,  data->cord->xstep, data->cord->ystep, xtx,texture);
      }
             
      else
      {
-            draw_line(data->img, id, y_start, id, y_end, ft_pixel(0, 0, 0, 255));
-          draw_wall_with_texture(data, id, ray_angle, data->cord->xstep, data->cord->ystep);  // this is the color of the wall
+            // draw_line(data->img, id, y_start, id, y_end, ft_pixel(0, 0, 0, 255));
+          draw_wall_with_texture(data, id, ray_angle, data->cord->xstep, data->cord->ystep, xtx, texture1);  // this is the color of the wall
      }
    }
     else
@@ -84,13 +91,13 @@ draw_line(data->img, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMA
         if(data->player->is_ray_facing_left == TRUE)
         {
 
-            draw_line(data->img, id, y_start, id, y_end, ft_pixel(0, 0, 0, 255));
-             draw_wall_with_texture(data, id, ray_angle, data->cord->xstep, data->cord->ystep);
+            // draw_line(data->img, id, y_start, id, y_end, ft_pixel(0, 0, 0, 255));
+             draw_wall_with_texture(data, id, ray_angle, data->cord->xstep, data->cord->ystep, xtx, texture2);
         }
         else
         {
-              draw_line(data->img, id, y_start, id, y_end, ft_pixel(0, 0, 0, 255));
-              draw_wall_with_texture(data, id, ray_angle,  data->cord->xstep, data->cord->ystep);
+            //   draw_line(data->img, id, y_start, id, y_end, ft_pixel(0, 0, 0, 255));
+              draw_wall_with_texture(data, id, ray_angle,  data->cord->xstep, data->cord->ystep, xtx, texture3);
         }
             
             
@@ -106,13 +113,14 @@ void render_rays(t_all_data *data)
     float	wall_height;
     float ray_distance;
     float ray_angle = normalize_angle(data->player->rotation_angle - (FOV_ANGLE / 2));
+    mlx_texture_t* texture = mlx_load_png("/Users/emohamed/Desktop/C3/textures/bluestone.png");
+    mlx_texture_t* texture1 = mlx_load_png("/Users/emohamed/Desktop/C3/textures/3_2.png");
+    mlx_texture_t* texture2 = mlx_load_png("/Users/emohamed/Desktop/C3/textures/mossy.png");
+    mlx_texture_t* texture3 = mlx_load_png("/Users/emohamed/Desktop/C3/textures/wood.png");
     while(id < num_of_rays)
     {
      
-        
-      
-
-        data = draw_rays(data, id, ray_angle);
+        data = draw_rays(data, id, ray_angle, texture, texture1, texture2, texture3);
         ray_angle += normalize_angle( FOV_ANGLE / num_of_rays);
         id++;
     }
