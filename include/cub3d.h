@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/07 10:03:11 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/07 12:07:35 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,5 +157,6 @@ t_all_data *draw_rays(t_all_data *data, int id, float ray_angle);
 
 t_all_data* draw_vertical_intersection(t_all_data *mlx, float ray_angle);
 t_all_data*	draw_horizontal_intersection(t_all_data *mlx, float ray_angle);
+void draw_wall_with_texture(t_all_data *data, int id, float ray_angle, float hor_intercept_x, float vert_intercept_y);
 
 #endif

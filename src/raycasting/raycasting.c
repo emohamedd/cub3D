@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:54:28 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/07 10:26:28 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/07 12:14:27 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,18 +67,32 @@ draw_line(data->img, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMA
    if(dis_v > dis_h)
    {
      if(data->player->is_ray_facing_up == TRUE)
-            draw_line(data->img, id, y_start, id, y_end,ft_pixel(0, 0, 0, 255)); // this if the color of the wall
+     {
+              draw_line(data->img, id, y_start, id, y_end, ft_pixel(0, 0, 0, 255));
+              draw_wall_with_texture(data, id, ray_angle,  data->cord->xstep, data->cord->ystep);
+     }
             
      else
-         draw_line(data->img, id, y_start, id, y_end, ft_pixel(204, 204, 255, 255) );  // this is the color of the wall
+     {
+            draw_line(data->img, id, y_start, id, y_end, ft_pixel(0, 0, 0, 255));
+          draw_wall_with_texture(data, id, ray_angle, data->cord->xstep, data->cord->ystep);  // this is the color of the wall
+     }
    }
     else
     {
       
         if(data->player->is_ray_facing_left == TRUE)
-            draw_line(data->img, id, y_start, id, y_end, ft_pixel(0, 0, 11, 0));
+        {
+
+            draw_line(data->img, id, y_start, id, y_end, ft_pixel(0, 0, 0, 255));
+             draw_wall_with_texture(data, id, ray_angle, data->cord->xstep, data->cord->ystep);
+        }
         else
-             draw_line(data->img, id, y_start, id, y_end, ft_pixel( 0, 0, 238, 300));
+        {
+              draw_line(data->img, id, y_start, id, y_end, ft_pixel(0, 0, 0, 255));
+              draw_wall_with_texture(data, id, ray_angle,  data->cord->xstep, data->cord->ystep);
+        }
+            
             
     }
    return(data);
