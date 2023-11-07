@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:54:28 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/07 14:52:53 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:54:01 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,12 +92,12 @@ draw_line(data->img, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMA
         {
 
             // draw_line(data->img, id, y_start, id, y_end, ft_pixel(0, 0, 0, 255));
-             draw_wall_with_texture(data, id, ray_angle, data->cord->xstep, data->cord->ystep, xtx, texture2);
+             draw_wall_with_texture(data, id, ray_angle,data->cord->xstep, data->cord->ystep, xtx, texture2);
         }
         else
         {
             //   draw_line(data->img, id, y_start, id, y_end, ft_pixel(0, 0, 0, 255));
-              draw_wall_with_texture(data, id, ray_angle,  data->cord->xstep, data->cord->ystep, xtx, texture3);
+              draw_wall_with_texture(data, id, ray_angle,data->cord->xstep, data->cord->ystep,   xtx, texture3);
         }
             
             
@@ -113,10 +113,10 @@ void render_rays(t_all_data *data)
     float	wall_height;
     float ray_distance;
     float ray_angle = normalize_angle(data->player->rotation_angle - (FOV_ANGLE / 2));
-    mlx_texture_t* texture = mlx_load_png("/Users/emohamed/Desktop/C3/textures/bluestone.png");
-    mlx_texture_t* texture1 = mlx_load_png("/Users/emohamed/Desktop/C3/textures/3_2.png");
-    mlx_texture_t* texture2 = mlx_load_png("/Users/emohamed/Desktop/C3/textures/mossy.png");
-    mlx_texture_t* texture3 = mlx_load_png("/Users/emohamed/Desktop/C3/textures/wood.png");
+    mlx_texture_t* texture = mlx_load_png("/Users/emohamed/Desktop/C3/textures/0.png");
+    mlx_texture_t* texture1 = mlx_load_png("/Users/emohamed/Desktop/C3/textures/00.png");
+    mlx_texture_t* texture2 = mlx_load_png("/Users/emohamed/Desktop/C3/textures/01.png");
+    mlx_texture_t* texture3 = mlx_load_png("/Users/emohamed/Desktop/C3/textures/02.png");
     while(id < num_of_rays)
     {
      

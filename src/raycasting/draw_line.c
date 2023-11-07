@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:46:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/07 13:32:17 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/07 17:38:22 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,27 +59,13 @@ void draw_wall_with_texture(t_all_data *data, int id, float ray_angle ,float hor
     int y_start = ((SIZE_TITLE * data->map->height) / 2) - (wall_height / 2);
     int y_end = ((SIZE_TITLE * data->map->height) / 2) + (wall_height / 2);
 
-    // int texture_x, 
     float ytx;
 
-        // texture_x = (int)hor_intercept_x % SIZE_TITLE;
 
-    // texture_y = ((y_start - ((SIZE_TITLE * data->map->height) / 2) + (wall_height / 2)) / wall_height) * SIZE_TITLE;
-
-    // mlx_texture_t* texture = mlx_load_png("/Users/emohamed/Desktop/C3/bluestone.png");
     float tx_inc = texture->height / (float)wall_height;
-    
-    // if (texture) {
-        // int wall_color = get_color_from_texture(texture_x, texture_y, texture);
 
-        // Draw the wall using draw_line
-        // draw_line(data->img, id, y_start, id, y_end, wall_color);
-        // y_start++;
-
-        // Overlay textures on top of the wall
-        float wallTopPixel;
+        float wallTopPixel = y_start;
         while (y_start < y_end) {
-            // ytx = ((y_start - ((SIZE_TITLE * data->map->height) / 2) + (wall_height / 2)) / wall_height) * SIZE_TITLE;
             ytx = (y_start - wallTopPixel) * tx_inc;
             
             if (ytx >= texture->height) {
@@ -90,6 +76,5 @@ void draw_wall_with_texture(t_all_data *data, int id, float ray_angle ,float hor
             y_start++;
         }
 
-        // Don't forget to free the loaded texture when done with it
         // mlx_delete_texture(texture);
     }

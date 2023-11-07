@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:44:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/06 12:32:56 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/07 17:36:04 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void    draw_map(t_all_data *data)
                 while (x < (SIZE_TITLE * j) + SIZE_TITLE)
                 {
                     if (data->map->map[i][j] == 49)
-                        mlx_put_pixel(data->img, x*MINIMAP_SCAL_FACTOR, y*MINIMAP_SCAL_FACTOR, ft_pixel(125, 128, 0, 33));
+                        mlx_put_pixel(data->img, x*MINIMAP_SCAL_FACTOR, y*MINIMAP_SCAL_FACTOR, ft_pixel(0, 0, 0, 255)); // this is the color of purple
                     else 
                         mlx_put_pixel(data->img, x*MINIMAP_SCAL_FACTOR, y*MINIMAP_SCAL_FACTOR, ft_pixel(255, 255, 255, 255));
                     x++;
