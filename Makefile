@@ -6,13 +6,13 @@
 #    By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by houattou          #+#    #+#              #
-#    Updated: 2023/11/07 10:03:17 by emohamed         ###   ########.fr        #
+#    Updated: 2023/11/07 10:54:20 by emohamed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 	 
 CC = cc
-CFLAGS = #-Wall -Werror -Wextra 
+CFLAGS = -O3 #-Wall -Werror -Wextra 
 
 SRCS = ./src/raycasting/draw_map.c ./src/raycasting/draw_player.c  main.c ./src/raycasting/update_player.c \
 	   ./src/raycasting/draw_line.c ./src/raycasting/check_wall.c ./src/raycasting/raycasting.c \

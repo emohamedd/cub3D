@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   update_player.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:43:54 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/05 13:19:59 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/07 10:57:22 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void update_player(t_all_data *mlx, mlx_key_data_t keydata)
     float new_y = 0;
     if (keydata.key == MLX_KEY_S)
     {
-        new_x = mlx->player->x + mlx->player->move_speed * cos(mlx->player->rotation_angle);
-        new_y = mlx->player->y + mlx->player->move_speed * sin(mlx->player->rotation_angle);
+        new_x = mlx->player->x - mlx->player->move_speed * cos(mlx->player->rotation_angle);
+        new_y = mlx->player->y - mlx->player->move_speed * sin(mlx->player->rotation_angle);
     }
     else if (keydata.key == MLX_KEY_D)
     {
@@ -54,8 +54,9 @@ void update_player(t_all_data *mlx, mlx_key_data_t keydata)
     }
     else if (keydata.key == MLX_KEY_W)
     {
-        new_x = mlx->player->x - mlx->player->move_speed * cos(mlx->player->rotation_angle);
-        new_y = mlx->player->y - mlx->player->move_speed * sin(mlx->player->rotation_angle);
+       
+        new_x = mlx->player->x + mlx->player->move_speed * cos(mlx->player->rotation_angle);
+        new_y = mlx->player->y + mlx->player->move_speed * sin(mlx->player->rotation_angle);
     }
     
     if( (check_if_have_wall(mlx, new_x, new_y)) == FALSE)
