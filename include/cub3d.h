@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/02 19:52:47 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/07 09:56:25 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 #define FPS 30
 #define WIDTH_MAP 25
 #define HEIGHT_MAP 11
-#define WIDTH    1200
-#define HEIGHT   1000
+#define WIDTH    2500
+#define HEIGHT   2500
 #define FOV_ANGLE (60 * (M_PI / 180))
 #define WALL_STRIP_WIDTH 1
 #define WALL_STRIO_WIDTH 4
@@ -32,7 +32,7 @@
 
 
 #define WALL_STRIO_WIDTH 4
-#include "/Users/houattou/Desktop/MLX42/include/MLX42/MLX42.h"
+#include "/Users/emohamed/Desktop/MLX42/include/MLX42/MLX42.h"
 
 
 // # include "../../get_line/get_next_line.h"
@@ -45,6 +45,7 @@
 #include<errno.h>
 #include<limits.h>
 #include<string.h>
+#include<fcntl.h>
 
 //this partie for parsing :
 
@@ -54,8 +55,8 @@ typedef struct s_map
 	char	**direc;
 	char	**map;
 	int		dir_len;
-	int 	width;
-	int 	height;
+	int	width;
+	int	height;
 
 }			t_map;
 
@@ -118,30 +119,21 @@ typedef struct s_player
    
 }t_player;
 
-typedef struct rays
-{
-	float rays_angle;
-	float wall_hits_x;
-	float wall_hits_y;
-	float distance;
-	int hit_vertical;
-	float hit_horizantal;
-
-	int wall_hit_content;
-}t_rays;
 
 typedef struct s_all_data
 {
 	mlx_t *mlx;
 	mlx_image_t *img;
 	t_player *player;
-	t_rays *rays;
+
 	t_cord *cord;
+	t_direc *dir;
+	t_map *map;
 
 }t_all_data;
 
 /*----------------*RayCasting functions:----------------------------------------------*/
-void    draw_map(mlx_t *mlx, mlx_image_t *img);
+void    draw_map(t_all_data *data);
 void drawing(t_all_data *data);
 
 void generate3d_projection(t_all_data *data);

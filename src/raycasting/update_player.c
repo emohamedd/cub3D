@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:43:54 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/02 19:11:29 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/05 13:19:59 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void update_player(t_all_data *mlx, mlx_key_data_t keydata)
         new_y = mlx->player->y - mlx->player->move_speed * sin(mlx->player->rotation_angle);
     }
     
-    if( (check_if_have_wall(mlx, new_x, new_y)) == TRUE )
+    if( (check_if_have_wall(mlx, new_x, new_y)) == FALSE)
     {
   
         mlx->player->x = new_x;
@@ -82,7 +82,7 @@ void	my_keyhook(mlx_key_data_t keydata, void *param)
     else
         ratate_player(keydata, mlx);
     drawing(mlx);    
-    draw_map(mlx->mlx, mlx->img);
+    draw_map(mlx);
     draw_player(mlx);
     //  draw_line(mlx->img, mlx->player->x, mlx->player->y, mlx->player->x + cos(mlx->player->rotation_angle)*40, \
     //     mlx->player->y + sin(mlx->player->rotation_angle)*40,   ft_pixel(255, 0, 0, 255));

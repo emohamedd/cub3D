@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 20:06:20 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/02 19:55:20 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:41:17 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_all_data*	draw_horizontal_intersection(t_all_data *mlx, float ray_angle)
     sign = 1;
     mlx->cord->ystep_h = 0;
     mlx->cord->ystep_h = 0;
+    
 	is_ray_facing_up = ray_angle > M_PI && ray_angle < 2 * M_PI;
     
     if(is_ray_facing_up)
@@ -39,15 +40,20 @@ t_all_data*	draw_horizontal_intersection(t_all_data *mlx, float ray_angle)
 
 	mlx->cord->xstep_h = mlx->player->x + (mlx->cord->ystep_h - mlx->player->y) / tan(ray_angle);
  
-	while ((mlx->cord->xstep_h >= 0 && mlx->cord->xstep_h < WIDTH && mlx->cord->ystep_h >= 0 && mlx->cord->ystep_h < HEIGHT))
+	while ((mlx->cord->xstep_h >= 0 && mlx->cord->xstep_h < SIZE_TITLE * mlx->map->width && mlx->cord->ystep_h >= 0 && mlx->cord->ystep_h < SIZE_TITLE * mlx->map->height))
 	{
         if((is_has_wall(mlx, mlx->cord->xstep_h , mlx->cord->ystep_h - SIZE_TITLE) && is_ray_facing_up )|| \
         (!is_ray_facing_up && (is_has_wall(mlx, mlx->cord->xstep_h, mlx->cord->ystep_h))))
+        {
+            // printf("dkhlt \n");
+            
+    //   draw_line(mlx->img, mlx->player->x*MINIMAP_SCAL_FACTOR, mlx->player->y*MINIMAP_SCAL_FACTOR,
+    //   mlx->cord->xstep_h*MINIMAP_SCAL_FACTOR, mlx->cord->ystep_h*MINIMAP_SCAL_FACTOR, ft_pixel(255, 255, 0, 255));
                  break;
+        }
         mlx->cord->xstep_h +=  sign *SIZE_TITLE / tan(ray_angle);
         mlx->cord->ystep_h += sign * SIZE_TITLE;
 	}
  
-    //   draw_line(mlx->img, mlx->player->x, mlx->player->y,mlx->cord->xstep_h, mlx->cord->ystep_h, ft_pixel(255, 255, 0, 255));
     return(mlx);
 }

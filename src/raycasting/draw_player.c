@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:44:34 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/02 19:11:40 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:56:03 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,32 @@
 
 void initialize_player(t_all_data *data)
 {
-    data->player->x = WIDTH / 2;
-    data->player->y = HEIGHT / 2;
     data->player->radius = 3;
     data->player->turn_direction = 0;
     data->player->wlk_direction = 0;
     data->player->rotation_angle = (3 * M_PI / 2);
-    data->player->move_speed = 8;
+    data->player->move_speed = 18;
     data->player->rotation_speed = 3* (M_PI / 180);
 
     data->player->heigth = 1;
     data->player->width = 1;
     data->player->wlk_speed = 100;
     data->player->turn_speed = 45 * (M_PI / 180);
+
+    for (int i = 0; i < data->map->height; i++)
+    {
+        for(int j = 0;  j < data->map->height;j++)
+        {
+            if(data->map->map[j][i] == 'E')
+            {
+                    data->player->x = (i  * SIZE_TITLE);
+                    data->player->y = (j * SIZE_TITLE);
+                    break;
+                
+            }
+                
+        }
+    }
 }
 
 void draw_player(t_all_data *data)
@@ -52,7 +65,5 @@ void draw_player(t_all_data *data)
         x++;
     } 
     render_rays(data);
-    draw_line(data->img, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMAP_SCAL_FACTOR,
-     (data->player->x+ cos(data->player->rotation_angle)*40)*MINIMAP_SCAL_FACTOR, \
-    (data->player->y+ sin(data->player->rotation_angle)*40)*MINIMAP_SCAL_FACTOR,   ft_pixel(255, 255, 255, 0));
+
 }
