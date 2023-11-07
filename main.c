@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/06 12:54:58 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/07 10:24:36 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ void drawing(t_all_data *data)
         while(j < ((SIZE_TITLE * data->map->width)) )
         {
             if( i < ((SIZE_TITLE * data->map->height)/ 2) )
-                mlx_put_pixel(data->img, j, i,ft_pixel(0, 119, 190, 255));
+            {
+                mlx_put_pixel(data->img, j, i, ft_pixel(255, 165, 0, 255)); // this is the color of the sky
+            }
             else
-                mlx_put_pixel(data->img, j, i,ft_pixel(0, 100, 0, 255));
+                mlx_put_pixel(data->img, j, i, ft_pixel(0, 0, 64, 255)); // darker blue color for the ground
             j++;    
                     
         }

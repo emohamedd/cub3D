@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:54:28 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/06 13:00:01 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/07 10:26:28 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_all_data *draw_rays(t_all_data *data, int id, float ray_angle)
    }
   
 float new_distance =  data->cord->distance  * cos(ray_angle - data->player->rotation_angle);
-draw_line(data->img, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMAP_SCAL_FACTOR, data->cord->xstep*MINIMAP_SCAL_FACTOR, data->cord->ystep*MINIMAP_SCAL_FACTOR, ft_pixel(255, 0, 255, 255));
+draw_line(data->img, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMAP_SCAL_FACTOR, data->cord->xstep*MINIMAP_SCAL_FACTOR, data->cord->ystep*MINIMAP_SCAL_FACTOR, ft_pixel(125, 125, 255, 255));
 
 
    int wall_height = (SIZE_TITLE/ new_distance) * ((SIZE_TITLE * data->map->width)/ 2)/ tan(FOV_ANGLE /2);
@@ -64,21 +64,21 @@ draw_line(data->img, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMA
    int  y_end = ((SIZE_TITLE * data->map->height)/ 2) + (wall_height /2);
 
 
-   if(dis_v >dis_h)
+   if(dis_v > dis_h)
    {
      if(data->player->is_ray_facing_up == TRUE)
-            draw_line(data->img, id, y_start, id, y_end,ft_pixel(128, 0, 128, 255));
+            draw_line(data->img, id, y_start, id, y_end,ft_pixel(0, 0, 0, 255)); // this if the color of the wall
             
      else
-         draw_line(data->img, id, y_start, id, y_end, ft_pixel(204, 204, 255, 255) );
+         draw_line(data->img, id, y_start, id, y_end, ft_pixel(204, 204, 255, 255) );  // this is the color of the wall
    }
     else
     {
       
         if(data->player->is_ray_facing_left == TRUE)
-            draw_line(data->img, id, y_start, id, y_end, ft_pixel(120, 120, 120, 0));
+            draw_line(data->img, id, y_start, id, y_end, ft_pixel(0, 0, 11, 0));
         else
-             draw_line(data->img, id, y_start, id, y_end, ft_pixel( 238, 130, 238, 0));
+             draw_line(data->img, id, y_start, id, y_end, ft_pixel( 0, 0, 238, 300));
             
     }
    return(data);
