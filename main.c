@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/07 18:12:31 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/08 12:56:06 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,8 @@ void drawing(t_all_data *data)
         i++;
     }
 
-    // Draw stars in the sky with shadows
-    int num_stars = 70; // You can adjust the number of stars as needed
-    int star_radius = 1; // Adjust the size of the stars
+    int num_stars = 70; //  ch7almn njma
+    int star_radius = 1; // Adjust the size of the stars hnaya
 
     int k = 0;
     while (k < num_stars)
@@ -70,7 +69,7 @@ void drawing(t_all_data *data)
         k++;
     }
 
-    // Create shadow effect on the ground
+    // shadow effect dyal pixels
     k = 0;
     while (k < num_stars)
     {
@@ -89,8 +88,7 @@ void drawing(t_all_data *data)
                     int pixel_y = y + n + ((SIZE_TITLE * data->map->height) / 2);
                     if (pixel_x >= 0 && pixel_x < (SIZE_TITLE * data->map->width) && pixel_y >= 0 && pixel_y < (SIZE_TITLE * data->map->height))
                     {
-                        // Darken the pixel color on the ground
-                        mlx_put_pixel(data->img, pixel_x, pixel_y, ft_pixel(255, 255, 240, 1)); // Adjust the shadow intensity
+                                                mlx_put_pixel(data->img, pixel_x, pixel_y, ft_pixel(255, 255, 240, 1)); // Adjust the shadow intensity
                     }
                 }
                 n++;
