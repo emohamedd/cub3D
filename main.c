@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/09 21:11:39 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/09 22:48:55 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,14 +126,10 @@ void raycasting(t_all_data *data)
     mlx_terminate(data->mlx);
     
 }
-int main(int ac , char **av)
+
+void parsing(t_all_data *data, int ac , char **av)
 {
-    int		fd;
-    t_all_data *data = (t_all_data*)malloc(sizeof(t_all_data));
-    data->player = (t_player *)malloc(sizeof(t_player));
-    data->cord = (t_cord *)malloc(sizeof(t_cord));
-    data->map =(t_map *)malloc(sizeof(t_map));
-    data->dir = (t_direc *)malloc(sizeof(t_direc));
+    int fd;
     if (ac != 2)
 		print_err("Wrong number of arguments\n");
 	else
@@ -149,7 +145,24 @@ int main(int ac , char **av)
 			readfile(fd, data->map, data->dir);
         load_textures(data);
 	}
-   raycasting(data);
+}
+t_all_data *init_data(t_all_data *data)
+{
+    data = (t_all_data*)malloc(sizeof(t_all_data));
+    data->player = (t_player *)malloc(sizeof(t_player));
+    data->cord = (t_cord *)malloc(sizeof(t_cord));
+    data->map =(t_map *)malloc(sizeof(t_map));
+    data->dir = (t_direc *)malloc(sizeof(t_direc));
+    return(data);
+}
+
+int main(int ac , char **av)
+{
+    int		fd;
+    t_all_data *data;
+    data = init_data(data);
+    parsing(data, ac, av);
+    raycasting(data);
     return EXIT_SUCCESS;
 }
 
