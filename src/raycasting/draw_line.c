@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:46:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/09 16:11:46 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/09 19:58:01 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,10 @@ void draw_wall_with_texture(t_all_data *data, int id, float ray_angle ,float hor
 {
     float ytx;
 
-    float tx_inc = texture->height / (float)data->wall_height;
+    float tx_inc = texture->height / (float)data->exact_wall_height;
 
-        float wallTopPixel = data->y_start;
+        float tmpYstart = ((SIZE_TITLE * data->map->height)/ 2) - (data->exact_wall_height/2);
+        float wallTopPixel = tmpYstart;
         while (data->y_start < data->y_end) {
             ytx = (data->y_start - wallTopPixel) * tx_inc;
             
@@ -64,6 +65,7 @@ void draw_wall_with_texture(t_all_data *data, int id, float ray_angle ,float hor
 
             mlx_put_pixel(data->img, id, data->y_start, get_color_from_texture(xtx, ytx, texture));
             data->y_start++;
+            tmpYstart++;
         }
 
         // mlx_delete_texture(texture);

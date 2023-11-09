@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/09 15:43:23 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/09 19:32:40 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,8 +132,6 @@ int main(int ac , char **av)
     data->cord = (t_cord *)malloc(sizeof(t_cord));
     data->map =(t_map *)malloc(sizeof(t_map));
     data->dir = (t_direc *)malloc(sizeof(t_direc));
-
-
     if (ac != 2)
 		print_err("Wrong number of arguments\n");
 	else
@@ -147,6 +145,7 @@ int main(int ac , char **av)
 		}
 		else
 			readfile(fd, data->map, data->dir);
+        load_textures(data);
 	}
    raycasting(data);
     return EXIT_SUCCESS;

@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:43:54 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/09 17:27:54 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/09 19:46:05 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void update_player(t_all_data *mlx, mlx_key_data_t keydata)
         new_y = mlx->player->y + mlx->player->move_speed * sin(mlx->player->rotation_angle);
     }
     
-    if( (check_if_have_wall(mlx, new_x, new_y)) == FALSE)
+    if( (check_if_have_wall(mlx, new_x, new_y)) == TRUE)
     {
   
         mlx->player->x = new_x;

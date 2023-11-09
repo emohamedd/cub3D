@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_the_directions.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:33:48 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/02 19:48:39 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/09 19:29:50 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,22 +58,42 @@ void	check_key_color_range(t_direc *dir)
 
 int	check_key_directions(t_direc *dir)
 {
+	int i  = 0;
+	// while(i < 6)
+	// {
+	// 	 printf(" --- > dir->key[i] = %s\n", dir->key);
+	// 	 i++;
+	// }
 	if (ft_strcmp(dir->key, "NO") == 0)
+	{
+		dir->no = ft_strdup(dir->value);
 		return (1);
+	}
 	else if (ft_strcmp(dir->key, "SO") == 0)
+	{
+		dir->so = ft_strdup(dir->value);
 		return (1);
+	}
 	else if (ft_strcmp(dir->key, "WE") == 0)
+	{
+		dir->we = ft_strdup(dir->value);
 		return (1);
+	}
 	else if (ft_strcmp(dir->key, "EA") == 0)
+	{
+		dir->ea = ft_strdup(dir->value);
 		return (1);
+	}
 	else if (ft_strcmp(dir->key, "F") == 0)
 	{
 		check_key_color_range(dir);
+		dir->f = ft_strdup(dir->value);
 		return (1);
 	}
 	else if (ft_strcmp(dir->key, "C") == 0)
 	{
 		check_key_color_range(dir);
+		dir->s = ft_strdup(dir->value);
 		return (1);
 	}
 	else

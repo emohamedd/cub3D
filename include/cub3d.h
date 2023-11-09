@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/09 16:00:09 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/09 19:49:17 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,18 @@
 #include<limits.h>
 #include<string.h>
 #include<fcntl.h>
+#include "../libft/libft.h"
 
 //this partie for parsing :
+
+typedef struct s_textrs
+{
+	mlx_texture_t	*ea_texture;
+	mlx_texture_t	*we_texture;
+	mlx_texture_t	*so_texture;
+	mlx_texture_t	*no_texture;
+}	t_textrs;
+
 
 typedef struct s_map
 {
@@ -64,6 +74,12 @@ typedef struct s_direc
 {
 	char	*key;
 	char	*value;
+	char 	*no;
+	char	*so;
+	char	*we;
+	char	*ea;
+	char	*s;
+	char	*f;
 
 }			t_direc;
 
@@ -132,6 +148,7 @@ typedef struct s_all_data
 	int exact_wall_height;
 	int wall_height;
 	int y_start;
+	t_textrs textrs;
 	int y_end;
 
 }t_all_data;
@@ -157,10 +174,12 @@ void cast_all_rays(t_all_data *data);
 void render_rays(t_all_data *data);
 
 void cast_ray(t_all_data *data,float angle_ray, int i);
-t_all_data *draw_rays(t_all_data *data, int id, float ray_angle, mlx_texture_t *texture, mlx_texture_t *texture1, mlx_texture_t *texture2, mlx_texture_t *texture3);
+t_all_data *draw_rays(t_all_data *data, int id, float ray_angle);
 
 t_all_data* draw_vertical_intersection(t_all_data *mlx, float ray_angle);
 t_all_data*	draw_horizontal_intersection(t_all_data *mlx, float ray_angle);
 void draw_wall_with_texture(t_all_data *data, int id, float ray_angle, float hor_intercept_x, float vert_intercept_y, float xtx, mlx_texture_t *texture);
 
+void separ_direc_value(t_all_data *data);
+void	load_textures(t_all_data *data);
 #endif

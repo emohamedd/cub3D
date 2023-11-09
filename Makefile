@@ -6,13 +6,13 @@
 #    By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by houattou          #+#    #+#              #
-#    Updated: 2023/11/07 10:54:20 by emohamed         ###   ########.fr        #
+#    Updated: 2023/11/09 19:30:33 by emohamed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 	 
 CC = cc
-CFLAGS = -O3 #-Wall -Werror -Wextra 
+CFLAGS = -O3
 
 SRCS = ./src/raycasting/draw_map.c ./src/raycasting/draw_player.c  main.c ./src/raycasting/update_player.c \
 	   ./src/raycasting/draw_line.c ./src/raycasting/check_wall.c ./src/raycasting/raycasting.c \
@@ -20,7 +20,7 @@ SRCS = ./src/raycasting/draw_map.c ./src/raycasting/draw_player.c  main.c ./src/
 	   ./src/raycasting/draw_projection_wall.c \
 	   ./src/parsing/check_file_name.c ./src/parsing/cub_utils.c ./src/parsing/parsing_the_directions.c \
 	   ./src/parsing/parsing_the_map.c ./src/parsing/print_err.c \
-	   ./src/parsing/valid_map.c  ./src/parsing/readfile.c \
+	   ./src/parsing/valid_map.c  ./src/parsing/readfile.c ./src/raycasting/txt_load.c
 
 
 		 

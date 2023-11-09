@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:44:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/07 17:36:04 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/09 19:45:53 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ bool	is_has_wall(t_all_data *mlx, float x, float y)
 	return (FALSE);
 
 }
-bool	check_if_have_wall(t_all_data *mlx, float x, float y)
-{
-	if (mlx->map->map[(int)(mlx->player->y / SIZE_TITLE)][(int)(x / SIZE_TITLE)] == '1')
-		return (TRUE);
-	if (mlx->map->map[(int)(y / SIZE_TITLE)][(int)(mlx->player->x / SIZE_TITLE)] == '1')
-		return (TRUE);
-	return (FALSE);
-}
+// bool	check_if_have_wall(t_all_data *mlx, float x, float y)
+// {
+// 	if (mlx->map->map[(int)(mlx->player->y / SIZE_TITLE)][(int)(x / SIZE_TITLE)] == '1')
+// 		return (TRUE);
+// 	if (mlx->map->map[(int)(y / SIZE_TITLE)][(int)(mlx->player->x / SIZE_TITLE)] == '1')
+// 		return (TRUE);
+// 	return (FALSE);
+// }
 
 
 void    draw_map(t_all_data *data)
