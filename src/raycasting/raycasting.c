@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:54:28 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/09 15:40:39 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/09 16:11:35 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,13 @@ t_all_data *draw_rays(t_all_data *data, int id, float ray_angle, mlx_texture_t *
    float dis_v = distance_between_points(data->player->x, data->player->y, 
    data->cord->xstep_v, data->cord->ystep_v);
    float dis_h = distance_between_points(data->player->x, data->player->y, data->cord->xstep_h, data->cord->ystep_h);
-   if(dis_v > dis_h)
+     if(dis_v > dis_h)
    {
         data->cord->xstep = data->cord->xstep_h;
         data->cord->ystep = data->cord->ystep_h;
         data->cord->distance = dis_h;
+        data->cord->is_horizontal = TRUE;
+        
    }
    else
    {
@@ -49,6 +51,7 @@ t_all_data *draw_rays(t_all_data *data, int id, float ray_angle, mlx_texture_t *
         data->cord->xstep = data->cord->xstep_v;
         data->cord->ystep = data->cord->ystep_v;
         data->cord->distance = dis_v;
+        data->cord->is_vertical = TRUE;
    }
    float xtx;
    if (data->cord->is_vertical == TRUE)
@@ -66,12 +69,12 @@ draw_line(data->img, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMA
    if(data->wall_height > SIZE_TITLE * data->map->height )
    {
         data->exact_wall_height  = data->wall_height;
-        data->wall_height = SIZE_TITLE * data->map->height ;
+        data->wall_height = SIZE_TITLE * data->map->height;
    }
  
 
-   int y_start = ((SIZE_TITLE * data->map->height)/ 2) - (data->wall_height/2);
-   int  y_end = ((SIZE_TITLE * data->map->height)/ 2) + (data->wall_height /2);
+    data->y_start = ((SIZE_TITLE * data->map->height)/ 2) - (data->wall_height/2);
+    data->y_end = ((SIZE_TITLE * data->map->height)/ 2) + (data->wall_height /2);
 
    if(dis_v > dis_h)
    {
@@ -104,6 +107,7 @@ draw_line(data->img, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMA
             
             
     }
+    // printf("hna %d\n",  data->wall_height);
    return(data);
 }
 

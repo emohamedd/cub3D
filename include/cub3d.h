@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/09 15:39:58 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/09 16:00:09 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,8 @@ typedef struct s_all_data
 	t_map *map;
 	int exact_wall_height;
 	int wall_height;
+	int y_start;
+	int y_end;
 
 }t_all_data;
 
