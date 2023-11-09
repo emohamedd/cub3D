@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:54:28 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/07 18:54:01 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:40:39 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,16 @@ t_all_data *draw_rays(t_all_data *data, int id, float ray_angle, mlx_texture_t *
 float new_distance =  data->cord->distance  * cos(ray_angle - data->player->rotation_angle);
 draw_line(data->img, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMAP_SCAL_FACTOR, data->cord->xstep*MINIMAP_SCAL_FACTOR, data->cord->ystep*MINIMAP_SCAL_FACTOR, ft_pixel(125, 125, 255, 255));
 
-
-   int wall_height = (SIZE_TITLE/ new_distance) * ((SIZE_TITLE * data->map->width)/ 2)/ tan(FOV_ANGLE /2);
-   if(wall_height > SIZE_TITLE * data->map->height )
-          wall_height = SIZE_TITLE * data->map->height ;
+    data->wall_height = (SIZE_TITLE/ new_distance) * ((SIZE_TITLE * data->map->width)/ 2)/ tan(FOV_ANGLE /2);
+   if(data->wall_height > SIZE_TITLE * data->map->height )
+   {
+        data->exact_wall_height  = data->wall_height;
+        data->wall_height = SIZE_TITLE * data->map->height ;
+   }
  
 
-   int y_start = ((SIZE_TITLE * data->map->height)/ 2) - (wall_height/2);
-   int  y_end = ((SIZE_TITLE * data->map->height)/ 2) + (wall_height /2);
+   int y_start = ((SIZE_TITLE * data->map->height)/ 2) - (data->wall_height/2);
+   int  y_end = ((SIZE_TITLE * data->map->height)/ 2) + (data->wall_height /2);
 
    if(dis_v > dis_h)
    {

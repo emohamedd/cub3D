@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/08 12:56:06 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:43:23 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ void raycasting(t_all_data *data)
 {
     
     initialize_player(data);
-    data->mlx = mlx_init(WIDTH ,HEIGHT , "MLX42", false);
+    data->mlx = mlx_init(WIDTH ,HEIGHT , "MLX42", true);
     data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
     drawing(data);
     draw_map(data);

@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:46:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/07 17:38:22 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:42:12 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,21 +48,22 @@ void draw_line(mlx_image_t* img, float X0, float Y0, float X1, float Y1, int col
     } 
 }
 
-void draw_wall_with_texture(t_all_data *data, int id, float ray_angle ,float hor_intercept_x, float vert_intercept_y, float xtx, mlx_texture_t *texture) {
+void draw_wall_with_texture(t_all_data *data, int id, float ray_angle ,float hor_intercept_x, float vert_intercept_y, float xtx, mlx_texture_t *texture) 
+{
     float new_distance = data->cord->distance * cos(ray_angle - data->player->rotation_angle);
-    int wall_height = (SIZE_TITLE / new_distance) * ((SIZE_TITLE * data->map->width) / 2) / tan(FOV_ANGLE / 2);
+    // int wall_height = (SIZE_TITLE / new_distance) * ((SIZE_TITLE * data->map->width) / 2) / tan(FOV_ANGLE / 2);
 
-    if (wall_height > SIZE_TITLE * data->map->height) {
-        wall_height = SIZE_TITLE * data->map->height;
+    if (data->wall_height > SIZE_TITLE * data->map->height) {
+        data->wall_height = SIZE_TITLE * data->map->height;
     }
 
-    int y_start = ((SIZE_TITLE * data->map->height) / 2) - (wall_height / 2);
-    int y_end = ((SIZE_TITLE * data->map->height) / 2) + (wall_height / 2);
+    int y_start = ((SIZE_TITLE * data->map->height) / 2) - (data->wall_height / 2);
+    int y_end = ((SIZE_TITLE * data->map->height) / 2) + (data->wall_height / 2);
 
     float ytx;
 
 
-    float tx_inc = texture->height / (float)wall_height;
+    float tx_inc = texture->height / (float)data->wall_height;
 
         float wallTopPixel = y_start;
         while (y_start < y_end) {
