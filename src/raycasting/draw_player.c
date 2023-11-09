@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:44:34 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/07 10:11:24 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/09 21:10:22 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void draw_player(t_all_data *data)
          y = center_y - radius;
         while (y <= center_y + radius) {
             if ((x - center_x) * (x - center_x) + (y - center_y) * (y - center_y) <= radius * radius) {
-                mlx_put_pixel(data->img, x*MINIMAP_SCAL_FACTOR, y*MINIMAP_SCAL_FACTOR , ft_pixel(255, 0, 0, 255));
+                mlx_put_pixel(data->img_minimap, x*MINIMAP_SCAL_FACTOR, y*MINIMAP_SCAL_FACTOR , ft_pixel(255, 0, 0, 255));
             }
             y++;
         }

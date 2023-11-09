@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/09 19:32:40 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/09 21:11:39 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ void raycasting(t_all_data *data)
     initialize_player(data);
     data->mlx = mlx_init(WIDTH ,HEIGHT , "MLX42", true);
     data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
+    data->img_minimap = mlx_new_image(data->mlx, 600, 500);
     drawing(data);
     draw_map(data);
     draw_player(data);
@@ -119,6 +120,7 @@ void raycasting(t_all_data *data)
 
     mlx_key_hook(data->mlx, &my_keyhook, data);
     mlx_image_to_window(data->mlx, data->img, 0, 0);
+    mlx_image_to_window(data->mlx, data->img_minimap, 0, 0);
 
     mlx_loop(data->mlx);
     mlx_terminate(data->mlx);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/09 19:49:17 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/09 21:08:20 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 
 
 #define WALL_STRIO_WIDTH 4
-#include "/Users/emohamed/Desktop/MLX42/include/MLX42/MLX42.h"
+#include "/Users/houattou/Desktop/MLX42/include/MLX42/MLX42.h"
 
 
 // # include "../../get_line/get_next_line.h"
@@ -140,6 +140,7 @@ typedef struct s_all_data
 {
 	mlx_t *mlx;
 	mlx_image_t *img;
+	mlx_image_t *img_minimap;
 	t_player *player;
 
 	t_cord *cord;
@@ -149,6 +150,7 @@ typedef struct s_all_data
 	int wall_height;
 	int y_start;
 	t_textrs textrs;
+
 	int y_end;
 
 }t_all_data;

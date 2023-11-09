@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+         #
+#    By: houattou <houattou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by houattou          #+#    #+#              #
-#    Updated: 2023/11/09 19:30:33 by emohamed         ###   ########.fr        #
+#    Updated: 2023/11/09 20:46:13 by houattou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ NAME = cub3D
 GREEN = \033[0;32m
 RESET = \033[0m
 GLFW = $(shell brew --prefix glfw)
-FRAMEWORKS = /Users/emohamed/Desktop/MLX42/build/libmlx42.a -Iinclude -lglfw -L $(GLFW)/lib/ -framework Cocoa -framework OpenGL -framework IOKit
+FRAMEWORKS = /Users/houattou/Desktop/MLX42/build/libmlx42.a -Iinclude -lglfw -L $(GLFW)/lib/ -framework Cocoa -framework OpenGL -framework IOKit
 all: $(NAME)
 
 %.o: %.c

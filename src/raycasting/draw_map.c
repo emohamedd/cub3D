@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:44:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/09 19:45:53 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/09 21:09:36 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,9 @@ void    draw_map(t_all_data *data)
                 while (x < (SIZE_TITLE * j) + SIZE_TITLE)
                 {
                     if (data->map->map[i][j] == 49)
-                        mlx_put_pixel(data->img, x*MINIMAP_SCAL_FACTOR, y*MINIMAP_SCAL_FACTOR, ft_pixel(0, 0, 0, 255)); // this is the color of purple
+                        mlx_put_pixel(data->img_minimap, x*MINIMAP_SCAL_FACTOR, y*MINIMAP_SCAL_FACTOR, ft_pixel(0, 0, 0, 255)); // this is the color of purple
                     else 
-                        mlx_put_pixel(data->img, x*MINIMAP_SCAL_FACTOR, y*MINIMAP_SCAL_FACTOR, ft_pixel(255, 255, 255, 255));
+                        mlx_put_pixel(data->img_minimap, x*MINIMAP_SCAL_FACTOR, y*MINIMAP_SCAL_FACTOR, ft_pixel(255, 255, 255, 255));
                     x++;
                 }
                 y++;
