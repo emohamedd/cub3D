@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/10 11:40:49 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:27:36 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,12 @@ typedef struct s_direc
 	char	*ea;
 	char	*s;
 	char	*f;
+	int		redf;
+	int		greenf;
+	int		bluef;
+	int		redc;
+	int		greenc;
+	int		bluec;
 
 }			t_direc;
 
