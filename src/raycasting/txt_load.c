@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 17:38:13 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/09 19:34:21 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/10 10:04:51 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	load_textures(t_all_data *data)
 	data->textrs.we_texture = mlx_load_png(data->dir->we);
 	data->textrs.so_texture = mlx_load_png(data->dir->so);
 	data->textrs.no_texture = mlx_load_png(data->dir->no);
-    // if (!data->textrs->ea_texture || !data->textrs->we_texture || !data->textrs->so_texture || !data->textrs->no_texture)
-    // {
-    //     printf("Error\n");
-    //     exit(0);
-    // }
+    if (!data->textrs.ea_texture || !data->textrs.we_texture || !data->textrs.so_texture || !data->textrs.no_texture)
+    {
+        printf("Error : To Open textures\n");
+        exit(0);
+    }
 }

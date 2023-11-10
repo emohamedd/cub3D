@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/09 19:49:17 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/10 10:57:48 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 #define FPS 30
 #define WIDTH_MAP 25
 #define HEIGHT_MAP 11
-#define WIDTH    2500
-#define HEIGHT   2500
+#define WIDTH    2100
+#define HEIGHT   960
 #define FOV_ANGLE (60 * (M_PI / 180))
 #define WALL_STRIP_WIDTH 1
 #define WALL_STRIO_WIDTH 4
@@ -92,8 +92,9 @@ int			valid_map(t_map *map);
 int			ft_strcmp(char *s1, char *s2);
 int			check_map_char(t_map *map);
 int			new_atoi(const char *str);
-
-void	readfile(int fd, t_map *map, t_direc *dir);
+void		check_key_color_range(t_direc *dir);
+int			check_key_directions(t_direc *dir);
+void		readfile(int fd, t_map *map, t_direc *dir);
 
 
 void	readfile(int fd, t_map *map, t_direc *dir);
