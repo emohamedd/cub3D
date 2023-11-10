@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/09 22:48:55 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:51:35 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,7 +162,7 @@ int main(int ac , char **av)
     t_all_data *data;
     data = init_data(data);
     parsing(data, ac, av);
-    raycasting(data);
+    // raycasting(data);
     return EXIT_SUCCESS;
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_the_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 10:00:37 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/02 19:48:57 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:57:02 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,11 @@ void map_parse(t_map *map)
 	j = 6;
 	i = 0;
 	len = only_size_of_map(map->all_map);
+	if (len < 0)
+	{
+		printf("Error Invalid Param\n");
+		exit(0);
+	}
 	map->map = malloc(sizeof(char *) * len + 1);
 	while (map->all_map && map->all_map[j])
 	{

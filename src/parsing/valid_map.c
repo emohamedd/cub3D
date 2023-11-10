@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   valid_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:36:44 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/02 19:29:54 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/10 12:00:10 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	valid_map(t_map *map)
 		j = 0;
 		while (map->map[i][j])
 		{
-			if (map->map[i][j] == '0')
+			if (map->map[i][j] == '0' || map->map[i][j] == 'E' || map->map[i][j] == 'S'|| map->map[i][j] == 'N'|| map->map[i][j] == 'W')
 			{
 				if (i - 1 < 0 || i + 1 >= map->height)
 					return (0);
