@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:54:28 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/09 19:51:37 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/09 21:10:37 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ t_all_data *draw_rays(t_all_data *data, int id, float ray_angle)
        xtx = (int)data->cord->xstep % SIZE_TITLE;
    }
 float new_distance =  data->cord->distance  * cos(ray_angle - data->player->rotation_angle);
-draw_line(data->img, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMAP_SCAL_FACTOR, data->cord->xstep*MINIMAP_SCAL_FACTOR, data->cord->ystep*MINIMAP_SCAL_FACTOR, ft_pixel(125, 125, 255, 255));
+draw_line(data->img_minimap, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMAP_SCAL_FACTOR, data->cord->xstep*MINIMAP_SCAL_FACTOR, data->cord->ystep*MINIMAP_SCAL_FACTOR, ft_pixel(125, 125, 255, 255));
 
     data->wall_height = (SIZE_TITLE/ new_distance) * ((SIZE_TITLE * data->map->width)/ 2)/ tan(FOV_ANGLE /2);
     data->exact_wall_height  = data->wall_height;

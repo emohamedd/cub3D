@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/10 10:57:48 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:00:08 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,7 @@ typedef struct s_all_data
 {
 	mlx_t *mlx;
 	mlx_image_t *img;
+	mlx_image_t *img_minimap;
 	t_player *player;
 
 	t_cord *cord;
@@ -150,6 +151,7 @@ typedef struct s_all_data
 	int wall_height;
 	int y_start;
 	t_textrs textrs;
+
 	int y_end;
 
 }t_all_data;
