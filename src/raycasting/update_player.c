@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   update_player.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:43:54 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/09 19:46:05 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/10 14:36:21 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,6 @@ void	my_keyhook(mlx_key_data_t keydata, void *param)
     else
         ratate_player(keydata, mlx);
     drawing(mlx);    
-    draw_map(mlx);
-    draw_player(mlx);
-    //  draw_line(mlx->img, mlx->player->x, mlx->player->y, mlx->player->x + cos(mlx->player->rotation_angle)*40, \
-    //     mlx->player->y + sin(mlx->player->rotation_angle)*40,   ft_pixel(255, 0, 0, 255));
-
 }
 
 

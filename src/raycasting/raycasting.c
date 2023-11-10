@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:54:28 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/09 21:10:37 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:35:04 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,9 +104,12 @@ draw_line(data->img_minimap, data->player->x*MINIMAP_SCAL_FACTOR, data->player->
             //   draw_line(data->img, id, data->y_start, id, data->y_end, ft_pixel(0, 0, 0, 255));
               draw_wall_with_texture(data, id, ray_angle,data->cord->xstep, data->cord->ystep,   xtx, data->textrs.ea_texture);
         }
-            
+  
             
     }
+    // printf("xstep is :%f\n", data->cord->xstep);
+    // printf("ystep is :%f\n", data->cord->ystep);
+
     // printf("hna %d\n",  data->wall_height);
    return(data);
 }
