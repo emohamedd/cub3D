@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:44:34 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/10 18:49:47 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/10 22:10:35 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,10 @@ char get_direction_of_player(t_all_data *data)
 }
 void initialize_player(t_all_data *data)
 {
-    data->player->radius = 3;
- 
-    data->player->rotation_angle = (3 * M_PI / 2);
-    data->player->move_speed = 18;
     int     i;
+    
+    data->player->radius = 3;
+    data->player->move_speed = 18;
     i = 0;
     char direction = get_direction_of_player(data);
     
@@ -60,13 +59,11 @@ void initialize_player(t_all_data *data)
          break;
             
     }
-    data->player->y= i * SIZE_TITLE  +  SIZE_TITLE / 2;
-    data->player->x =  ((float)(ft_strchr(data->map->map[i], direction) - \
-			data->map->map[i])*SIZE_TITLE) + SIZE_TITLE / 2;
+    data->player->y= (float)(i * SIZE_TITLE  +  SIZE_TITLE / 2);
+    data->player->x =(float) (((ft_strchr(data->map->map[i], direction) - \
+			data->map->map[i])*SIZE_TITLE) + SIZE_TITLE / 2);
     printf(" x is :%f\n", data->player->x);
-    printf(" y is :%f\n", data->player->y);        
-            
-    
+    printf(" y is :%f\n", data->player->y);
 }
 
 

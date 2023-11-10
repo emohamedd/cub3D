@@ -6,7 +6,7 @@
 #    By: houattou <houattou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by emohamed          #+#    #+#              #
-#    Updated: 2023/11/10 17:04:48 by houattou         ###   ########.fr        #
+#    Updated: 2023/11/10 22:16:35 by houattou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ SRCS = ./src/raycasting/draw_map.c ./src/raycasting/draw_player.c  main.c ./src/
 	   ./src/raycasting/draw_projection_wall.c \
 	   ./src/parsing/check_file_name.c ./src/parsing/cub_utils.c ./src/parsing/parsing_the_directions.c ./src/parsing/key_color_range.c ./src/parsing/fulling_directions.c \
 	   ./src/parsing/parsing_the_map.c ./src/parsing/print_err.c \
-	   ./src/parsing/valid_map.c  ./src/parsing/readfile.c ./src/raycasting/txt_load.c ./src/raycasting/drawing.c \
+	   ./src/parsing/valid_map.c  ./src/parsing/readfile.c ./src/raycasting/txt_load.c ./src/raycasting/drawing.c ./src/raycasting/initialization.c \
+	   ./src/parsing/parsing.c \
+	   
 
 
 		 

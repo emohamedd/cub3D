@@ -6,14 +6,14 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 20:06:20 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/06 12:41:17 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/10 22:36:19 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../../include/cub3d.h"
 
 
-t_all_data*	draw_horizontal_intersection(t_all_data *mlx, float ray_angle)
+void	draw_horizontal_intersection(t_all_data *mlx, float ray_angle)
 {
 	
 	bool	is_ray_facing_up;
@@ -22,7 +22,7 @@ t_all_data*	draw_horizontal_intersection(t_all_data *mlx, float ray_angle)
     sign = 1;
     mlx->cord->ystep_h = 0;
     mlx->cord->ystep_h = 0;
-    
+    // printf("horizontal angle %f\n", ray_angle);
 	is_ray_facing_up = ray_angle > M_PI && ray_angle < 2 * M_PI;
     
     if(is_ray_facing_up)
@@ -55,5 +55,5 @@ t_all_data*	draw_horizontal_intersection(t_all_data *mlx, float ray_angle)
         mlx->cord->ystep_h += sign * SIZE_TITLE;
 	}
  
-    return(mlx);
+    // return(mlx);
 }
