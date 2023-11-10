@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/10 11:00:08 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/10 11:40:49 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 #define FPS 30
 #define WIDTH_MAP 25
 #define HEIGHT_MAP 11
-#define WIDTH    2100
-#define HEIGHT   960
+#define WIDTH   2190
+#define HEIGHT   960 //960
 #define FOV_ANGLE (60 * (M_PI / 180))
 #define WALL_STRIP_WIDTH 1
 #define WALL_STRIO_WIDTH 4
