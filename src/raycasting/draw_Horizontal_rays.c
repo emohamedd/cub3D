@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 20:06:20 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/10 22:36:19 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/11 14:13:27 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ void	draw_horizontal_intersection(t_all_data *mlx, float ray_angle)
 
 	mlx->cord->xstep_h = mlx->player->x + (mlx->cord->ystep_h - mlx->player->y) / tan(ray_angle);
  
-	while ((mlx->cord->xstep_h >= 0 && mlx->cord->xstep_h < SIZE_TITLE * mlx->map->width && mlx->cord->ystep_h >= 0 && mlx->cord->ystep_h < SIZE_TITLE * mlx->map->height))
+	while (true)
 	{
-        if((is_has_wall(mlx, mlx->cord->xstep_h , mlx->cord->ystep_h - SIZE_TITLE) && is_ray_facing_up )|| \
+        if((is_ray_facing_up && is_has_wall(mlx, mlx->cord->xstep_h , mlx->cord->ystep_h - SIZE_TITLE))|| \
         (!is_ray_facing_up && (is_has_wall(mlx, mlx->cord->xstep_h, mlx->cord->ystep_h))))
         {
             // printf("dkhlt \n");
