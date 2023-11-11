@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/10 18:27:36 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/10 22:32:19 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 #define FPS 30
 #define WIDTH_MAP 25
 #define HEIGHT_MAP 11
-#define WIDTH   2190
-#define HEIGHT   960 //960
+#define WIDTH   2500
+#define HEIGHT   2500
 #define FOV_ANGLE (60 * (M_PI / 180))
 #define WALL_STRIP_WIDTH 1
 #define WALL_STRIO_WIDTH 4
@@ -32,7 +32,7 @@
 
 
 #define WALL_STRIO_WIDTH 4
-#include "/Users/emohamed/Desktop/MLX42/include/MLX42/MLX42.h"
+#include "/Users/houattou/Desktop/MLX42/include/MLX42/MLX42.h"
 
 
 // # include "../../get_line/get_next_line.h"
@@ -58,6 +58,12 @@ typedef struct s_textrs
 	mlx_texture_t	*no_texture;
 }	t_textrs;
 
+typedef enum e_direction {
+	NO,
+	SO,
+	WE,
+	EA,
+}	t_direction;
 
 typedef struct s_map
 {
@@ -65,6 +71,7 @@ typedef struct s_map
 	char	**direc;
 	char	**map;
 	int		dir_len;
+	t_direction direction;
 	int	width;
 	int	height;
 
@@ -89,21 +96,8 @@ typedef struct s_direc
 
 }			t_direc;
 
-void		print_err(char *s);
-int			check_file_cub(char *file);
-void		readfile(int fd, t_map *map, t_direc *dir);
-void		dir_parse(t_map *map, t_direc *direc);
-void		map_parse(t_map *map);
-int			valid_map(t_map *map);
-int			ft_strcmp(char *s1, char *s2);
-int			check_map_char(t_map *map);
-int			new_atoi(const char *str);
-void		check_key_color_range(t_direc *dir);
-int			check_key_directions(t_direc *dir);
-void		readfile(int fd, t_map *map, t_direc *dir);
 
 
-void	readfile(int fd, t_map *map, t_direc *dir);
 //this part for raycasting:
 typedef struct s_cord
 {
@@ -135,6 +129,7 @@ typedef struct s_player
 	float width;
 	float heigth;
 
+
 	bool is_ray_facing_up;
 	bool is_ray_facing_down;
 	bool is_ray_facing_left;
@@ -156,6 +151,7 @@ typedef struct s_all_data
 	int exact_wall_height;
 	int wall_height;
 	int y_start;
+	
 	t_textrs textrs;
 
 	int y_end;
@@ -163,6 +159,10 @@ typedef struct s_all_data
 }t_all_data;
 
 /*----------------*RayCasting functions:----------------------------------------------*/
+t_all_data *init_data(t_all_data *data);
+void init(t_all_data *data);
+void init_mlx(t_all_data *data);
+void parsing(t_all_data *data, int ac , char **av);
 void    draw_map(t_all_data *data);
 void drawing(t_all_data *data);
 
@@ -185,10 +185,26 @@ void render_rays(t_all_data *data);
 void cast_ray(t_all_data *data,float angle_ray, int i);
 t_all_data *draw_rays(t_all_data *data, int id, float ray_angle);
 
-t_all_data* draw_vertical_intersection(t_all_data *mlx, float ray_angle);
-t_all_data*	draw_horizontal_intersection(t_all_data *mlx, float ray_angle);
+void draw_vertical_intersection(t_all_data *mlx, float ray_angle);
+void draw_horizontal_intersection(t_all_data *mlx, float ray_angle);
 void draw_wall_with_texture(t_all_data *data, int id, float ray_angle, float hor_intercept_x, float vert_intercept_y, float xtx, mlx_texture_t *texture);
 
 void separ_direc_value(t_all_data *data);
 void	load_textures(t_all_data *data);
+/*parsing par--------------------------------------------------------------------*/
+void		print_err(char *s);
+int			check_file_cub(char *file);
+void		readfile(int fd, t_map *map, t_direc *dir);
+void		dir_parse(t_map *map, t_direc *direc);
+void		map_parse(t_map *map);
+int			valid_map(t_map *map);
+int			ft_strcmp(char *s1, char *s2);
+int			check_map_char(t_map *map);
+int			new_atoi(const char *str);
+void		check_key_color_range(t_direc *dir);
+int			check_key_directions(t_direc *dir);
+void		readfile(int fd, t_map *map, t_direc *dir);
+void player_direction(t_map *map);
+// void	readfile(int fd, t_map *map, t_direc *dir);
+
 #endif
