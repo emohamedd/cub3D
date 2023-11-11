@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:54:28 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/10 22:51:10 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/11 21:40:56 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,51 @@ float normalize_angle(float angle)
     return(angle);
 }
 
+// t_all_data *get_true_distance(t_all_data *data, float ray_angle)
+// {
+//     float angle =normalize_angle(ray_angle);
 
+//     draw_horizontal_intersection(data, ray_angle);
+   
+//    draw_vertical_intersection(data, angle);
+
+//    float dis_v = distance_between_points(data->player->x, data->player->y, 
+//    data->cord->xstep_v, data->cord->ystep_v);
+//    float dis_h = distance_between_points(data->player->x, data->player->y, data->cord->xstep_h, data->cord->ystep_h);
+//      if(dis_v >= dis_h)
+//    {
+//         data->cord->xstep = data->cord->xstep_h;
+//         data->cord->ystep = data->cord->ystep_h;
+//         data->cord->distance = dis_h;
+//         data->cord->is_horizontal = TRUE;
+        
+//    }
+//    else
+//    {
+    
+//         data->cord->xstep = data->cord->xstep_v;
+//         data->cord->ystep = data->cord->ystep_v;
+//         data->cord->distance = dis_v;
+//         data->cord->is_vertical = TRUE;
+//    }
+//    return(data);
+    
+// }
 t_all_data *draw_rays(t_all_data *data, int id, float ray_angle)
 {
    float angle =normalize_angle(ray_angle);
+//    data = get_true_distance(data, ray_angle);
+   
 
     draw_horizontal_intersection(data, ray_angle);
    
-   draw_vertical_intersection(data, angle);
+   draw_vertical_intersection(data, ray_angle);
+
 
    float dis_v = distance_between_points(data->player->x, data->player->y, 
    data->cord->xstep_v, data->cord->ystep_v);
    float dis_h = distance_between_points(data->player->x, data->player->y, data->cord->xstep_h, data->cord->ystep_h);
-     if(dis_v > dis_h)
+     if(dis_v >= dis_h)
    {
         data->cord->xstep = data->cord->xstep_h;
         data->cord->ystep = data->cord->ystep_h;
@@ -53,6 +85,8 @@ t_all_data *draw_rays(t_all_data *data, int id, float ray_angle)
         data->cord->distance = dis_v;
         data->cord->is_vertical = TRUE;
    }
+    // printf("hor is :%f\n", dis_h);
+    // printf("ver is :%f\n", dis_v);
    float xtx;
    if (data->cord->is_vertical == TRUE)
    {

@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 20:06:20 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/11 14:13:27 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/11 21:17:35 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	draw_horizontal_intersection(t_all_data *mlx, float ray_angle)
  
 	while (true)
 	{
-        if((is_ray_facing_up && is_has_wall(mlx, mlx->cord->xstep_h , mlx->cord->ystep_h - SIZE_TITLE))|| \
-        (!is_ray_facing_up && (is_has_wall(mlx, mlx->cord->xstep_h, mlx->cord->ystep_h))))
+        if((is_ray_facing_up && is_has_wall(mlx, mlx->cord->xstep_h , mlx->cord->ystep_h - SIZE_TITLE ))|| \
+        (!is_ray_facing_up && (is_has_wall(mlx, mlx->cord->xstep_h, mlx->cord->ystep_h))) || (is_ray_facing_up && is_has_wall(mlx, mlx->cord->xstep_h , mlx->cord->ystep_h - 1)))
         {
             // printf("dkhlt \n");
             
@@ -54,6 +54,8 @@ void	draw_horizontal_intersection(t_all_data *mlx, float ray_angle)
         mlx->cord->xstep_h +=  sign *SIZE_TITLE / tan(ray_angle);
         mlx->cord->ystep_h += sign * SIZE_TITLE;
 	}
+    // printf("xstep_h here is :%f\n", mlx->cord->xstep_h);
+    //  printf("ystep_h hereis :%f\n", mlx->cord->ystep_h);
  
     // return(mlx);
 }
