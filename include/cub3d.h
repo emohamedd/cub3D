@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/11 12:41:53 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/11 13:39:21 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,8 +119,6 @@ typedef struct s_player
 	float x;
 	float y;
 	float radius;
-	int turn_direction;
-	int  wlk_direction;
 	float rotation_angle;
 	float move_speed;
 	float rotation_speed;

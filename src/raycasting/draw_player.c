@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:44:34 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/10 22:10:35 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/11 12:48:17 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ void initialize_player(t_all_data *data)
     data->player->y= (float)(i * SIZE_TITLE  +  SIZE_TITLE / 2);
     data->player->x =(float) (((ft_strchr(data->map->map[i], direction) - \
 			data->map->map[i])*SIZE_TITLE) + SIZE_TITLE / 2);
-    printf(" x is :%f\n", data->player->x);
-    printf(" y is :%f\n", data->player->y);
+    // printf(" x is :%f\n", data->player->x);
+    // printf(" y is :%f\n", data->player->y);
 }
 
 

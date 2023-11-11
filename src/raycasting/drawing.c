@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   drawing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:04:14 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/10 17:38:30 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/11 15:27:25 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/cub3d.h"
 
+int    get_rgba(int r, int g, int b, int a)
+{
+    return (r << 24 | g << 16 | b << 8 | a);
+}
 
 void add_stars_to_sky(t_all_data *data)
 {
@@ -91,11 +95,11 @@ void draw_ceil_floor(t_all_data *data)
         {
             if (i < ((SIZE_TITLE * data->map->height) / 2))
             {
-                mlx_put_pixel(data->img, j, i, data->dir->s); // Color of the sky
+                mlx_put_pixel(data->img, j, i, get_rgba(data->dir->redc, data->dir->greenc, data->dir->bluec ,255)); // Color of the sky
             }
             else
             {
-                mlx_put_pixel(data->img, j, i,  data->dir->f); // Darker blue color for the ground
+                mlx_put_pixel(data->img, j, i,  get_rgba(data->dir->redf, data->dir->greenf, data->dir->bluef ,255)); // Darker blue color for the ground
             }
 
             j++;
