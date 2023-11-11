@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:46:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/09 19:58:01 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/10 19:07:42 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void draw_line(mlx_image_t* img, float X0, float Y0, float X1, float Y1, int col
     // calculate dx & dy 
     float dx = X1 - X0; 
     float dy = Y1 - Y0; 
-  
     // calculate steps required for generating pixels 
     int steps = fabs(dx) > fabs(dy) ? fabs(dx) : fabs(dy); 
   

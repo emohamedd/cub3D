@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 10:00:37 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/10 11:57:02 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/11 12:38:42 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int lenght_of_the_long_line_in_map(t_map * map)
 	i = 0;
 	j = 0;
 	max = 0;
-	while (map->all_map[i])
+	while (map->map[i])
 	{
 		j = 0;
-		while (map->all_map[i][j])
+		while (map->map[i][j])
 		{
 			j++;
 		}
