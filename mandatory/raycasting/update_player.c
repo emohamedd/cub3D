@@ -6,11 +6,12 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:43:54 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/12 19:29:39 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/12 10:22:01 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
+#define TWO_PI 2 * M_PI
 #include "../../include/cub3d.h"
 
 
@@ -26,6 +27,11 @@ void ratate_player(mlx_key_data_t keydata, t_all_data *data)
     else if(keydata.key == MLX_KEY_RIGHT)
         data->player->rotation_angle += 0.1;
 }
+
+
+
+
+
 
 void update_player(t_all_data *mlx, mlx_key_data_t keydata)
 {

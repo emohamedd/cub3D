@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 22:06:06 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/12 19:40:14 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/12 12:40:51 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void init_mlx(t_all_data *data)
 {
     data->mlx = mlx_init(WIDTH,HEIGHT, "MLX42", true);
     data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
+    data->img_minimap = mlx_new_image(data->mlx, 1000, 900);
+    
 }
 
 void init(t_all_data *data)

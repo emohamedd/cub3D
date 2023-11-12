@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:04:14 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/12 19:51:37 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/12 22:06:13 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,14 @@ int    get_rgba(int r, int g, int b, int a)
     return (r << 24 | g << 16 | b << 8 | a);
 }
 
+int32_t ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a)
+{
+    return (r << 24 | g << 16 | b << 8 | a);
+}
 void add_stars_to_sky(t_all_data *data)
 {
-    int num_stars = 70; 
-    int star_radius = 1; 
+    int num_stars = 70; //  ch7almn njma
+    int star_radius = 1; // Adjust the size of the stars hnaya
 
     int k = 0;
     while (k < num_stars)
@@ -40,7 +44,7 @@ void add_stars_to_sky(t_all_data *data)
                     int pixel_y = y + n;
                     if (pixel_x >= 0 && pixel_x < (WIDTH) && pixel_y >= 0 && pixel_y < ((HEIGHT) / 2))
                     {
-                        mlx_put_pixel(data->img, pixel_x, pixel_y, ft_pixel(255, 255, 255, 255)); 
+                        mlx_put_pixel(data->img, pixel_x, pixel_y, ft_pixel(255, 255, 255, 255)); // Draw stars in the sky
                     }
                 }
                 n++;
@@ -53,7 +57,7 @@ void add_stars_to_sky(t_all_data *data)
 void add_stars_to_foor(t_all_data *data)
 {
     int k = 0;
-    int num_stars = 70; 
+    int num_stars = 70; //  ch7almn njma
     int star_radius = 1;
     while (k < num_stars)
     {
@@ -108,6 +112,8 @@ void draw_ceil_floor(t_all_data *data)
     }
     add_stars_to_sky(data);
     add_stars_to_foor(data);
+
+   
 }
 
 void drawing(t_all_data *data)

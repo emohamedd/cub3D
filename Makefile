@@ -6,7 +6,7 @@
 #    By: houattou <houattou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by emohamed          #+#    #+#              #
-#    Updated: 2023/11/12 19:31:39 by houattou         ###   ########.fr        #
+#    Updated: 2023/11/12 22:12:55 by houattou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@
 CC = cc
 CFLAGS = -O3
 
-SRCS = ./mandatory/raycasting/get_cordinatin_of_player.c  main.c ./mandatory/raycasting/update_player.c \
-	   ./mandatory/raycasting/draw_wall_with_texture.c ./mandatory/raycasting/check_wall.c ./mandatory/raycasting/raycasting.c \
+SRCS = ./mandatory/raycasting/coordination_of_player.c   main.c ./mandatory/raycasting/update_player.c \
+	   ./mandatory/raycasting/render_textures.c ./mandatory/raycasting/check_wall.c ./mandatory/raycasting/raycasting.c \
 	   ./mandatory/raycasting/get_vertical_intersection.c  ./mandatory/raycasting/get_horizontal_intersection.c \
 	   ./mandatory/raycasting/draw_projection_wall.c   ./mandatory/raycasting/math.c \
 	   ./mandatory/parsing/check_file_name.c ./mandatory/parsing/cub_utils.c ./mandatory/parsing/parsing_the_directions.c ./mandatory/parsing/free_func.c ./mandatory/parsing/key_color_range.c ./mandatory/parsing/fulling_directions.c \

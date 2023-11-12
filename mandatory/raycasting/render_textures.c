@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_wall_with_texture.c                           :+:      :+:    :+:   */
+/*   render_textures.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:46:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/12 19:43:46 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/12 22:15:20 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/cub3d.h"
 
+#include <math.h>
   
   int	get_color_from_texture(int x, int y, mlx_texture_t *texture)
 {
@@ -20,9 +21,8 @@
 	i = (x * 4) + ((y * 4) * texture->width);
 	return (texture->pixels[i] << 24 | \
 	texture->pixels[i + 1] << 16 | texture->pixels[i + 2] << 8 \
-		| texture->pixels[i + 3]);
+										| texture->pixels[i + 3]);
 }
-
 
 void draw_wall_with_texture(t_all_data *data, int id, float ray_angle ,float hor_intercept_x, float vert_intercept_y, float xtx, mlx_texture_t *texture) 
 {
@@ -45,4 +45,6 @@ void draw_wall_with_texture(t_all_data *data, int id, float ray_angle ,float hor
             tmpYstart++;
      
         }
+
+        // mlx_delete_texture(texture);
     }

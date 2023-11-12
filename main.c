@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/12 19:44:26 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/12 18:35:48 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ void raycasting(t_all_data *data)
     drawing(data);
     mlx_key_hook(data->mlx, &my_keyhook, data);
     mlx_image_to_window(data->mlx, data->img, 0, 0);
-    mlx_loop(data->mlx); 
+    mlx_image_to_window(data->mlx, data->img_minimap, 0, 0);
+    mlx_loop(data->mlx);
+    
 }
 void check_valid_width_height(t_map *map)
 {
@@ -41,6 +43,8 @@ void free_all_data(t_all_data *data)
         mlx_terminate(data->mlx);
     if(data->img)    
         mlx_delete_image(data->mlx, data->img);
+    if(data->img_minimap)    
+        mlx_delete_image(data->mlx, data->img_minimap); 
     free(data);
 }
 int main(int ac , char **av)
