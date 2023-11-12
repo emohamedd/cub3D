@@ -6,7 +6,7 @@
 #    By: houattou <houattou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by emohamed          #+#    #+#              #
-#    Updated: 2023/11/12 15:33:35 by houattou         ###   ########.fr        #
+#    Updated: 2023/11/12 17:34:24 by houattou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,14 +15,14 @@
 CC = cc
 CFLAGS = -O3
 
-SRCS = ./src/raycasting/draw_map.c ./src/raycasting/draw_player.c  main.c ./src/raycasting/update_player.c \
-	   ./src/raycasting/draw_line.c ./src/raycasting/check_wall.c ./src/raycasting/raycasting.c \
-	   ./src/raycasting/get_vertical_intersection.c  ./src/raycasting/get_horizontal_intersection.c \
-	   ./src/raycasting/draw_projection_wall.c   ./src/raycasting/math.c \
-	   ./src/parsing/check_file_name.c ./src/parsing/cub_utils.c ./src/parsing/parsing_the_directions.c ./src/parsing/free_func.c ./src/parsing/key_color_range.c ./src/parsing/fulling_directions.c \
-	   ./src/parsing/parsing_the_map.c ./src/parsing/print_err.c \
-	   ./src/parsing/valid_map.c  ./src/parsing/readfile.c ./src/raycasting/txt_load.c ./src/raycasting/drawing.c ./src/raycasting/initialization.c \
-	   ./src/parsing/parsing.c \
+SRCS = ./mandatory/raycasting/draw_map.c ./mandatory/raycasting/draw_player.c  main.c ./mandatory/raycasting/update_player.c \
+	   ./mandatory/raycasting/draw_line.c ./mandatory/raycasting/check_wall.c ./mandatory/raycasting/raycasting.c \
+	   ./mandatory/raycasting/get_vertical_intersection.c  ./mandatory/raycasting/get_horizontal_intersection.c \
+	   ./mandatory/raycasting/draw_projection_wall.c   ./mandatory/raycasting/math.c \
+	   ./mandatory/parsing/check_file_name.c ./mandatory/parsing/cub_utils.c ./mandatory/parsing/parsing_the_directions.c ./mandatory/parsing/free_func.c ./mandatory/parsing/key_color_range.c ./mandatory/parsing/fulling_directions.c \
+	   ./mandatory/parsing/parsing_the_map.c ./mandatory/parsing/print_err.c \
+	   ./mandatory/parsing/valid_map.c  ./mandatory/parsing/readfile.c ./mandatory/raycasting/txt_load.c ./mandatory/raycasting/drawing.c ./mandatory/raycasting/initialization.c \
+	   ./mandatory/parsing/parsing.c \
 	   
 
 

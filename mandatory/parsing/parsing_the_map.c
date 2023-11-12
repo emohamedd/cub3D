@@ -1,0 +1,87 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing_the_map.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/08 10:00:37 by emohamed          #+#    #+#             */
+/*   Updated: 2023/11/12 09:56:07 by emohamed         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../../include/cub3d.h"
+
+int lenght_of_the_long_line_in_map(t_map * map)
+{
+	int i;
+	int j;
+	int max;
+
+	i = 0;
+	j = 0;
+	max = 0;
+	while (map->map[i])
+	{
+		j = 0;
+		while (map->map[i][j])
+		{
+			j++;
+		}
+		if (j > max)
+			max = j;
+		i++;
+	}
+	return (max);
+}
+
+int only_size_of_map(char **s)
+{
+	int i;
+
+	i = 0;
+	while (s[i])
+	{
+		i++;
+	}
+	return (i - 6);
+}
+
+int map_height(t_map *map)
+{
+	int i;
+
+	i = 0;
+	while (map->map[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
+void map_parse(t_map *map)
+{
+	int j;
+	int i;
+	int len;
+
+	j = 6;
+	i = 0;
+	len = only_size_of_map(map->all_map);
+	if (len < 0)
+	{
+		printf("Error Invalid Param\n");
+		exit(0);
+	}
+	map->map = malloc(sizeof(char *) * len + 1);
+	while (map->all_map && map->all_map[j])
+	{
+		map->map[i] = map->all_map[j];
+		i++;
+		j++;
+	}
+	map->width = lenght_of_the_long_line_in_map(map);
+	map->height = map_height(map);
+	map->map[i] = NULL;
+
+}
