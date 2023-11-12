@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:03:35 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/12 10:52:02 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/12 16:40:05 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	get_vertical_intersection(t_all_data *mlx, float ray_angle)
 	while (true)
 	{
 		if ((is_ray_facing_left && is_has_wall(mlx, mlx->cord->xstep_v - SIZE_TITLE , mlx->cord->ystep_v))
-		 || (!is_ray_facing_left && is_has_wall(mlx, mlx->cord->xstep_v, mlx->cord->ystep_v)) || (is_ray_facing_left && is_has_wall(mlx, mlx->cord->xstep_v + 1, mlx->cord->ystep_v)))
+		 || (!is_ray_facing_left && is_has_wall(mlx, mlx->cord->xstep_v, mlx->cord->ystep_v)) || (is_ray_facing_left && is_has_wall(mlx, mlx->cord->xstep_v + 1, mlx->cord->ystep_v  + 1)))
 		{
 			   break ;
 			

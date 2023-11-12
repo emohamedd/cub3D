@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 20:06:20 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/12 10:38:12 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/12 16:40:15 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void get_horizontal_intersection(t_all_data *mlx, float ray_angle)
 	while (true)
 	{
         if((is_ray_facing_up && is_has_wall(mlx, mlx->cord->xstep_h , mlx->cord->ystep_h - SIZE_TITLE ))|| \
-        (!is_ray_facing_up && (is_has_wall(mlx, mlx->cord->xstep_h, mlx->cord->ystep_h))) || (is_ray_facing_up && is_has_wall(mlx, mlx->cord->xstep_h , mlx->cord->ystep_h - 1)))
+        (!is_ray_facing_up && (is_has_wall(mlx, mlx->cord->xstep_h, mlx->cord->ystep_h))) || (is_ray_facing_up && is_has_wall(mlx, mlx->cord->xstep_h + 1, mlx->cord->ystep_h + 1)))
                  break;
         mlx->cord->xstep_h +=  sign *SIZE_TITLE / tan(ray_angle);
         mlx->cord->ystep_h += sign * SIZE_TITLE;

@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:04:14 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/12 15:43:38 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/12 15:50:21 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void add_stars_to_foor(t_all_data *data)
                     int pixel_y = y + n + (HEIGHT / 2);
                     if (pixel_x >= 0 && pixel_x < (WIDTH) && pixel_y >= 0 && pixel_y < (HEIGHT))
                     {
-                        mlx_put_pixel(data->img, pixel_x, pixel_y, ft_pixel(255, 255, 240, 1)); // Adjust the shadow intensity
+                        mlx_put_pixel(data->img, pixel_x, pixel_y, ft_pixel(255, 255, 240, 1));
                     }
                 }
                 n++;
@@ -95,11 +95,11 @@ void draw_ceil_floor(t_all_data *data)
         {
             if (i < (HEIGHT) / 2)
             {
-                mlx_put_pixel(data->img, j, i, get_rgba(data->dir->redc, data->dir->greenc, data->dir->bluec ,255)); // Color of the sky
+                mlx_put_pixel(data->img, j, i, get_rgba(data->dir->redc, data->dir->greenc, data->dir->bluec ,255));
             }
             else
             {
-                mlx_put_pixel(data->img, j, i,  get_rgba(data->dir->redf, data->dir->greenf, data->dir->bluef ,255)); // Darker blue color for the ground
+                mlx_put_pixel(data->img, j, i,  get_rgba(data->dir->redf, data->dir->greenf, data->dir->bluef ,255));
             }
 
             j++;
