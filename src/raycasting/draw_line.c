@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_line.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:46:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/10 19:07:42 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/12 14:30:54 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,11 @@ void draw_line(mlx_image_t* img, float X0, float Y0, float X1, float Y1, int col
 void draw_wall_with_texture(t_all_data *data, int id, float ray_angle ,float hor_intercept_x, float vert_intercept_y, float xtx, mlx_texture_t *texture) 
 {
     float ytx;
+ 
 
     float tx_inc = texture->height / (float)data->exact_wall_height;
 
-        float tmpYstart = ((SIZE_TITLE * data->map->height)/ 2) - (data->exact_wall_height/2);
+        float tmpYstart = ((HEIGHT)/ 2) - (data->exact_wall_height/2);
         float wallTopPixel = tmpYstart;
         while (data->y_start < data->y_end) {
             ytx = (data->y_start - wallTopPixel) * tx_inc;
@@ -65,6 +66,7 @@ void draw_wall_with_texture(t_all_data *data, int id, float ray_angle ,float hor
             mlx_put_pixel(data->img, id, data->y_start, get_color_from_texture(xtx, ytx, texture));
             data->y_start++;
             tmpYstart++;
+     
         }
 
         // mlx_delete_texture(texture);

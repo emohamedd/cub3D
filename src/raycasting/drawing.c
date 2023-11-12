@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   drawing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:04:14 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/11 15:27:25 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/12 12:40:04 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,29 +85,47 @@ void add_stars_to_foor(t_all_data *data)
 }
 void draw_ceil_floor(t_all_data *data)
 {
-    int i, j;
-    i = 0;
+    // int i, j;
+    // i = 0;
 
-    while (i < ((SIZE_TITLE * data->map->height)))
+    // while (i < ((SIZE_TITLE * data->map->height)))
+    // {
+    //     j = 0;
+    //     while (j < ((SIZE_TITLE * data->map->width)))
+    //     {
+    //         if (i < ((SIZE_TITLE * data->map->height) / 2))
+    //         {
+    //             mlx_put_pixel(data->img, j, i, get_rgba(data->dir->redc, data->dir->greenc, data->dir->bluec ,255)); // Color of the sky
+    //         }
+    //         else
+    //         {
+    //             mlx_put_pixel(data->img, j, i,  get_rgba(data->dir->redf, data->dir->greenf, data->dir->bluef ,255)); // Darker blue color for the ground
+    //         }
+
+    //         j++;
+    //     }
+    //     i++;
+    // }
+    // add_stars_to_sky(data);
+    // add_stars_to_foor(data);
+
+    int i;
+    int j;
+    i = 0;
+    while(i < HEIGHT)
     {
         j = 0;
-        while (j < ((SIZE_TITLE * data->map->width)))
+        while(j < WIDTH)
         {
-            if (i < ((SIZE_TITLE * data->map->height) / 2))
-            {
-                mlx_put_pixel(data->img, j, i, get_rgba(data->dir->redc, data->dir->greenc, data->dir->bluec ,255)); // Color of the sky
-            }
+            if( i < HEIGHT / 2)
+                mlx_put_pixel(data->img, j, i,ft_pixel(0, 119, 190, 255));
             else
-            {
-                mlx_put_pixel(data->img, j, i,  get_rgba(data->dir->redf, data->dir->greenf, data->dir->bluef ,255)); // Darker blue color for the ground
-            }
-
-            j++;
+                mlx_put_pixel(data->img, j, i,ft_pixel(0, 100, 0, 255));
+            j++;    
+                    
         }
         i++;
     }
-    add_stars_to_sky(data);
-    add_stars_to_foor(data);
 }
 
 void drawing(t_all_data *data)

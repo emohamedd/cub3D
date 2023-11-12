@@ -6,7 +6,7 @@
 #    By: houattou <houattou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by emohamed          #+#    #+#              #
-#    Updated: 2023/11/12 10:19:07 by houattou         ###   ########.fr        #
+#    Updated: 2023/11/12 12:44:27 by houattou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ CFLAGS = -O3
 
 SRCS = ./src/raycasting/draw_map.c ./src/raycasting/draw_player.c  main.c ./src/raycasting/update_player.c \
 	   ./src/raycasting/draw_line.c ./src/raycasting/check_wall.c ./src/raycasting/raycasting.c \
-	   ./src/raycasting/draw_Horizontal_rays.c  ./src/raycasting/draw_vertical_rays.c \
-	   ./src/raycasting/draw_projection_wall.c \
+	   ./src/raycasting/get_vertical_intersection.c  ./src/raycasting/get_horizontal_intersection.c \
+	   ./src/raycasting/draw_projection_wall.c   ./src/raycasting/math.c \
 	   ./src/parsing/check_file_name.c ./src/parsing/cub_utils.c ./src/parsing/parsing_the_directions.c ./src/parsing/key_color_range.c ./src/parsing/fulling_directions.c \
 	   ./src/parsing/parsing_the_map.c ./src/parsing/print_err.c \
 	   ./src/parsing/valid_map.c  ./src/parsing/readfile.c ./src/raycasting/txt_load.c ./src/raycasting/drawing.c ./src/raycasting/initialization.c \

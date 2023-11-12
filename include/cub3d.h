@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/12 10:18:55 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/12 14:22:13 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 #define FPS 30
 #define WIDTH_MAP 25
 #define HEIGHT_MAP 11
-#define WIDTH   2500
-#define HEIGHT   2500
+#define WIDTH    1200
+#define HEIGHT   1000
 #define FOV_ANGLE (60 * (M_PI / 180))
 #define WALL_STRIP_WIDTH 1
 #define WALL_STRIO_WIDTH 4
@@ -121,17 +121,10 @@ typedef struct s_player
 	float radius;
 	float rotation_angle;
 	float move_speed;
-	float rotation_speed;
-    float wlk_speed;
-	float turn_speed;
-	float width;
-	float heigth;
-
-
-	bool is_ray_facing_up;
-	bool is_ray_facing_down;
 	bool is_ray_facing_left;
-	bool is_ray_facing_right;
+	bool is_ray_facing_up;
+	float dis_h;
+	float dis_v;
    
 }t_player;
 
@@ -163,7 +156,7 @@ void init_mlx(t_all_data *data);
 void parsing(t_all_data *data, int ac , char **av);
 void    draw_map(t_all_data *data);
 void drawing(t_all_data *data);
-
+float distance_between_points(float x1, float y1, float x2, float y2);
 void generate3d_projection(t_all_data *data);
 int32_t ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void initialize_player(t_all_data *data);
@@ -183,8 +176,8 @@ void render_rays(t_all_data *data);
 void cast_ray(t_all_data *data,float angle_ray, int i);
 t_all_data *draw_rays(t_all_data *data, int id, float ray_angle);
 
-void draw_vertical_intersection(t_all_data *mlx, float ray_angle);
-void draw_horizontal_intersection(t_all_data *mlx, float ray_angle);
+void get_horizontal_intersection(t_all_data *mlx, float ray_angle);
+void	get_vertical_intersection(t_all_data *mlx, float ray_angle);
 void draw_wall_with_texture(t_all_data *data, int id, float ray_angle, float hor_intercept_x, float vert_intercept_y, float xtx, mlx_texture_t *texture);
 
 void separ_direc_value(t_all_data *data);
