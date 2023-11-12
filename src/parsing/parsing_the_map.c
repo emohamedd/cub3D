@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 10:00:37 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/11 12:38:42 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/12 09:56:07 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,18 @@ int only_size_of_map(char **s)
 	return (i - 6);
 }
 
+int map_height(t_map *map)
+{
+	int i;
+
+	i = 0;
+	while (map->map[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
 void map_parse(t_map *map)
 {
 	int j;
@@ -69,7 +81,7 @@ void map_parse(t_map *map)
 		j++;
 	}
 	map->width = lenght_of_the_long_line_in_map(map);
-	map->height = len;
+	map->height = map_height(map);
 	map->map[i] = NULL;
 
 }
