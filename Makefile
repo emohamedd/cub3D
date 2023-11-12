@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: houattou <houattou@student.42.fr>          +#+  +:+       +#+         #
+#    By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by emohamed          #+#    #+#              #
-#    Updated: 2023/11/12 10:16:38 by houattou         ###   ########.fr        #
+#    Updated: 2023/11/12 10:33:50 by emohamed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -O3
 
 SRCS = ./src/raycasting/draw_map.c ./src/raycasting/draw_player.c  main.c ./src/raycasting/update_player.c \
 	   ./src/raycasting/draw_line.c ./src/raycasting/check_wall.c ./src/raycasting/raycasting.c \
-	   ./src/raycasting/draw_Horizontal_rays.c  ./src/raycasting/draw_vertical_rays.c \
+	   ./src/raycasting/draw_Horizontal_rays.c  ./src/raycasting/draw_vertical_rays.c ./src/parsing/free_func.c \
 	   ./src/raycasting/draw_projection_wall.c \
 	   ./src/parsing/check_file_name.c ./src/parsing/cub_utils.c ./src/parsing/parsing_the_directions.c ./src/parsing/key_color_range.c ./src/parsing/fulling_directions.c \
 	   ./src/parsing/parsing_the_map.c ./src/parsing/print_err.c \

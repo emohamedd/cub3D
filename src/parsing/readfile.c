@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:56:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/12 10:00:29 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/12 11:16:25 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	readfile(int fd, t_map *map, t_direc *dir)
 		i++;
 	}
 	map->all_map = ft_split(next_line, '\n');
+	// free(next_line);
 	map_parse(map);
 	if (valid_map(map) == 0)
 		print_err("ERROR : Invalid MAP\n");
@@ -55,4 +56,5 @@ void	readfile(int fd, t_map *map, t_direc *dir)
 	dir_parse(map, dir);
 	close(fd);
 	free(line);
+	
 }

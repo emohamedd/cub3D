@@ -53,7 +53,7 @@ void parsing(t_all_data *data, int ac , char **av)
 			exit(1);
 		}
 		else
-			readfile(fd, data->map, data->dir);
+		readfile(fd, data->map, data->dir);
         load_textures(data);
         player_direction(data->map);
 	}

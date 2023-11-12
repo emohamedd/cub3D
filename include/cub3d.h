@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/12 10:16:59 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/12 10:29:28 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,6 +203,7 @@ void		check_key_color_range(t_direc *dir);
 int			check_key_directions(t_direc *dir);
 void		readfile(int fd, t_map *map, t_direc *dir);
 void player_direction(t_map *map);
+void free_2d_arr(char **arr);
 // void	readfile(int fd, t_map *map, t_direc *dir);
 
 #endif
