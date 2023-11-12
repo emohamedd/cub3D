@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:44:20 by emohamed          #+#    #+#             */
-/*   Updated: 2023/10/11 13:51:18 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/12 10:00:26 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ char	*new_get_line(char *str, int fd)
 			break ;
 		if (r == -1)
 		{
-			// free(str);
-			// free(buff);
+			free(str);
+			free(buff);
 			return (NULL);
 		}
 		buff[r] = '\0';
@@ -48,7 +48,7 @@ char	*new_get_line(char *str, int fd)
 		if (check_str(str) == 1)
 			break ;
 	}
-	// free(buff);
+	free(buff);
 	return (str);
 }
 
@@ -94,6 +94,6 @@ char	*get_next_line(int fd)
 	if (!line)
 		return (NULL);
 	save = ft_strchre(save, '\n');
-	// free(p);
+	free(p);
 	return (line);
 }
