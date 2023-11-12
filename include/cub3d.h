@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/12 10:16:59 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/12 10:18:55 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 
 
 #define WALL_STRIO_WIDTH 4
-#include "/Users/emohamed/Desktop/MLX42/include/MLX42/MLX42.h"
+#include "/Users/houattou/Desktop/MLX42/include/MLX42/MLX42.h"
 
 
 // # include "../../get_line/get_next_line.h"
