@@ -6,11 +6,12 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:46:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/12 14:30:54 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/12 14:34:03 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/cub3d.h"
+
 #include <math.h>
   
   int	get_color_from_texture(int x, int y, mlx_texture_t *texture)

@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:33:48 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/10 10:54:31 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/12 11:21:06 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ void trim_and_replace(char *str, char replace, char *trim)
 void check_direction_arguments(char **new_array)
 {
     if (new_array[2])
+    {
         print_err("ERROR : Wrong number of directions arguments\n");
+    }
 }
 
 void process_direction(t_direc *dir, char **new_array)
@@ -36,6 +38,7 @@ void process_direction(t_direc *dir, char **new_array)
 
     if (check_key_directions(dir) == 0)
         print_err("ERROR : Wrong key\n");
+        
 }
 
 void dir_parse(t_map *map, t_direc *dir)
@@ -49,9 +52,9 @@ void dir_parse(t_map *map, t_direc *dir)
     while (map->all_map[i] && (map->all_map[i][0] != '1'))
     {
         map->direc[i] = map->all_map[i];
+        // free(map->all_map[i]);
         i++;
     }
-
     map->dir_len = i;
 
     if (map->dir_len != 6)
@@ -62,10 +65,14 @@ void dir_parse(t_map *map, t_direc *dir)
     {
         trim_and_replace(map->direc[i], 16, " ");
         new_array = ft_split(map->direc[i], ' ');
+        free(map->direc[i]);
         check_direction_arguments(new_array);
         process_direction(dir, new_array);
+        free_2d_arr(new_array);
         i++;
     }
+       
 
-    map->direc[i] = NULL;
+    // free(map->all_map[i]);
+    // free_2d_arr(map->direc);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/12 10:19:44 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/12 11:23:33 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,13 @@ int main(int ac , char **av)
     t_all_data *data;
     data = init_data(data);
     parsing(data, ac, av);
-    // while(1);
+    raycasting(data);
+   
     // printf("map->width = %d\n", data->map->width);
     // printf("map->height = %d\n", data->map->height);
-    raycasting(data);
+    // while (1);
+    // free(data);
+    
     return EXIT_SUCCESS;
 }
 

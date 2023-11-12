@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 10:45:35 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/10 18:32:38 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/12 10:42:15 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int handle_color_key(t_direc *dir)
         dir->redf = ft_atoi(str[0]);
         dir->greenf = ft_atoi(str[1]);
         dir->bluef = ft_atoi(str[2]);
+        free_2d_arr(str);
+        free(dir->f);
         return 1;
     }
     else if (ft_strcmp(dir->key, "C") == 0)
@@ -32,6 +34,8 @@ int handle_color_key(t_direc *dir)
         dir->redc = ft_atoi(str[0]);
         dir->greenc = ft_atoi(str[1]);
         dir->bluec = ft_atoi(str[2]);
+        free_2d_arr(str);
+        free(dir->s);
         return 1;
     }
     

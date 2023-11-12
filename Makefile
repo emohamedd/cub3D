@@ -6,9 +6,10 @@
 #    By: houattou <houattou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by emohamed          #+#    #+#              #
-#    Updated: 2023/11/12 12:44:27 by houattou         ###   ########.fr        #
+#    Updated: 2023/11/12 14:34:47 by houattou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 	 
 CC = cc
@@ -33,7 +34,7 @@ NAME = cub3D
 GREEN = \033[0;32m
 RESET = \033[0m
 GLFW = $(shell brew --prefix glfw)
-FRAMEWORKS = /Users/houattou/Desktop/MLX42/build/libmlx42.a -Iinclude -lglfw -L $(GLFW)/lib/ -framework Cocoa -framework OpenGL -framework IOKit
+FRAMEWORKS = /Users/emohamed/Desktop/MLX42/build/libmlx42.a -Iinclude -lglfw -L $(GLFW)/lib/ -framework Cocoa -framework OpenGL -framework IOKit
 all: $(NAME)
 
 %.o: %.c
