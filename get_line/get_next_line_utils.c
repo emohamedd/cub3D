@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 18:26:28 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/09 18:05:31 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/12 10:00:58 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_strjoine(char *s1, char *s2)
 	while (s2 && i < ft_strlene(s2) + k)
 		ptr[i++] = s2[j++];
 	ptr[i] = '\0';
-	// free(s1);
+	free(s1);
 	return (ptr);
 }
 
