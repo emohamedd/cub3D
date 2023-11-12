@@ -6,37 +6,23 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/12 15:40:44 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/12 21:11:42 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #ifndef CUB3D_H
 # define CUB3D_H
-#define SIZE_TITLE 60
-#define MAP_MUM_ROWS 25
-#define MAP_MUM_COLS 11
-#define FPS 30
-#define WIDTH_MAP 25
-#define HEIGHT_MAP 11
+#define SIZE_TILE 60
 #define WIDTH    1500
 #define HEIGHT   1000
 #define FOV_ANGLE (60 * (M_PI / 180))
-#define WALL_STRIP_WIDTH 1
-#define WALL_STRIO_WIDTH 4
-#define MUM_RAYS WIDTH/ 4
-#define   MINIMAP_SCAL_FACTOR 0.2
-
-
 #define TRUE 1
 #define FALSE 0
 
 
-#define WALL_STRIO_WIDTH 4
+
 #include "/Users/houattou/Desktop/MLX42/include/MLX42/MLX42.h"
-
-
-// # include "../../get_line/get_next_line.h"
 # include <math.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -119,7 +105,7 @@ typedef struct s_player
 {
 	float x;
 	float y;
-	float radius;
+
 	float rotation_angle;
 	float move_speed;
 	bool is_ray_facing_left;
@@ -134,24 +120,26 @@ typedef struct s_all_data
 {
 	mlx_t *mlx;
 	mlx_image_t *img;
-	mlx_image_t *img_minimap;
 	t_player *player;
-
 	t_cord *cord;
 	t_direc *dir;
 	t_map *map;
 	int exact_wall_height;
 	int wall_height;
 	int y_start;
-	
-	t_textrs textrs;
-
 	int y_end;
-
+	float ray_angle;
+	int sign;
+	bool is_player_facing_left;
+	bool is_player_facing_up;
+	 float xtx;
+	  int id;
+	t_textrs textrs;
 }t_all_data;
 
 /*----------------*RayCasting functions:----------------------------------------------*/
 t_all_data *init_data(t_all_data *data);
+void start_raycasting(t_all_data *data);
 void init(t_all_data *data);
 void init_mlx(t_all_data *data);
 void parsing(t_all_data *data, int ac , char **av);
@@ -175,10 +163,10 @@ void cast_all_rays(t_all_data *data);
 void render_rays(t_all_data *data);
 
 void cast_ray(t_all_data *data,float angle_ray, int i);
-t_all_data *draw_rays(t_all_data *data, int id, float ray_angle);
+t_all_data *draw_rays(t_all_data *data, int id);
 
-void get_horizontal_intersection(t_all_data *mlx, float ray_angle);
-void	get_vertical_intersection(t_all_data *mlx, float ray_angle);
+void get_horizontal_intersection(t_all_data *mlx);
+void	get_vertical_intersection(t_all_data *mlx);
 void draw_wall_with_texture(t_all_data *data, int id, float ray_angle, float hor_intercept_x, float vert_intercept_y, float xtx, mlx_texture_t *texture);
 
 void separ_direc_value(t_all_data *data);
