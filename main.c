@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/12 11:23:33 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/12 15:48:33 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,22 @@ void raycasting(t_all_data *data)
     mlx_terminate(data->mlx);
     
 }
-
+void check_valid_width_height(t_map *map)
+{
+    if (map->width > WIDTH || map->height > HEIGHT)
+    {
+        printf("Error\n");
+        exit(0);
+    }
+}
 int main(int ac , char **av)
 {
     int		fd;
     t_all_data *data;
     data = init_data(data);
     parsing(data, ac, av);
+    check_valid_width_height(data->map);
+
     raycasting(data);
    
     // printf("map->width = %d\n", data->map->width);

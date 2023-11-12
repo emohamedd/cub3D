@@ -3,16 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2023/11/12 14:22:13 by houattou         ###   ########.fr       */
-=======
-/*   Updated: 2023/11/12 11:22:42 by emohamed         ###   ########.fr       */
->>>>>>> 9b6feae2b3998588a113560561963243cb955268
+/*   Updated: 2023/11/12 15:40:44 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef CUB3D_H
 # define CUB3D_H
@@ -22,7 +19,7 @@
 #define FPS 30
 #define WIDTH_MAP 25
 #define HEIGHT_MAP 11
-#define WIDTH    1200
+#define WIDTH    1500
 #define HEIGHT   1000
 #define FOV_ANGLE (60 * (M_PI / 180))
 #define WALL_STRIP_WIDTH 1
@@ -36,7 +33,7 @@
 
 
 #define WALL_STRIO_WIDTH 4
-#include "/Users/emohamed/Desktop/MLX42/include/MLX42/MLX42.h"
+#include "/Users/houattou/Desktop/MLX42/include/MLX42/MLX42.h"
 
 
 // # include "../../get_line/get_next_line.h"
@@ -189,7 +186,9 @@ void	load_textures(t_all_data *data);
 /*parsing par--------------------------------------------------------------------*/
 void		print_err(char *s);
 int			check_file_cub(char *file);
+int handle_color_key(t_direc *dir);
 void		readfile(int fd, t_map *map, t_direc *dir);
+void free_2d_arr(char **arr);
 void		dir_parse(t_map *map, t_direc *direc);
 void		map_parse(t_map *map);
 int			valid_map(t_map *map);
@@ -200,7 +199,6 @@ void		check_key_color_range(t_direc *dir);
 int			check_key_directions(t_direc *dir);
 void		readfile(int fd, t_map *map, t_direc *dir);
 void player_direction(t_map *map);
-void free_2d_arr(char **arr);
 // void	readfile(int fd, t_map *map, t_direc *dir);
 
 #endif

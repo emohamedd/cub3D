@@ -6,7 +6,7 @@
 #    By: houattou <houattou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by emohamed          #+#    #+#              #
-#    Updated: 2023/11/12 14:34:47 by houattou         ###   ########.fr        #
+#    Updated: 2023/11/12 15:33:35 by houattou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRCS = ./src/raycasting/draw_map.c ./src/raycasting/draw_player.c  main.c ./src/
 	   ./src/raycasting/draw_line.c ./src/raycasting/check_wall.c ./src/raycasting/raycasting.c \
 	   ./src/raycasting/get_vertical_intersection.c  ./src/raycasting/get_horizontal_intersection.c \
 	   ./src/raycasting/draw_projection_wall.c   ./src/raycasting/math.c \
-	   ./src/parsing/check_file_name.c ./src/parsing/cub_utils.c ./src/parsing/parsing_the_directions.c ./src/parsing/key_color_range.c ./src/parsing/fulling_directions.c \
+	   ./src/parsing/check_file_name.c ./src/parsing/cub_utils.c ./src/parsing/parsing_the_directions.c ./src/parsing/free_func.c ./src/parsing/key_color_range.c ./src/parsing/fulling_directions.c \
 	   ./src/parsing/parsing_the_map.c ./src/parsing/print_err.c \
 	   ./src/parsing/valid_map.c  ./src/parsing/readfile.c ./src/raycasting/txt_load.c ./src/raycasting/drawing.c ./src/raycasting/initialization.c \
 	   ./src/parsing/parsing.c \
@@ -34,7 +34,7 @@ NAME = cub3D
 GREEN = \033[0;32m
 RESET = \033[0m
 GLFW = $(shell brew --prefix glfw)
-FRAMEWORKS = /Users/emohamed/Desktop/MLX42/build/libmlx42.a -Iinclude -lglfw -L $(GLFW)/lib/ -framework Cocoa -framework OpenGL -framework IOKit
+FRAMEWORKS = /Users/houattou/Desktop/MLX42/build/libmlx42.a -Iinclude -lglfw -L $(GLFW)/lib/ -framework Cocoa -framework OpenGL -framework IOKit
 all: $(NAME)
 
 %.o: %.c
