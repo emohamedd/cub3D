@@ -10,39 +10,40 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../../include/cub3d.h"
+#include "../../include/cub3d.h"
 
-
-void get_horizontal_intersection(t_all_data *mlx, float ray_angle)
+void	get_horizontal_intersection(t_all_data *mlx, float ray_angle)
 {
-	
-	bool	is_ray_facing_up;
-    int sign;
+	bool is_ray_facing_up;
+	int sign;
 
-    sign = 1;
-    mlx->cord->ystep_h = 0;
-    mlx->cord->ystep_h = 0;
+	sign = 1;
+	mlx->cord->ystep_h = 0;
+	mlx->cord->ystep_h = 0;
 	is_ray_facing_up = ray_angle > M_PI && ray_angle < 2 * M_PI;
-    
-    if(is_ray_facing_up)
-    {
-         mlx->player->is_ray_facing_up = TRUE;
-        sign *= -1;
-    }
+
+	if (is_ray_facing_up)
+	{
+		mlx->player->is_ray_facing_up = TRUE;
+		sign *= -1;
+	}
 	mlx->cord->ystep_h = floor(mlx->player->y / SIZE_TITLE) * SIZE_TITLE;
-    if(!is_ray_facing_up)
-    {
-        mlx->cord->ystep_h += SIZE_TITLE;
-        mlx->player->is_ray_facing_up = FALSE;
-        
-    }
-	mlx->cord->xstep_h = mlx->player->x + (mlx->cord->ystep_h - mlx->player->y) / tan(ray_angle);
+	if (!is_ray_facing_up)
+	{
+		mlx->cord->ystep_h += SIZE_TITLE;
+		mlx->player->is_ray_facing_up = FALSE;
+	}
+	mlx->cord->xstep_h = mlx->player->x + (mlx->cord->ystep_h - mlx->player->y)
+		/ tan(ray_angle);
 	while (true)
 	{
-        if((is_ray_facing_up && is_has_wall(mlx, mlx->cord->xstep_h , mlx->cord->ystep_h - SIZE_TITLE ))|| \
-        (!is_ray_facing_up && (is_has_wall(mlx, mlx->cord->xstep_h, mlx->cord->ystep_h))) || (is_ray_facing_up && is_has_wall(mlx, mlx->cord->xstep_h, mlx->cord->ystep_h)))
-                 break;
-        mlx->cord->xstep_h +=  sign *SIZE_TITLE / tan(ray_angle);
-        mlx->cord->ystep_h += sign * SIZE_TITLE;
+		if ((is_ray_facing_up && is_has_wall(mlx, mlx->cord->xstep_h,
+					mlx->cord->ystep_h - SIZE_TITLE)) || (!is_ray_facing_up
+				&& (is_has_wall(mlx, mlx->cord->xstep_h, mlx->cord->ystep_h)))
+			|| (is_ray_facing_up && is_has_wall(mlx, mlx->cord->xstep_h,
+					mlx->cord->ystep_h)))
+			break ;
+		mlx->cord->xstep_h += sign * SIZE_TITLE / tan(ray_angle);
+		mlx->cord->ystep_h += sign * SIZE_TITLE;
 	}
 }

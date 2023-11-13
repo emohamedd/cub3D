@@ -12,7 +12,6 @@
 
 #include "../../include/cub3d.h"
 
-void   draw_projection_wall(t_all_data *data)
+void	draw_projection_wall(t_all_data *data)
 {
-    
 }
