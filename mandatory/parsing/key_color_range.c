@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 10:38:42 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/10 10:38:50 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/13 19:50:42 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	process_color_values(t_direc *dir)
 			print_err("ERROR : Wrong color range\n");
 		i++;
 	}
+	free_2d_arr(new_array);
 }
 
 // Combine the two functions

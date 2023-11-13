@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 10:45:35 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 16:37:51 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/13 19:50:13 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int handle_color_key(t_direc *dir)
 {
     check_key_color_range(dir);
-    
     if (ft_strcmp(dir->key, "F") == 0)
     {
         char **str = ft_split(dir->value, 16);
@@ -34,7 +33,6 @@ int handle_color_key(t_direc *dir)
         free_2d_arr(str);
         return 1;
     }
-    
     return 0;
 }
 
