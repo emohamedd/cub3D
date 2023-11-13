@@ -3,57 +3,55 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 14:40:21 by houattou          #+#    #+#             */
-/*   Updated: 2022/10/29 19:58:39 by houattou         ###   ########.fr       */
+/*   Created: 2023/05/11 09:47:11 by emohamed          #+#    #+#             */
+/*   Updated: 2023/05/16 10:37:52 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	len(long nb)
+int	count_len(int n)
 {
-	int	len;
+	int	i;
 
-	len = 0;
-	if (nb < 0)
+	i = 0;
+	if (n <= 0)
+		i++;
+	while (n != 0)
 	{
-		nb = nb * -1;
-		len++;
+		i++;
+		n /= 10;
 	}
-	while (nb > 0)
-	{
-		nb = nb / 10;
-		len++;
-	}
-	return (len);
+	return (i);
 }
 
-char	*ft_itoa(int nb)
+char	*ft_itoa(int n)
 {
-	char	*str;
-	long	n;
-	long	i;
+	int		i;
+	char	*p;
 
-	n = (long)nb;
-	i = len(n);
-	if (n == 0)
-		return (ft_strdup("0"));
-	str = (char *)malloc(sizeof(char) * (i + 1));
-	if (!str)
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	i = count_len(n);
+	p = malloc((count_len(n) + 1) * sizeof(char));
+	if (!p)
 		return (NULL);
-	str[i--] = '\0';
+	p[i] = '\0';
+		i--;
+	if (n == 0)
+		p[i] = 0 + '0';
 	if (n < 0)
 	{
-		str[0] = '-';
-		n = n * -1;
+		p[0] = '-';
+		n = -n;
 	}
 	while (n > 0)
 	{
-		str[i] = 48 + (n % 10);
-		n = n / 10;
+		p[i] = n % 10 + '0';
+		n /= 10;
 		i--;
 	}
-	return (str);
+	return (p);
 }
