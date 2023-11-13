@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_the_directions.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:33:48 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/12 15:36:52 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/13 10:25:55 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void dir_parse(t_map *map, t_direc *dir)
     while (map->all_map[i] && (map->all_map[i][0] != '1'))
     {
         map->direc[i] = map->all_map[i];
-        // free(map->all_map[i]);
         i++;
     }
     map->dir_len = i;
@@ -71,8 +70,5 @@ void dir_parse(t_map *map, t_direc *dir)
         free_2d_arr(new_array);
         i++;
     }
-       
-
-    // free(map->all_map[i]);
     // free_2d_arr(map->direc);
 }

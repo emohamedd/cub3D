@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_func.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 10:28:41 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/12 15:29:52 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/13 10:17:36 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ void free_2d_arr(char **arr)
         free(arr[i]);
         i++;
     }
+    free(arr);
 }
