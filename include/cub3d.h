@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 10:14:47 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:25:32 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ typedef struct s_map
 	char	**all_map;
 	char	**direc;
 	char	**map;
+	char 	**minimap;
 	int		dir_len;
 	t_direction direction;
 	int	width;

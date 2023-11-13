@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 12:21:59 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:37:08 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,3 @@ int main(int ac , char **av)
     free_all_data(data);
     return EXIT_SUCCESS;
 }
-
-

@@ -6,14 +6,14 @@
 #    By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by emohamed          #+#    #+#              #
-#    Updated: 2023/11/13 14:29:17 by emohamed         ###   ########.fr        #
+#    Updated: 2023/11/13 17:34:03 by emohamed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 	 
 CC = cc
-CFLAGS =  -O3
+CFLAGS =  -O3 
 
 SRCS = ./mandatory/raycasting/coordination_of_player.c   main.c ./mandatory/raycasting/update_player.c \
 	   ./mandatory/raycasting/render_textures.c ./mandatory/raycasting/check_wall.c ./mandatory/raycasting/raycasting.c \

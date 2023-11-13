@@ -1,14 +1,9 @@
-            SO textures/0.png                 
-
-        NO  textures/00.png 
-
+SO textures/0.png                 
+NO  textures/00.png 
 EA textures/01.png
-
 WE textures/02.png
-
 C 0,0,0
 F 0,0,0
-
 
 1111111111111111111111111111111111111111111111111111111111111111
 1000000000000000000001000000000011

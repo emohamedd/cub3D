@@ -14,30 +14,7 @@
 
 #include "../../include/cub3d.h"
 
-void player_direction(t_map *map)
-{
-    int	x;
-	int	y;
 
-	y = 0;
-	while (map->map[y])
-	{
-		x = 0;
-		while (map->map[y][x])
-		{
-			if (map->map[y][x] == 'N')
-				map->direction = NO;
-			else if (map->map[y][x] == 'S')
-				map->direction = SO;
-			else if (map->map[y][x] == 'W')
-				map->direction = WE;
-			else if (map->map[y][x] == 'E')
-				map->direction = EA;
-			x++;
-		}
-		y++;
-	}
-}
 void parsing(t_all_data *data, int ac , char **av)
 {
     int fd;
@@ -56,7 +33,6 @@ void parsing(t_all_data *data, int ac , char **av)
 		readfile(fd, data->map, data->dir);
 		// system("leaks cub3D");
         load_textures(data);
-        player_direction(data->map);
 	}
     
 }

@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 10:45:35 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 10:16:20 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:37:51 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,6 @@ int check_key_directions(t_direc *dir)
     else
     {
         return handle_color_key(dir);
+
     }
 }

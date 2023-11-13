@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 10:00:37 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 13:09:59 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:29:44 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,30 @@ int map_height(t_map *map)
 	}
 	return (i);
 }
+void player_direction(t_map *map)
+{
+    int	x;
+	int	y;
+
+	y = 0;
+	while (map->map[y])
+	{
+		x = 0;
+		while (map->map[y][x])
+		{
+			if (map->map[y][x] == 'N')
+				map->direction = NO;
+			else if (map->map[y][x] == 'S')
+				map->direction = SO;
+			else if (map->map[y][x] == 'W')
+				map->direction = WE;
+			else if (map->map[y][x] == 'E')
+				map->direction = EA;
+			x++;
+		}
+		y++;
+	}
+}
 
 void map_parse(t_map *map)
 {
@@ -76,12 +100,12 @@ void map_parse(t_map *map)
 	map->map = malloc(sizeof(char *) * (len + 1));
 	while (map->all_map && map->all_map[j])
 	{
-		map->map[i] = map->all_map[j];
+		map->map[i] = map->all_map[j]; 
 		i++;
 		j++;
 	}
 	map->map[i] = NULL;
 	map->width = lenght_of_the_long_line_in_map(map);
 	map->height = map_height(map);
-
+	player_direction(map);
 }

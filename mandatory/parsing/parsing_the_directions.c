@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:33:48 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 14:42:56 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:20:01 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void dir_parse(t_map *map, t_direc *dir)
         free(tmp);
         i++;
     }
+    
     // pause();
     int len = len_of_direction(map);
     map->direc = malloc(sizeof(char *) * (len + 1));
@@ -69,7 +70,6 @@ void dir_parse(t_map *map, t_direc *dir)
         i++;
     }
     map->direc[i] = NULL;
-    // free_2d_arr(map->all_map);
     map->dir_len = i;
 
     if (map->dir_len != 6)
@@ -86,5 +86,4 @@ void dir_parse(t_map *map, t_direc *dir)
         free_2d_arr(new_array);
         i++;
     }
-    // free_2d_arr(map->direc);
 }
