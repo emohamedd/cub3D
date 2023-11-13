@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:48:29 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/13 12:27:34 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/13 21:03:19 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,13 @@ bool	is_has_wall(t_all_data *mlx, float x, float y)
 {
 	float	new_x;
 	float	new_y;
+	int		x_step;
+	int		y_step;
 
+	x_step = x + 0.01;
+	y_step = y + 0.01;
+	x_step = floor(x_step / SIZE_TITLE);
+	y_step = floor(y_step / SIZE_TITLE);
 	if (x <= 0 || x >= SIZE_TITLE * mlx->map->width || y <= 0 || y >= SIZE_TITLE
 		* mlx->map->height)
 		return (TRUE);
@@ -52,6 +58,8 @@ bool	is_has_wall(t_all_data *mlx, float x, float y)
 		|| new_y >= mlx->map->height)
 		return (TRUE);
 	if (mlx->map->map[(int)new_y][(int)new_x] == '1')
+		return (TRUE);
+	if (mlx->map->map[y_step][x_step] == '1')
 		return (TRUE);
 	return (FALSE);
 }
