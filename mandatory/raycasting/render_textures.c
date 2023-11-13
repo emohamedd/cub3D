@@ -11,40 +11,40 @@
 /* ************************************************************************** */
 
 #include "../../include/cub3d.h"
-
 #include <math.h>
-  
-  int	get_color_from_texture(int x, int y, mlx_texture_t *texture)
+
+int	get_color_from_texture(int x, int y, mlx_texture_t *texture)
 {
 	int	i;
 
 	i = (x * 4) + ((y * 4) * texture->width);
-	return (texture->pixels[i] << 24 | \
-	texture->pixels[i + 1] << 16 | texture->pixels[i + 2] << 8 \
-										| texture->pixels[i + 3]);
+	return (texture->pixels[i] << 24 | texture->pixels[i
+		+ 1] << 16 | texture->pixels[i + 2] << 8 | texture->pixels[i + 3]);
 }
 
-void draw_wall_with_texture(t_all_data *data, int id, float ray_angle ,float hor_intercept_x, float vert_intercept_y, float xtx, mlx_texture_t *texture) 
+void	draw_wall_with_texture(t_all_data *data, int id, float ray_angle,
+		float hor_intercept_x, float vert_intercept_y, float xtx,
+		mlx_texture_t *texture)
 {
-    float ytx;
- 
+	float	ytx;
+	float	tx_inc;
+	float	tmpYstart;
+	float	wallTopPixel;
 
-    float tx_inc = texture->height / (float)data->exact_wall_height;
-
-        float tmpYstart = ((HEIGHT)/ 2) - (data->exact_wall_height/2);
-        float wallTopPixel = tmpYstart;
-        while (data->y_start < data->y_end) {
-            ytx = (data->y_start - wallTopPixel) * tx_inc;
-            
-            if (ytx >= texture->height) {
-                ytx = 0;
-            }
-
-            mlx_put_pixel(data->img, id, data->y_start, get_color_from_texture(xtx, ytx, texture));
-            data->y_start++;
-            tmpYstart++;
-     
-        }
-
-        // mlx_delete_texture(texture);
-    }
+	tx_inc = texture->height / (float)data->exact_wall_height;
+	tmpYstart = ((HEIGHT) / 2) - (data->exact_wall_height / 2);
+	wallTopPixel = tmpYstart;
+	while (data->y_start < data->y_end)
+	{
+		ytx = (data->y_start - wallTopPixel) * tx_inc;
+		if (ytx >= texture->height)
+		{
+			ytx = 0;
+		}
+		mlx_put_pixel(data->img, id, data->y_start, get_color_from_texture(xtx,
+				ytx, texture));
+		data->y_start++;
+		tmpYstart++;
+	}
+	// mlx_delete_texture(texture);
+}
