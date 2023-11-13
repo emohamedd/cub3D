@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 10:45:35 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/12 10:42:15 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/13 10:16:20 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,20 @@ int handle_color_key(t_direc *dir)
     
     if (ft_strcmp(dir->key, "F") == 0)
     {
-        dir->f = ft_strdup(dir->value);
-        char **str = ft_split(dir->f, 16);
+        char **str = ft_split(dir->value, 16);
         dir->redf = ft_atoi(str[0]);
         dir->greenf = ft_atoi(str[1]);
         dir->bluef = ft_atoi(str[2]);
         free_2d_arr(str);
-        free(dir->f);
         return 1;
     }
     else if (ft_strcmp(dir->key, "C") == 0)
     {
-        dir->s = ft_strdup(dir->value);
-        char **str = ft_split(dir->s, 16);
+        char **str = ft_split(dir->value, 16);
         dir->redc = ft_atoi(str[0]);
         dir->greenc = ft_atoi(str[1]);
         dir->bluec = ft_atoi(str[2]);
         free_2d_arr(str);
-        free(dir->s);
         return 1;
     }
     

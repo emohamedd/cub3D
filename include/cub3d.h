@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/12 22:16:55 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/13 10:14:47 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 
 
 #define WALL_STRIO_WIDTH 4
-#include "/Users/houattou/Desktop/MLX42/include/MLX42/MLX42.h"
+#include "/Users/emohamed/Desktop/MLX42/include/MLX42/MLX42.h"
 
 
 // # include "../../get_line/get_next_line.h"
@@ -170,9 +170,6 @@ void	my_keyhook(mlx_key_data_t keydata, void *param);
 bool	is_has_wall(t_all_data *mlx, float x, float y);
 bool    check_if_have_wall(t_all_data *data, float x, float y);
 float normalize_angle(float angle);
-
-
-
 void render_rays(t_all_data *data);
 
 void cast_ray(t_all_data *data,float angle_ray, int i);

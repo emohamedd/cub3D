@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_the_directions.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:33:48 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/12 15:36:52 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/13 13:29:13 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,21 +40,34 @@ void process_direction(t_direc *dir, char **new_array)
         print_err("ERROR : Wrong key\n");
         
 }
+int len_of_direction(t_map *map)
+{
+    int i = 0;
+    while (map->all_map[i] && (map->all_map[i][0] != '1'))
+        i++;
+    return i;
+}
 
 void dir_parse(t_map *map, t_direc *dir)
 {
     int i = 0;
     char **new_array;
 
-    map->all_map[i] = ft_strtrim(map->all_map[i], " \t");
-    map->direc = ft_split(map->all_map[i], '\n');
-
+    while(map->all_map[i])
+    {
+        map->all_map[i] = ft_strtrim(map->all_map[i], " \t");
+        i++;
+    }
+    int len = len_of_direction(map);
+    map->direc = malloc(sizeof(char *) * (len + 1));
+    i = 0;
     while (map->all_map[i] && (map->all_map[i][0] != '1'))
     {
         map->direc[i] = map->all_map[i];
-        // free(map->all_map[i]);
         i++;
     }
+    map->direc[i] = NULL;
+    // free_2d_arr(map->all_map);
     map->dir_len = i;
 
     if (map->dir_len != 6)
@@ -71,8 +84,5 @@ void dir_parse(t_map *map, t_direc *dir)
         free_2d_arr(new_array);
         i++;
     }
-       
-
-    // free(map->all_map[i]);
     // free_2d_arr(map->direc);
 }

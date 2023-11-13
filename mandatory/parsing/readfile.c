@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:56:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/12 11:24:24 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/13 13:32:10 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,24 @@ void	readfile(int fd, t_map *map, t_direc *dir)
 	next_line = ft_strdup("");
 	while (line)
 	{
+		// printf("line : %s\n", line);
+		// char *tmp = next_line;
 		next_line = ft_strjoin(next_line, line);
-		free(line);
+		// free(line);
+		// free(tmp);
 		line = get_next_line(fd);
 		i++;
 	}
+	// system("leaks cub3D");
+	free(line);
 	map->all_map = ft_split(next_line, '\n');
+	free(next_line);	
 		map_parse(map);
 	if (valid_map(map) == 0)
 		print_err("ERROR : Invalid MAP\n");
 	if (check_map_char(map) == 0)
 		print_err("ERROR : Invalid Num Player\n");
 	dir_parse(map, dir);
-	close(fd);
-	free(line);
 	
+	close(fd);
 }

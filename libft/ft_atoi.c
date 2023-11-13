@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 18:53:39 by houattou          #+#    #+#             */
-/*   Updated: 2022/10/29 19:53:23 by houattou         ###   ########.fr       */
+/*   Created: 2021/05/08 14:50:37 by emohamed          #+#    #+#             */
+/*   Updated: 2023/05/09 12:30:05 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,25 @@
 
 int	ft_atoi(const char *str)
 {
-	int	signe;
-	int	number;
+	int	i;
+	int	stock;
+	int	sign;
 
-	signe = 1;
-	while (*str == '\t' || *str == '\n' || *str == '\f' || *str == '\v'
-		|| *str == '\r' || *str == ' ')
+	i = 0;
+	stock = 0;
+	sign = 1;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		str++;
+		if (str[i] == '-')
+			sign = -1;
+		i++;
 	}
-	if (*str == '-' || *str == '+')
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
 	{
-		if (*str == '-')
-		{
-			signe = signe * (-1);
-		}
-		str++;
+		stock = (stock * 10) + (str[i] - '0');
+		i++;
 	}
-	number = 0;
-	while (*str >= 48 && *str <= 57)
-	{
-		number = (number * 10) + (*str - '0');
-		str++;
-	}
-	return (number * signe);
+	return (sign * stock);
 }

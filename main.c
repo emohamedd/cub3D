@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/12 18:35:48 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/13 12:21:59 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,8 @@ int main(int ac , char **av)
     t_all_data *data;
     data = init_data(data);
     parsing(data, ac, av);
-    
+    // system("leaks cub3D");
     check_valid_width_height(data->map);
-
     raycasting(data);
     free_all_data(data);
     return EXIT_SUCCESS;
