@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 10:00:37 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 17:29:44 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:55:49 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void map_parse(t_map *map)
 	map->map = malloc(sizeof(char *) * (len + 1));
 	while (map->all_map && map->all_map[j])
 	{
-		map->map[i] = map->all_map[j]; 
+		map->map[i] = ft_strdup(map->all_map[j]); 
 		i++;
 		j++;
 	}

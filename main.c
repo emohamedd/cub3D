@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 17:37:08 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:03:54 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,13 @@ int main(int ac , char **av)
     data = init_data(data);
     parsing(data, ac, av);
     // system("leaks cub3D");
+    // int i  = 0;
+    // while(data->map->map[i])
+    // {
+    //     printf("%s\n", data->map->map[i]);
+    //     i++;
+    // }
+    // pause();
     check_valid_width_height(data->map);
     raycasting(data);
     free_all_data(data);

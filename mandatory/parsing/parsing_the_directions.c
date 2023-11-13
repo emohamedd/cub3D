@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:33:48 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 17:20:01 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:58:41 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void dir_parse(t_map *map, t_direc *dir)
 {
     int i = 0;
     char **new_array;
+    i = 0;
     while(map->all_map[i])
     {
         char *tmp = map->all_map[i];
@@ -66,12 +67,11 @@ void dir_parse(t_map *map, t_direc *dir)
     i = 0;
     while (map->all_map[i] && (map->all_map[i][0] != '1'))
     {
-        map->direc[i] = map->all_map[i];
+        map->direc[i] = ft_strdup(map->all_map[i]);
         i++;
     }
     map->direc[i] = NULL;
     map->dir_len = i;
-
     if (map->dir_len != 6)
         print_err("ERROR : Wrong number of directions\n");
 
