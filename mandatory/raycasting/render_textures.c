@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:46:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/13 15:39:18 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/13 20:36:50 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ void	draw_wall_with_texture(t_all_data *data, int id, float xtx,
 {
 	float	ytx;
 	float	tx_inc;
-	float	tmpYstart;
-	float	wallTopPixel;
+	float	tmp_ystart;
+	float	wall_top_pixel;
 
 	tx_inc = texture->height / (float)data->exact_wall_height;
-	tmpYstart = ((HEIGHT) / 2) - (data->exact_wall_height / 2);
-	wallTopPixel = tmpYstart;
+	tmp_ystart = ((HEIGHT) / 2) - (data->exact_wall_height / 2);
+	wall_top_pixel = tmp_ystart;
 	while (data->y_start < data->y_end)
 	{
-		ytx = (data->y_start - wallTopPixel) * tx_inc;
+		ytx = (data->y_start - wall_top_pixel) * tx_inc;
 		if (ytx >= texture->height)
 		{
 			ytx = 0;
@@ -43,7 +43,7 @@ void	draw_wall_with_texture(t_all_data *data, int id, float xtx,
 		mlx_put_pixel(data->img, id, data->y_start, get_color_from_texture(xtx,
 				ytx, texture));
 		data->y_start++;
-		tmpYstart++;
+		tmp_ystart++;
 	}
 	// mlx_delete_texture(texture);
 }
