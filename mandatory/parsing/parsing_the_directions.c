@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:33:48 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 13:29:13 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/13 14:42:56 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,14 @@ void dir_parse(t_map *map, t_direc *dir)
 {
     int i = 0;
     char **new_array;
-
     while(map->all_map[i])
     {
+        char *tmp = map->all_map[i];
         map->all_map[i] = ft_strtrim(map->all_map[i], " \t");
+        free(tmp);
         i++;
     }
+    // pause();
     int len = len_of_direction(map);
     map->direc = malloc(sizeof(char *) * (len + 1));
     i = 0;
