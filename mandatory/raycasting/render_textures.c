@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:46:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/12 22:15:20 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/13 15:39:18 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ int	get_color_from_texture(int x, int y, mlx_texture_t *texture)
 		+ 1] << 16 | texture->pixels[i + 2] << 8 | texture->pixels[i + 3]);
 }
 
-void	draw_wall_with_texture(t_all_data *data, int id, float ray_angle,
-		float hor_intercept_x, float vert_intercept_y, float xtx,
+void	draw_wall_with_texture(t_all_data *data, int id, float xtx,
 		mlx_texture_t *texture)
 {
 	float	ytx;

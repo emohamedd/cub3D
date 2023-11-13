@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 17:25:32 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:38:34 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,9 @@ typedef struct s_all_data
 	int exact_wall_height;
 	int wall_height;
 	int y_start;
+	float	ray_angle;
+	
+	float	xtx;
 	
 	t_textrs textrs;
 
@@ -178,8 +181,8 @@ t_all_data *draw_rays(t_all_data *data, int id, float ray_angle);
 
 void get_horizontal_intersection(t_all_data *mlx, float ray_angle);
 void	get_vertical_intersection(t_all_data *mlx, float ray_angle);
-void draw_wall_with_texture(t_all_data *data, int id, float ray_angle, float hor_intercept_x, float vert_intercept_y, float xtx, mlx_texture_t *texture);
-
+void	draw_wall_with_texture(t_all_data *data, int id, float xtx,
+		mlx_texture_t *texture);
 void separ_direc_value(t_all_data *data);
 void	load_textures(t_all_data *data);
 /*parsing par--------------------------------------------------------------------*/
