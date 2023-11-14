@@ -6,7 +6,7 @@
 #    By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by emohamed          #+#    #+#              #
-#    Updated: 2023/11/14 21:23:32 by emohamed         ###   ########.fr        #
+#    Updated: 2023/11/14 22:49:28 by emohamed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,11 +44,12 @@ NAME = cub3D
 # NAME_BONUS = cub3D_bonus
 
 GREEN = \033[0;32m
+YELLOW = \033[0;33m
 RESET = \033[0m
 GLFW = $(shell brew --prefix glfw)
 FRAMEWORKS = /Users/emohamed/Desktop/MLX42/build/libmlx42.a -Iinclude -lglfw -L $(GLFW)/lib/ -framework Cocoa -framework OpenGL -framework IOKit
 
-all: $(NAME)
+all: $(NAME) display_banner
 
 %.o: %.c
 	@$(CC) $(CFLAGS)  -c $< -o $@
@@ -59,6 +60,18 @@ $(NAME): $(OBJS)
 	@make -C get_line
 	@$(CC) $(CFLAGS) $(OBJS) libft/libft.a get_line/get_next_line.a  $(FRAMEWORKS) -o $(NAME) 
 	@echo "$(GREEN)✅  CUB3D : Compilation successful!$(RESET)"
+
+display_banner:
+	@echo "$(GREEN)\$(RESET)" 
+	@echo "$(GREEN)		.d8888b.  888     888 888888b.     .d8888b.  8888888b.$(RESET)" 
+	@echo "$(GREEN)		d88P  Y88b 888     888 888  \"88b   d88P  Y88b 888   Y88b$(RESET)" 
+	@echo "$(GREEN)		888    888 888     888 888  .88P        .d88P 888    888$(RESET)" 
+	@echo "$(GREEN)		888        888     888 8888888K.       8888\"  888    888$(RESET)" 
+	@echo "$(GREEN)		888        888     888 888  \"Y88 b      \"Y8b. 888    888$(RESET)" 
+	@echo "$(GREEN)		888    888 888     888 888    888  888    888 888    888$(RESET)" 
+	@echo "$(GREEN)		Y88b  d88P Y88b. .d88P 888   d88P  Y88b  d88P 888  .d88P$(RESET)" 
+	@echo "$(GREEN)		  Y8888P     Y88888P    8888888P      Y8888P   8888888P$(RESET)"
+	@echo "$(YELLOW)						By emohamed && houattou$(RESET)"
 
 # bonus: $(OBJS_BONUS)
 # 	@make -C libft
