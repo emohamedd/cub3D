@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_textures.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:46:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/13 15:39:18 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/14 16:34:13 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	draw_wall_with_texture(t_all_data *data, int id, float xtx,
 	while (data->y_start < data->y_end)
 	{
 		ytx = (data->y_start - wallTopPixel) * tx_inc;
+		
 		if (ytx >= texture->height)
 		{
 			ytx = 0;
@@ -45,5 +46,4 @@ void	draw_wall_with_texture(t_all_data *data, int id, float xtx,
 		data->y_start++;
 		tmpYstart++;
 	}
-	// mlx_delete_texture(texture);
 }

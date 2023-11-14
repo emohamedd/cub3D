@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 18:03:54 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:22:54 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,17 @@ void raycasting(t_all_data *data)
 void check_valid_width_height(t_map *map)
 {
     if (map->width > WIDTH || map->height > HEIGHT)
-    {
-        printf("Error\n");
-        exit(0);
-    }
+        print_err("Error: Invalid width or height\n");
 }
 void free_all_data(t_all_data *data)
 {
-    free(data->player);
-    free(data->cord);
-    free(data->map);
-    free(data->dir);
+    free_2d_arr(data->map->all_map);
     if(data->mlx)
         mlx_terminate(data->mlx);
     if(data->img)    
         mlx_delete_image(data->mlx, data->img);
     if(data->img_minimap)    
         mlx_delete_image(data->mlx, data->img_minimap); 
-    free(data);
 }
 int main(int ac , char **av)
 {
@@ -53,14 +46,6 @@ int main(int ac , char **av)
     t_all_data *data;
     data = init_data(data);
     parsing(data, ac, av);
-    // system("leaks cub3D");
-    // int i  = 0;
-    // while(data->map->map[i])
-    // {
-    //     printf("%s\n", data->map->map[i]);
-    //     i++;
-    // }
-    // pause();
     check_valid_width_height(data->map);
     raycasting(data);
     free_all_data(data);

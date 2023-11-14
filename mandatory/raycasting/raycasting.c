@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:54:28 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/13 15:48:28 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/14 14:34:07 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	cast_rays(t_all_data *data, int id, float ray_angle)
 			draw_wall_with_texture(data, id, data->xtx,
 				data->textrs.so_texture);
 	}
-	else
+	else	
 	{
 		if (data->player->is_ray_facing_left == TRUE)
 			draw_wall_with_texture(data, id, data->xtx,
