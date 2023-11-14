@@ -6,8 +6,8 @@ EA textures/01.png
 
 WE textures/02.png
 
-C 0,0,0
-F 0,0,0
+C 0,0,250
+F 150,150,0
 
 111
 1N1

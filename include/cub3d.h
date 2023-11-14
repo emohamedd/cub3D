@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/14 17:06:32 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:36:40 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 
 
 #define WALL_STRIO_WIDTH 4
-#include "/Users/houattou/Desktop/MLX42/include/MLX42/MLX42.h"
+#include "/Users/emohamed/Desktop/MLX42/include/MLX42/MLX42.h"
 
 
 // # include "../../get_line/get_next_line.h"
@@ -71,7 +71,7 @@ typedef struct s_map
 	char	**all_map;
 	char	**direc;
 	char	**map;
-	char 	**minimap;
+	// char 	**minimap;
 	int		dir_len;
 	t_direction direction;
 	int	width;
@@ -214,6 +214,7 @@ void		check_key_color_range(t_direc *dir);
 int			check_key_directions(t_direc *dir);
 void		readfile(int fd, t_map *map, t_direc *dir);
 void player_direction(t_map *map);
+void free_all_data(t_all_data *data);
 // void	readfile(int fd, t_map *map, t_direc *dir);
 
 #endif

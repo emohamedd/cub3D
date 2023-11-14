@@ -27,7 +27,6 @@ void parsing(t_all_data *data, int ac , char **av)
 		if (fd == -1)
 		{
 			print_err("File not found\n");
-			exit(1);
 		}
 		else
 		readfile(fd, data->map, data->dir);

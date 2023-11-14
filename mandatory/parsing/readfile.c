@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:56:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 17:18:26 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:07:13 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	check_map(int fd, char *line)
 	if (fd == -1)
 		print_err("ERROR : Failed to open file\n");
 	if (!line)
-		print_err("ERROR : Empty MAP");
+		print_err("ERROR : Empty MAP\n");
 	if (line[0] == '\n')
 		print_err("ERROR : There is a Empty String on MAP\n");
 	if (line[0] == '\n')
@@ -54,9 +54,15 @@ void	readfile(int fd, t_map *map, t_direc *dir)
 		free(next_line);	
 	map_parse(map);
 	if (valid_map(map) == 0)
+	{
+		free_2d_arr(map->all_map);
 		print_err("ERROR : Invalid MAP\n");
+	}
 	if (check_map_char(map) == 0)
+	{
+		free_2d_arr(map->all_map);
 		print_err("ERROR : Invalid Num Player\n");
+	}
 	dir_parse(map, dir);
 	close(fd);
 }

@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:33:48 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 19:47:48 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:01:30 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void check_direction_arguments(char **new_array)
 {
     if (new_array[2])
     {
+        free_2d_arr(new_array);
         print_err("ERROR : Wrong number of directions arguments\n");
     }
 }
@@ -37,7 +38,10 @@ void process_direction(t_direc *dir, char **new_array)
     dir->value = new_array[1];
 
     if (check_key_directions(dir) == 0)
+    {
+        free_2d_arr(new_array);
         print_err("ERROR : Wrong key\n");
+    }
         
 }
 int len_of_direction(t_map *map)
@@ -76,6 +80,21 @@ void dir_parse(t_map *map, t_direc *dir)
         print_err("ERROR : Wrong number of directions\n");
 
     i = 0;
+    int j = 0;
+    int k = 0;
+    while (j < map->dir_len)
+    {
+        while (k < map->dir_len)
+        {
+            if (j != k)
+            {
+                if (ft_strncmp(map->direc[j], map->direc[k], 2) == 0)
+                    print_err("ERROR : Duplicate key\n");
+            }
+            k++;
+        }
+        j++;
+    }
     while (i < map->dir_len)
     {
         trim_and_replace(map->direc[i], 16, " ");

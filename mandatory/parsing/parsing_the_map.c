@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 10:00:37 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 19:44:35 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:05:02 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,6 @@ void map_parse(t_map *map)
 	if (len < 0)
 	{
 		printf("Error Invalid Param\n");
-		exit(0);
 	}
 	map->map = malloc(sizeof(char *) * (len + 1));
 	while (map->all_map && map->all_map[j])
