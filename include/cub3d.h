@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/14 17:24:54 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/14 21:23:08 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,6 +205,17 @@ int			check_key_directions(t_direc *dir);
 void		readfile(int fd, t_map *map, t_direc *dir);
 void player_direction(t_map *map);
 void free_all_data(t_all_data *data);
+int	len_of_direction(t_map *map);
+void	trim_and_replace(char *str, char replace, char *trim);
+void	trim_map_lines(t_map *map);
+void	check_direction_count(t_map *map);
+void	check_for_duplicate_keys(t_map *map);
+void	check_direction_arguments(char **new_array);
+void	check_and_exit_if_invalid_map(t_map *map);
+void	check_file_opening(int fd, char *line);
+void	check_empty_map(char *line);
+void	check_empty_string(char *line);
+void	check_and_exit_if_empty_string(char *line);
 // void	readfile(int fd, t_map *map, t_direc *dir);
 
 #endif

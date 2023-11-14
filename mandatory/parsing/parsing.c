@@ -1,24 +1,22 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initialization.c                                   :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 22:06:06 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/10 22:12:26 by houattou         ###   ########.fr       */
+/*   Created: 2023/11/14 21:10:51 by emohamed          #+#    #+#             */
+/*   Updated: 2023/11/14 21:11:00 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../../include/cub3d.h"
 
-
-void parsing(t_all_data *data, int ac , char **av)
+void	parsing(t_all_data *data, int ac, char **av)
 {
-    int fd;
-    if (ac != 2)
+	int	fd;
+
+	if (ac != 2)
 		print_err("Wrong number of arguments\n");
 	else
 	{
@@ -29,9 +27,7 @@ void parsing(t_all_data *data, int ac , char **av)
 			print_err("File not found\n");
 		}
 		else
-		readfile(fd, data->map, data->dir);
-		// system("leaks cub3D");
-        load_textures(data);
+			readfile(fd, data->map, data->dir);
+		load_textures(data);
 	}
-    
 }
