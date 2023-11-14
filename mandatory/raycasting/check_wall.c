@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:48:29 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/13 12:27:34 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/14 13:22:35 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ bool	is_has_wall(t_all_data *mlx, float x, float y)
 {
 	float	new_x;
 	float	new_y;
-
+	
 	if (x <= 0 || x >= SIZE_TITLE * mlx->map->width || y <= 0 || y >= SIZE_TITLE
 		* mlx->map->height)
 		return (TRUE);

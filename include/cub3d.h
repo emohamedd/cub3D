@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/14 17:13:13 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:24:54 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,9 @@ typedef struct s_cord
 	float   ystep_h;
     float   ystep_v;
 	float	distance;
+	bool is_player_facing_up;
+	bool is_player_facing_left;
+	int sign;
 	bool is_vertical;
 	bool is_horizontal;
 
