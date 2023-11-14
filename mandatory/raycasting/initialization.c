@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 22:06:06 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/13 12:32:49 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:06:29 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_all_data	*init_data(t_all_data *data)
 	data->cord = (t_cord *)malloc(sizeof(t_cord));
 	data->map = (t_map *)malloc(sizeof(t_map));
 	data->dir = (t_direc *)malloc(sizeof(t_direc));
+	data->mouse = (t_mouse *)malloc(sizeof(t_mouse));
 	return (data);
 }
 

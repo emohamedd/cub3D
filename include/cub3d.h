@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 20:38:08 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:06:32 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,8 +134,16 @@ typedef struct s_player
 }t_player;
 
 
+typedef struct s_mouse
+{
+	int	x;
+	int	y;
+}	t_mouse;
+
+
 typedef struct s_all_data
 {
+	t_mouse			*mouse;
 	mlx_t *mlx;
 	mlx_image_t *img;
 	mlx_image_t *img_minimap;
@@ -160,6 +168,8 @@ typedef struct s_all_data
 /*----------------*RayCasting functions:----------------------------------------------*/
 t_all_data *init_data(t_all_data *data);
 void start_raycasting(t_all_data *data);
+void draw_map(t_all_data *data);
+void draw_player(t_all_data *data);
 void init(t_all_data *data);
 void init_mlx(t_all_data *data);
 void parsing(t_all_data *data, int ac , char **av);

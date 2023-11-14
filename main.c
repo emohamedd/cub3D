@@ -3,23 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 18:03:54 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:06:43 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "./include/cub3d.h"
 
+void	mouse_handler(void *param)
+{
+	int32_t	x;
+	int32_t	y;
+	int32_t	dx;
+	t_all_data	*mlx;
 
+	mlx = (t_all_data *)param;
+	mlx_get_mouse_pos(mlx->mlx, &x, &y);
+	if (x > WIDTH)
+		mlx->player->rotation_angle += 0.01;
+	if (x < 0)
+		mlx->player->rotation_angle -= 0.01;
+	dx = x - mlx->mouse->x;
+	mlx->player->rotation_angle += dx * 0.001;
+	mlx->mouse->x = x;
+	mlx->mouse->y = y;
+	draw_map(mlx);
+	draw_player(mlx);
+
+	// render_player(mlx);
+}
 void raycasting(t_all_data *data)
 {
 
     init(data);
     drawing(data);
     mlx_key_hook(data->mlx, &my_keyhook, data);
+    mlx_loop_hook(data->mlx, mouse_handler, data);
     mlx_image_to_window(data->mlx, data->img, 0, 0);
     mlx_image_to_window(data->mlx, data->img_minimap, 0, 0);
     mlx_loop(data->mlx);

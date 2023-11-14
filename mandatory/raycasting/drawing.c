@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:04:14 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/13 12:30:32 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:00:52 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,5 +135,7 @@ void	draw_ceil_floor(t_all_data *data)
 void	drawing(t_all_data *data)
 {
 	draw_ceil_floor(data);
-	start_raycasting(data);
+	// start_raycasting(data);
+	draw_map(data);
+	draw_player(data);
 }
