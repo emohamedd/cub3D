@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 21:15:22 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/15 16:57:06 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 17:02:49 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	trim_and_replace(char *str, char replace, char *trim)
 {
 	int	j;
 
+	(void)replace;
 	j = 0;
 	while (str[j])
 	{

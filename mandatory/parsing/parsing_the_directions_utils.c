@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_the_directions_utils.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 21:15:22 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/14 21:18:28 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 17:00:50 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	trim_and_replace(char *str, char replace, char *trim)
 	int	j;
 
 	j = 0;
+	(void)replace;
 	while (str[j])
 	{
 		if (str[j] == ' ' || str[j] == '\t')

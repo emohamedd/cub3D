@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:56:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/15 16:54:25 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 17:03:31 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	read_map_and_parse(int fd, t_map *map, t_direc *dir)
 	char	*tmp;
 
 	i = 0;
+	(void)dir;
 	line = get_next_line(fd);
 	check_file_opening(fd, line);
 	check_empty_map(line);
@@ -43,6 +44,7 @@ void	read_map_and_parse(int fd, t_map *map, t_direc *dir)
 
 void	validate_and_exit_if_invalid_map(t_map *map, t_direc *dir)
 {
+	(void)dir;
 	map_parse(map);
 	check_and_exit_if_invalid_map(map);
 }

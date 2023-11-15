@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 21:22:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/15 16:57:53 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 17:03:07 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	check_and_exit_if_invalid_map(t_map *map)
 
 void	check_file_opening(int fd, char *line)
 {
+	(void)line;
 	if (fd == -1)
 		print_err("ERROR : Failed to open file\n");
 }
