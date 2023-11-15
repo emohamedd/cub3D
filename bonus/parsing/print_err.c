@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   print_err.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 12:38:12 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/15 14:35:01 by emohamed         ###   ########.fr       */
+/*   Created: 2023/10/07 12:29:48 by emohamed          #+#    #+#             */
+/*   Updated: 2023/11/13 14:45:46 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../include/cub3d.h"
+#include "../../libft/libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	print_err(char *s)
 {
-	size_t	sizee;
-	void	*p;
-
-	p = NULL;
-	sizee = count * size;
-	p = malloc(sizee);
-	if (!p)
-		return (NULL);
-	ft_bzero(p, sizee);
-	return (p);
+	write(2, "Error\n", 6);
+	ft_putstr_fd(s, 2);
+	exit(1);
 }

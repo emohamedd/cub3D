@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 11:59:19 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/13 12:09:24 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:35:38 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		j++;
 	}
 	p[i + j] = '\0';
-	// free((char *)s1);
 	return (p);
 }

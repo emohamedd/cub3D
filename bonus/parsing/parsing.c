@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 12:38:12 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/15 14:35:01 by emohamed         ###   ########.fr       */
+/*   Created: 2023/11/14 21:10:51 by emohamed          #+#    #+#             */
+/*   Updated: 2023/11/14 21:11:00 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../include/cub3d.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	parsing(t_all_data *data, int ac, char **av)
 {
-	size_t	sizee;
-	void	*p;
+	int	fd;
 
-	p = NULL;
-	sizee = count * size;
-	p = malloc(sizee);
-	if (!p)
-		return (NULL);
-	ft_bzero(p, sizee);
-	return (p);
+	if (ac != 2)
+		print_err("Wrong number of arguments\n");
+	else
+	{
+		fd = open(av[1], O_RDONLY);
+		check_file_cub(av[1]);
+		if (fd == -1)
+		{
+			print_err("File not found\n");
+		}
+		else
+			readfile(fd, data->map, data->dir);
+		load_textures(data);
+	}
 }

@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   check_file_name.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 12:38:12 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/15 14:35:01 by emohamed         ###   ########.fr       */
+/*   Created: 2023/10/07 13:09:59 by emohamed          #+#    #+#             */
+/*   Updated: 2023/11/14 17:03:11 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../include/cub3d.h"
+#include "../../libft/libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+int	check_file_cub(char *file)
 {
-	size_t	sizee;
-	void	*p;
+	int	len;
 
-	p = NULL;
-	sizee = count * size;
-	p = malloc(sizee);
-	if (!p)
-		return (NULL);
-	ft_bzero(p, sizee);
-	return (p);
+	len = ft_strlen(file);
+	if (ft_strncmp(file + (len - 4), ".cub", 4) == 0)
+		return (1);
+	else
+	{
+		print_err("The string does not end with .cub\n");
+	}
+	return (0);
 }
