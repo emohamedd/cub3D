@@ -1,5 +1,8 @@
 # Cub3D 42 Network Project Readme
 
+## Game Simulation :
+<img width="1498" alt="Screen Shot 2023-11-15 at 7 29 17 PM" src="https://github.com/emohamedd/cub3D/assets/102475281/b88d3a99-8d26-4124-bfbd-9fc0c5497499">
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Project Description](#project-description)
@@ -160,3 +163,4 @@ Replace path_to_map.cub with the path to your map file. The map file contains in
    ## Right Arrow: Rotate camera right
    ## Left Arrow: Rotate camera left
    ## Esc: Exit the game
+
