@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub.h"
 #include "../../libft/libft.h"
+#include "../cub.h"
 
 void	check_vertical_intersection(t_all_data *mlx, float *ray_angle)
 {

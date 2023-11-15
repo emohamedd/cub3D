@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:26:14 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/15 16:31:19 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:58:53 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	free_all_data(t_all_data *data)
 
 int	main(int ac, char **av)
 {
-	int			fd;
 	t_all_data	*data;
 
 	data = init_data(data);

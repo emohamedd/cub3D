@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 16:49:17 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/15 16:24:37 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:41:19 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,4 @@ void	draw_player(t_all_data *data)
 		}
 		x++;
 	}
-	start_raycasting(data);
 }

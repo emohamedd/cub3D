@@ -6,14 +6,14 @@
 #    By: houattou <houattou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by emohamed          #+#    #+#              #
-#    Updated: 2023/11/15 16:32:37 by houattou         ###   ########.fr        #
+#    Updated: 2023/11/15 16:51:42 by houattou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 	 
 CC = cc
-CFLAGS =  -O3 #-fsanitize=address -g
+CFLAGS =  -O3 #-Wall -Werror -Wextra
 
 
 SRCS = ./mandatory/raycasting/coordination_of_player.c   main.c ./mandatory/raycasting/update_player.c \

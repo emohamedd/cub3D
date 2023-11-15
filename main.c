@@ -6,12 +6,11 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/15 15:36:34 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:49:00 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/cub3d.h"
-
 
 void	raycasting(t_all_data *data)
 {
@@ -36,9 +35,9 @@ void	free_all_data(t_all_data *data)
 
 int	main(int ac, char **av)
 {
-	int			fd;
 	t_all_data	*data;
 
+	data = NULL;
 	data = init_data(data);
 	parsing(data, ac, av);
 	raycasting(data);

@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 20:06:20 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/13 20:47:58 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:49:10 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ void	check_horizontal_intersection(t_all_data *mlx, float *ray_angle)
 
 void	get_horizontal_intersection(t_all_data *mlx, float ray_angle)
 {
-	bool	is_ray_facing_up;
-
 	mlx->cord->sign = 1;
 	mlx->cord->ystep_h = 0;
 	mlx->cord->ystep_h = 0;
