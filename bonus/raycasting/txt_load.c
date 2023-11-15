@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   txt_load.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 17:38:13 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/15 14:28:03 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:18:31 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "../cub.h"
 
 void	load_textures(t_all_data *data)
 {

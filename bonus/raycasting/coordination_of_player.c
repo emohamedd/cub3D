@@ -6,11 +6,11 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 11:44:34 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/13 12:29:06 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:17:35 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "../cub.h"
 
 float	convert_degree(float degree)
 {

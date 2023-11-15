@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:27:41 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/15 15:28:36 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:20:12 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,7 @@ typedef struct s_player
 	bool			is_ray_facing_up;
 	float			dis_h;
 	float			dis_v;
+	float			fov_angle;
 
 }					t_player;
 

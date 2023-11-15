@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fulling_directions.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 10:45:35 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/14 20:57:42 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:16:26 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "../cub.h"
 
 int	handle_color_key(t_direc *dir)
 {

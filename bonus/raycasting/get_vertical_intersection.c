@@ -6,11 +6,11 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 11:03:35 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/13 21:06:31 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:17:55 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "../cub.h"
 #include "../../libft/libft.h"
 
 void	check_vertical_intersection(t_all_data *mlx, float *ray_angle)

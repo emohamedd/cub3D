@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   readfile.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:56:34 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/14 21:24:12 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:17:09 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../get_line/get_next_line.h"
-#include "../../include/cub3d.h"
+#include "../cub.h"
 #include "../../libft/libft.h"
 
 void	read_map_and_parse(int fd, t_map *map, t_direc *dir)

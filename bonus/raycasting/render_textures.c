@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   render_textures.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:46:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/15 14:28:24 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:18:24 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
-#include <math.h>
+#include "../cub.h"
+
 
 int	get_color_from_texture(int x, int y, mlx_texture_t *texture)
 {

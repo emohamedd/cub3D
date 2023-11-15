@@ -6,11 +6,11 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 22:06:06 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/15 10:54:48 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:20:47 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "../cub.h"
 
 t_all_data	*init_data(t_all_data *data)
 {
@@ -22,6 +22,7 @@ t_all_data	*init_data(t_all_data *data)
 	data->mouse = (t_mouse *)malloc(sizeof(t_mouse));
 	data->mouse->x = 0;
 	data->mouse->y = 0;
+	data->player->fov_angle = convert_degree(60);
 	return (data);
 }
 

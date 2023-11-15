@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_file_name.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 13:09:59 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/14 17:03:11 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:16:00 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "../cub.h"
 #include "../../libft/libft.h"
 
 int	check_file_cub(char *file)

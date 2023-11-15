@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   draw_stars.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:24:49 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/15 14:26:45 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:17:39 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "../cub.h"
 
 void	initialize_star_parameters(t_all_data *data)
 {
