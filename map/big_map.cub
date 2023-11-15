@@ -1,10 +1,10 @@
-SO textures/0.png
+SO textures/a1.png
 
-NO  textures/00.png
+NO  textures/a2.png
 
-EA textures/01.png
+EA textures/a3.png
 
-WE textures/02.png
+WE textures/a4.png
 
 C 0,0,0
 F 0,0,0
