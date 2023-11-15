@@ -6,7 +6,7 @@
 #    By: houattou <houattou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by emohamed          #+#    #+#              #
-#    Updated: 2023/11/15 16:27:20 by houattou         ###   ########.fr        #
+#    Updated: 2023/11/15 16:32:37 by houattou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRCS = ./mandatory/raycasting/coordination_of_player.c   main.c ./mandatory/rayc
 	   
 
 
-SRCS_BONUS = ./bonus/raycasting/coordination_of_player.c   main.c ./bonus/raycasting/update_player.c \
+SRCS_BONUS = ./bonus/raycasting/coordination_of_player.c   ./bonus/main_bonus.c ./bonus/raycasting/update_player.c \
 	   ./bonus/raycasting/render_textures.c ./bonus/raycasting/check_wall.c ./bonus/raycasting/raycasting.c \
 	   ./bonus/raycasting/get_vertical_intersection.c  ./bonus/raycasting/get_horizontal_intersection.c \
 	   ./bonus/raycasting/drawing_bonus.c   ./bonus/raycasting/math.c \
