@@ -3,42 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   drawing_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 16:49:17 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/15 14:29:39 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:41:19 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
-
-void	draw_line(mlx_image_t *img, float X0, float Y0, float X1, float Y1,
-		int color)
-{
-	float	dx;
-	float	dy;
-	int		steps;
-	float	xinc;
-	float	yinc;
-	float	X;
-	float	Y;
-
-	dx = X1 - X0;
-	dy = Y1 - Y0;
-	steps = fabs(dx) > fabs(dy) ? fabs(dx) : fabs(dy);
-	xinc = dx / (float)steps;
-	yinc = dy / (float)steps;
-	X = X0;
-	Y = Y0;
-	for (int i = 0; i <= steps; i++)
-	{
-		mlx_put_pixel(img, X, Y, color);
-		if (img == NULL)
-			break ;
-		X += xinc;
-		Y += yinc;
-	}
-}
+#include "../cub.h"
 
 void	render_single_tile(mlx_image_t *img, int x, int y, unsigned int color)
 {
@@ -108,5 +80,4 @@ void	draw_player(t_all_data *data)
 		}
 		x++;
 	}
-	start_raycasting(data);
 }

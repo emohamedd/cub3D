@@ -6,11 +6,11 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:48:29 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/14 13:22:35 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:55:15 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "../cub.h"
 
 bool	check_if_have_wall(t_all_data *data, float x, float y)
 {

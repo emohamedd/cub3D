@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   readfile_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 21:22:33 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/14 21:24:35 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 17:01:12 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	check_and_exit_if_invalid_map(t_map *map)
 
 void	check_file_opening(int fd, char *line)
 {
+	(void)line;
 	if (fd == -1)
 		print_err("ERROR : Failed to open file\n");
 }

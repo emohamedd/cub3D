@@ -3,36 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   cub.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:27:41 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/15 15:28:36 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:02:35 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef CUB_H
+# define CUB_H
 # define SIZE_TITLE 60
-# define MAP_MUM_ROWS 25
-# define MAP_MUM_COLS 11
-# define FPS 30
-# define WIDTH_MAP 25
-# define HEIGHT_MAP 11
 # define WIDTH 1500
 # define HEIGHT 1000
-# define FOV_ANGLE (60 * (M_PI / 180))
-# define WALL_STRIP_WIDTH 1
-# define WALL_STRIO_WIDTH 4
-# define MUM_RAYS WIDTH / 4
 # define MINIMAP_SCAL_FACTOR 0.2
-
 # define TRUE 1
 # define FALSE 0
+# include "/Users/emohamed/Desktop/MLX42/include/MLX42/MLX42.h"
 
-# define WALL_STRIO_WIDTH 4
-# include "/Users/houattou/Desktop/MLX42/include/MLX42/MLX42.h"
-
-// # include "../../get_line/get_next_line.h"
 # include "../libft/libft.h"
 # include <errno.h>
 # include <fcntl.h>
@@ -43,8 +30,6 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-
-// this partie for parsing :
 
 typedef struct s_textrs
 {
@@ -93,7 +78,6 @@ typedef struct s_direc
 
 }					t_direc;
 
-// this part for raycasting:
 typedef struct s_cord
 {
 	float			xstep;
@@ -122,6 +106,7 @@ typedef struct s_player
 	bool			is_ray_facing_up;
 	float			dis_h;
 	float			dis_v;
+	float			fov_angle;
 
 }					t_player;
 
@@ -179,7 +164,6 @@ void				draw_player(t_all_data *data);
 void				init(t_all_data *data);
 void				init_mlx(t_all_data *data);
 void				parsing(t_all_data *data, int ac, char **av);
-void				draw_map(t_all_data *data);
 void				drawing(t_all_data *data);
 float				distance_between_points(float x1, float y1, float x2,
 						float y2);
@@ -189,23 +173,16 @@ void				initialize_player(t_all_data *data);
 void				draw_player(t_all_data *data);
 void				ratate_player(mlx_key_data_t keydata, t_all_data *data);
 void				update_player(t_all_data *mlx, mlx_key_data_t keydata);
-void				draw_line(mlx_image_t *image, float x1, float y1, float x2,
-						float y2, int color);
 void				my_keyhook(mlx_key_data_t keydata, void *param);
 bool				is_has_wall(t_all_data *mlx, float x, float y);
 bool				check_if_have_wall(t_all_data *data, float x, float y);
 float				normalize_angle(float angle);
-void				render_rays(t_all_data *data);
-
-void				cast_ray(t_all_data *data, float angle_ray, int i);
-t_all_data			*draw_rays(t_all_data *data, int id, float ray_angle);
 
 void				get_horizontal_intersection(t_all_data *mlx,
 						float ray_angle);
 void				get_vertical_intersection(t_all_data *mlx, float ray_angle);
 void				draw_wall_with_texture(t_all_data *data, int id, float xtx,
 						mlx_texture_t *texture);
-void				separ_direc_value(t_all_data *data);
 void				load_textures(t_all_data *data);
 /*---------PARSING-------*/
 void				print_err(char *s);
@@ -236,6 +213,5 @@ void				check_empty_map(char *line);
 void				check_empty_string(char *line);
 void				check_and_exit_if_empty_string(char *line);
 void				add_stars_to_sky(t_all_data *data);
-// void	readfile(int fd, t_map *map, t_direc *dir);
 
 #endif

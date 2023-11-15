@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   key_color_range.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 10:38:42 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/14 21:01:43 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:54:56 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "../cub.h"
 
 void	replace_commas_with_separator(t_direc *dir)
 {

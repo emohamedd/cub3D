@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:26:14 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/15 15:29:18 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 17:02:32 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ void	free_all_data(t_all_data *data)
 
 int	main(int ac, char **av)
 {
-	int			fd;
 	t_all_data	*data;
 
+	data = NULL;
 	data = init_data(data);
 	parsing(data, ac, av);
 	check_valid_width_height(data->map);

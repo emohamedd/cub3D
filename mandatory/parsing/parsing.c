@@ -6,12 +6,11 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 21:10:51 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/15 15:35:50 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:40:27 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/cub3d.h"
-
 
 void	check_valid_width_height(t_map *map)
 {
@@ -21,6 +20,7 @@ void	check_valid_width_height(t_map *map)
 		map->height = HEIGHT;
 	}
 }
+
 void	parsing(t_all_data *data, int ac, char **av)
 {
 	int	fd;

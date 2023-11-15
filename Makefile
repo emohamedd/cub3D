@@ -6,14 +6,14 @@
 #    By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by emohamed          #+#    #+#              #
-#    Updated: 2023/11/15 16:20:36 by emohamed         ###   ########.fr        #
+#    Updated: 2023/11/15 19:04:57 by emohamed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 	 
 CC = cc
-CFLAGS =  -O3 #-fsanitize=address -g
+CFLAGS =  -O3 -Wall -Werror -Wextra
 
 
 SRCS = ./mandatory/raycasting/coordination_of_player.c   main.c ./mandatory/raycasting/update_player.c \
@@ -27,7 +27,7 @@ SRCS = ./mandatory/raycasting/coordination_of_player.c   main.c ./mandatory/rayc
 	   
 
 
-SRCS_BONUS = ./bonus/raycasting/coordination_of_player.c   main.c ./bonus/raycasting/update_player.c \
+SRCS_BONUS = ./bonus/raycasting/coordination_of_player.c   ./bonus/main_bonus.c ./bonus/raycasting/update_player.c \
 	   ./bonus/raycasting/render_textures.c ./bonus/raycasting/check_wall.c ./bonus/raycasting/raycasting.c \
 	   ./bonus/raycasting/get_vertical_intersection.c  ./bonus/raycasting/get_horizontal_intersection.c \
 	   ./bonus/raycasting/drawing_bonus.c   ./bonus/raycasting/math.c \
@@ -72,7 +72,7 @@ display_banner:
 	@echo "$(GREEN)		888    888 888     888 888    888  888    888 888    888$(RESET)" 
 	@echo "$(GREEN)		Y88b  d88P Y88b. .d88P 888   d88P  Y88b  d88P 888  .d88P$(RESET)" 
 	@echo "$(GREEN)		  Y8888P     Y88888P   8888888P      Y8888P   8888888P$(RESET)"
-	@echo "$(YELLOW)						By emohamed && houattou$(RESET)"
+	@echo "$(YELLOW)				By Med_Amine_Elg && Hassna_Ouattou$(RESET)"
 
 bonus: $(OBJS_BONUS)
 	@make -C libft
@@ -83,26 +83,26 @@ bonus: $(OBJS_BONUS)
 clean:
 	@make -C libft/ clean
 	@make -C get_line/ clean
-	@rm -f $(OBJS) $(OBJS_BONUS)
+	@rm -f $(OBJS) 
 	@echo "$(GREEN)✅ Cleaned up object files$(RESET)"
 
 fclean: clean
 	@make -C libft/ fclean
 	@make -C get_line/ fclean
-	@rm -f $(NAME) $(NAME_BONUS)
+	@rm -f $(NAME) 
 	@echo "$(GREEN)✅ Cleaned up $(NAME) and $(NAME_BONUS)$(RESET)"
+clean_bonus:
+	@make -C libft/ clean
+	@make -C get_line/ clean
+	@rm -f  $(OBJS_BONUS)
+	@echo "$(GREEN)✅ Cleaned up bonus object files$(RESET)"
 
-# clean:
-# 	@make -C libft/ clean
-# 	@make -C get_line/ clean
-# 	@rm -f $(OBJS)
-# 	@echo "$(GREEN)✅ Cleaned up object files$(RESET)"
-
-# fclean: clean
-# 	@make -C libft/ fclean
-# 	@make -C get_line/ fclean
-# 	@rm -f $(NAME) 
-# 	@echo "$(GREEN)✅ Cleaned up $(NAME) and $(RESET)"
+fclean_bonus: clean_bonus
+	@make -C libft/ fclean
+	@make -C get_line/ fclean
+	@rm -f  $(NAME_BONUS)
+	@echo "$(GREEN)✅ Cleaned up  $(NAME_BONUS)$(RESET)"
 
 re: fclean all
-# re: fclean all
+re_bonus: fclean_bonus bonus
+

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   update_player.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:43:54 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/14 16:54:46 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:18:36 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "../cub.h"
 
 void	ratate_player(mlx_key_data_t keydata, t_all_data *data)
 {

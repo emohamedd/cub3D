@@ -6,11 +6,11 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 12:12:48 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/13 12:34:09 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:18:07 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "../cub.h"
 
 float	distance_between_points(float x1, float y1, float x2, float y2)
 {

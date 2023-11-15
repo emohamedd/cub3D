@@ -6,11 +6,11 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:04:14 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/15 16:14:16 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:02:43 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "../cub.h"
 
 int	get_rgba(int r, int g, int b, int a)
 {
@@ -55,4 +55,5 @@ void	drawing(t_all_data *data)
 	draw_ceil_floor(data);
 	draw_map(data);
 	draw_player(data);
+	start_raycasting(data);
 }

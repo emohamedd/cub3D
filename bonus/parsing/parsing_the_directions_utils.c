@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_the_directions_utils.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 21:15:22 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/14 21:18:28 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 17:02:49 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "../cub.h"
 
 int	len_of_direction(t_map *map)
 {
@@ -26,6 +26,7 @@ void	trim_and_replace(char *str, char replace, char *trim)
 {
 	int	j;
 
+	(void)replace;
 	j = 0;
 	while (str[j])
 	{

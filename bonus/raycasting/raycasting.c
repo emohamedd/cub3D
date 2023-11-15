@@ -6,11 +6,11 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:54:28 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/15 15:57:55 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:39:35 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/cub3d.h"
+#include "../cub.h"
 
 t_all_data	*smaller_distance(t_all_data *data)
 {
@@ -30,10 +30,6 @@ t_all_data	*smaller_distance(t_all_data *data)
 		data->cord->is_horizontal = FALSE;
 		data->cord->is_vertical = TRUE;
 	}
-	draw_line(data->img_minimap, data->player->x * MINIMAP_SCAL_FACTOR,
-		data->player->y * MINIMAP_SCAL_FACTOR, data->cord->xstep
-		* MINIMAP_SCAL_FACTOR, data->cord->ystep * MINIMAP_SCAL_FACTOR,
-		ft_pixel(255, 0, 0, 255));
 	return (data);
 }
 
@@ -101,12 +97,13 @@ void	start_raycasting(t_all_data *data)
 
 	id = 0;
 	num_of_rays = WIDTH;
-	data->ray_angle = normalize_angle(data->player->rotation_angle - (data->player->fov_angle
-				/ 2));
+	data->ray_angle = normalize_angle(data->player->rotation_angle
+			- (data->player->fov_angle / 2));
 	while (id < num_of_rays)
 	{
 		cast_rays(data, id, data->ray_angle);
-		data->ray_angle += normalize_angle(data->player->fov_angle / num_of_rays);
+		data->ray_angle += normalize_angle(data->player->fov_angle
+				/ num_of_rays);
 		id++;
 	}
 }
