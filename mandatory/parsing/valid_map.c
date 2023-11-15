@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 12:36:44 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/14 21:13:24 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:21:07 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int	valid_map(t_map *map)
 	int	i;
 	int	j;
 
-	i = 0;
-	while (map->map[i])
+	i = -1;
+	while (map->map[++i])
 	{
-		j = 0;
-		while (map->map[i][j])
+		j = -1;
+		while (map->map[i][++j])
 		{
 			if (map->map[i][j] == '0' || map->map[i][j] == 'E'
 				|| map->map[i][j] == 'S' || map->map[i][j] == 'N'
@@ -46,9 +46,7 @@ int	valid_map(t_map *map)
 						+ 1][j] == '\0'))
 					return (0);
 			}
-			j++;
 		}
-		i++;
 	}
 	return (1);
 }
