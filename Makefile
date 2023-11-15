@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+         #
+#    By: houattou <houattou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by emohamed          #+#    #+#              #
-#    Updated: 2023/11/15 14:37:46 by emohamed         ###   ########.fr        #
+#    Updated: 2023/11/15 15:45:11 by houattou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,11 @@ CFLAGS =  -O3 #-fsanitize=address -g
 SRCS = ./mandatory/raycasting/coordination_of_player.c   main.c ./mandatory/raycasting/update_player.c \
 	   ./mandatory/raycasting/render_textures.c ./mandatory/raycasting/check_wall.c ./mandatory/raycasting/raycasting.c \
 	   ./mandatory/raycasting/get_vertical_intersection.c  ./mandatory/raycasting/get_horizontal_intersection.c \
-	   ./mandatory/raycasting/drawing_bonus.c   ./mandatory/raycasting/math.c \
+	   ./mandatory/raycasting/math.c \
 	   ./mandatory/parsing/check_file_name.c ./mandatory/parsing/cub_utils.c ./mandatory/parsing/parsing_the_directions.c ./mandatory/parsing/free_func.c ./mandatory/parsing/key_color_range.c ./mandatory/parsing/fulling_directions.c \
 	   ./mandatory/parsing/parsing_the_map.c ./mandatory/parsing/print_err.c ./mandatory/parsing/parsing_the_directions_utils.c ./mandatory/parsing/readfile_utils.c \
 	   ./mandatory/parsing/valid_map.c  ./mandatory/parsing/readfile.c ./mandatory/raycasting/txt_load.c ./mandatory/raycasting/drawing.c ./mandatory/raycasting/initialization.c \
-	   ./mandatory/parsing/parsing.c ./mandatory/raycasting/draw_stars.c \
+	   ./mandatory/parsing/parsing.c \
 	   
 
 
@@ -48,7 +48,7 @@ GREEN = \033[0;32m
 YELLOW = \033[0;33m
 RESET = \033[0m
 GLFW = $(shell brew --prefix glfw)
-FRAMEWORKS = /Users/emohamed/Desktop/MLX42/build/libmlx42.a -Iinclude -lglfw -L $(GLFW)/lib/ -framework Cocoa -framework OpenGL -framework IOKit
+FRAMEWORKS = /Users/houattou/Desktop/MLX42/build/libmlx42.a -Iinclude -lglfw -L $(GLFW)/lib/ -framework Cocoa -framework OpenGL -framework IOKit
 
 all: $(NAME) display_banner
 

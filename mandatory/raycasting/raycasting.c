@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:54:28 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/15 11:09:37 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:56:54 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,6 @@ t_all_data	*smaller_distance(t_all_data *data)
 		data->cord->is_horizontal = FALSE;
 		data->cord->is_vertical = TRUE;
 	}
-	draw_line(data->img_minimap, data->player->x * MINIMAP_SCAL_FACTOR,
-		data->player->y * MINIMAP_SCAL_FACTOR, data->cord->xstep
-		* MINIMAP_SCAL_FACTOR, data->cord->ystep * MINIMAP_SCAL_FACTOR,
-		ft_pixel(255, 0, 0, 255));
 	return (data);
 }
 
@@ -57,7 +53,7 @@ t_all_data	*get_valid_distance(t_all_data *data, float ray_angle)
 t_all_data	*calcul_wall_height(t_all_data *data)
 {
 	data->wall_height = (SIZE_TITLE / data->cord->distance) * (WIDTH / 2)
-		/ tan(FOV_ANGLE / 2);
+		/ tan(data->player->fov_angle / 2);
 	data->exact_wall_height = data->wall_height;
 	if (data->wall_height > HEIGHT)
 		data->wall_height = HEIGHT;
@@ -101,12 +97,13 @@ void	start_raycasting(t_all_data *data)
 
 	id = 0;
 	num_of_rays = WIDTH;
-	data->ray_angle = normalize_angle(data->player->rotation_angle - (FOV_ANGLE
-				/ 2));
+	data->ray_angle = normalize_angle(data->player->rotation_angle
+			- (data->player->fov_angle / 2));
 	while (id < num_of_rays)
 	{
 		cast_rays(data, id, data->ray_angle);
-		data->ray_angle += normalize_angle(FOV_ANGLE / num_of_rays);
+		data->ray_angle += normalize_angle(data->player->fov_angle
+				/ num_of_rays);
 		id++;
 	}
 }

@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 21:10:51 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/14 21:11:00 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:35:50 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/cub3d.h"
 
+
+void	check_valid_width_height(t_map *map)
+{
+	if (map->width > WIDTH || map->height > HEIGHT)
+	{
+		map->width = WIDTH;
+		map->height = HEIGHT;
+	}
+}
 void	parsing(t_all_data *data, int ac, char **av)
 {
 	int	fd;
@@ -30,4 +39,5 @@ void	parsing(t_all_data *data, int ac, char **av)
 			readfile(fd, data->map, data->dir);
 		load_textures(data);
 	}
+	check_valid_width_height(data->map);
 }
