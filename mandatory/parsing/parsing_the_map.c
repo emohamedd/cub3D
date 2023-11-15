@@ -6,17 +6,17 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 10:00:37 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/14 17:05:02 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/14 21:10:17 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/cub3d.h"
 
-int lenght_of_the_long_line_in_map(t_map * map)
+int	lenght_of_the_long_line_in_map(t_map *map)
 {
-	int i;
-	int j;
-	int max;
+	int	i;
+	int	j;
+	int	max;
 
 	i = 0;
 	j = 0;
@@ -35,9 +35,9 @@ int lenght_of_the_long_line_in_map(t_map * map)
 	return (max);
 }
 
-int only_size_of_map(char **s)
+int	only_size_of_map(char **s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])
@@ -47,9 +47,9 @@ int only_size_of_map(char **s)
 	return (i - 6);
 }
 
-int map_height(t_map *map)
+int	map_height(t_map *map)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (map->map[i])
@@ -58,9 +58,10 @@ int map_height(t_map *map)
 	}
 	return (i);
 }
-void player_direction(t_map *map)
+
+void	player_direction(t_map *map)
 {
-    int	x;
+	int	x;
 	int	y;
 
 	y = 0;
@@ -83,11 +84,11 @@ void player_direction(t_map *map)
 	}
 }
 
-void map_parse(t_map *map)
+void	map_parse(t_map *map)
 {
-	int j;
-	int i;
-	int len;
+	int	j;
+	int	i;
+	int	len;
 
 	j = 6;
 	i = 0;
@@ -99,7 +100,7 @@ void map_parse(t_map *map)
 	map->map = malloc(sizeof(char *) * (len + 1));
 	while (map->all_map && map->all_map[j])
 	{
-		map->map[i] = ft_strdup(map->all_map[j]); 
+		map->map[i] = ft_strdup(map->all_map[j]);
 		i++;
 		j++;
 	}

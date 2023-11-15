@@ -29,9 +29,9 @@ int	ft_strcmp(char *s1, char *s2)
 
 int	new_atoi(const char *str)
 {
-	int		i;
-	int		stock;
-	int		sign;
+	int	i;
+	int	stock;
+	int	sign;
 
 	i = 0;
 	stock = 0;
