@@ -6,7 +6,7 @@
 #    By: houattou <houattou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/15 11:51:02 by emohamed          #+#    #+#              #
-#    Updated: 2023/11/15 15:45:11 by houattou         ###   ########.fr        #
+#    Updated: 2023/11/15 16:27:20 by houattou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ display_banner:
 	@echo "$(GREEN)		888    888 888     888 888    888  888    888 888    888$(RESET)" 
 	@echo "$(GREEN)		Y88b  d88P Y88b. .d88P 888   d88P  Y88b  d88P 888  .d88P$(RESET)" 
 	@echo "$(GREEN)		  Y8888P     Y88888P   8888888P      Y8888P   8888888P$(RESET)"
-	@echo "$(YELLOW)						By emohamed && houattou$(RESET)"
+	@echo "$(YELLOW)						By Med_Amine_Elg && Hassna_Ouattou$(RESET)"
 
 bonus: $(OBJS_BONUS)
 	@make -C libft
@@ -92,17 +92,5 @@ fclean: clean
 	@rm -f $(NAME) $(NAME_BONUS)
 	@echo "$(GREEN)✅ Cleaned up $(NAME) and $(NAME_BONUS)$(RESET)"
 
-# clean:
-# 	@make -C libft/ clean
-# 	@make -C get_line/ clean
-# 	@rm -f $(OBJS)
-# 	@echo "$(GREEN)✅ Cleaned up object files$(RESET)"
+re: fclean all
 
-# fclean: clean
-# 	@make -C libft/ fclean
-# 	@make -C get_line/ fclean
-# 	@rm -f $(NAME) 
-# 	@echo "$(GREEN)✅ Cleaned up $(NAME) and $(RESET)"
-
-re: fclean all bonus
-# re: fclean all
