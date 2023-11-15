@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/14 18:36:40 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:01:22 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 
 
 #define WALL_STRIO_WIDTH 4
-#include "/Users/emohamed/Desktop/MLX42/include/MLX42/MLX42.h"
+#include "/Users/houattou/Desktop/MLX42/include/MLX42/MLX42.h"
 
 
 // # include "../../get_line/get_next_line.h"
@@ -166,6 +166,7 @@ typedef struct s_all_data
 }t_all_data;
 
 /*----------------*RayCasting functions:----------------------------------------------*/
+float	convert_degree(float degree);
 t_all_data *init_data(t_all_data *data);
 void start_raycasting(t_all_data *data);
 void draw_map(t_all_data *data);

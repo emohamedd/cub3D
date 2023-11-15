@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_textures.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 10:46:22 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/14 17:24:03 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 10:27:19 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	draw_wall_with_texture(t_all_data *data, int id, float xtx,
 	wall_top_pixel = tmp_ystart;
 	while (data->y_start < data->y_end)
 	{
-		ytx = (data->y_start - wallTopPixel) * tx_inc;
+		ytx = (data->y_start - wall_top_pixel) * tx_inc;
 		
 		if (ytx >= texture->height)
 		{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:54:28 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/14 14:34:07 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/15 10:31:43 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,18 @@ t_all_data	*smaller_distance(t_all_data *data)
 		data->cord->ystep = data->cord->ystep_h;
 		data->cord->distance = data->player->dis_h;
 		data->cord->is_horizontal = TRUE;
+		data->cord->is_vertical = FALSE;
 	}
 	else
 	{
 		data->cord->xstep = data->cord->xstep_v;
 		data->cord->ystep = data->cord->ystep_v;
 		data->cord->distance = data->player->dis_v;
+		data->cord->is_horizontal = FALSE;
 		data->cord->is_vertical = TRUE;
 	}
+	draw_line(data->img_minimap, data->player->x*MINIMAP_SCAL_FACTOR, data->player->y*MINIMAP_SCAL_FACTOR,
+		data->cord->xstep*MINIMAP_SCAL_FACTOR, data->cord->ystep*MINIMAP_SCAL_FACTOR, ft_pixel(255, 0, 0, 255));
 	return (data);
 }
 
