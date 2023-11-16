@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_the_directions.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:33:48 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/15 16:55:57 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/16 12:43:46 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ void	check_for_duplicate_keys(t_map *map)
 	int	k;
 
 	j = 0;
-	k = 0;
 	while (j < map->dir_len)
 	{
+		k = 0;
 		while (k < map->dir_len)
 		{
-			if (j != k && ft_strncmp(map->direc[j], map->direc[k], 2) == 0)
+			if (j != k && ft_strncmp(map->direc[j], map->direc[k], 1) == 0)
 				print_err("ERROR : Duplicate key\n");
 			k++;
 		}

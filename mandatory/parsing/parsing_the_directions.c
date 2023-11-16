@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:33:48 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/14 21:18:17 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/16 12:42:42 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ void	check_for_duplicate_keys(t_map *map)
 	int	k;
 
 	j = 0;
-	k = 0;
 	while (j < map->dir_len)
 	{
+		k = 0;
 		while (k < map->dir_len)
 		{
-			if (j != k && ft_strncmp(map->direc[j], map->direc[k], 2) == 0)
+			if (j != k && ft_strncmp(map->direc[j], map->direc[k], 1) == 0)
 				print_err("ERROR : Duplicate key\n");
 			k++;
 		}
