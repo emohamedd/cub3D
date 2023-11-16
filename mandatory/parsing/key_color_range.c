@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 10:38:42 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/14 21:01:43 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/16 13:23:26 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,9 @@ void	check_key_color_range(t_direc *dir)
 	j = 0;
 	while (dir->value[i])
 	{
-		if (dir->value[i] == ',')
+		if (!ft_isdigit(dir->value[i]) && dir->value[i] != ',')
+			print_err("ERROR : Invalid Char in Colors\n");
+		else if (dir->value[i] == ',')
 			j++;
 		i++;
 	}
