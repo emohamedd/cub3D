@@ -1,0 +1,10 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/Users/emohamed/.brew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineSystem.cmake:211 (message)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      The system is: Darwin - 19.6.0 - x86_64
