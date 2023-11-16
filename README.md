@@ -1,5 +1,16 @@
 # Cub3D 42 Network Project Readme
 
+# Project Collaboration 
+
+First i want to express my  gratitude to my  project collaborator, Hasna Ouattou. Her dedication, skills, and passion for our project have been invaluable.
+
+**GitHub:** [Houattou](https://github.com/Houattou)
+
+Thank you, Hasna, for your hard work and commitment. 
+
+Best regards,
+
+
 ## Game Simulation :
 <img width="1498" alt="Screen Shot 2023-11-15 at 7 29 17 PM" src="https://github.com/emohamedd/cub3D/assets/102475281/b88d3a99-8d26-4124-bfbd-9fc0c5497499">
 
