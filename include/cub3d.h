@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/16 14:00:37 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:12:14 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # define TRUE 1
 # define FALSE 0
 # include "../libft/libft.h"
-# include "/Users/houattou/Desktop/MLX42/include/MLX42/MLX42.h"
+# include "/Users/emohamed/Desktop/MLX42/include/MLX42/MLX42.h"
 # include <fcntl.h>
 # include <math.h>
 # include <stdlib.h>

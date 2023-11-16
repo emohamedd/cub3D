@@ -15,22 +15,22 @@
 t_all_data	*init_data(t_all_data *data)
 {
 	data = (t_all_data *)malloc(sizeof(t_all_data));
-	if(!data)
+	if (!data)
 		return (NULL);
 	data->player = (t_player *)malloc(sizeof(t_player));
-	if(!data->player)
+	if (!data->player)
 		return (NULL);
 	data->cord = (t_cord *)malloc(sizeof(t_cord));
-	if(!data->cord)
+	if (!data->cord)
 		return (NULL);
 	data->map = (t_map *)malloc(sizeof(t_map));
-	if(!data->map)
+	if (!data->map)
 		return (NULL);
 	data->dir = (t_direc *)malloc(sizeof(t_direc));
-	if(!data->dir)
+	if (!data->dir)
 		return (NULL);
 	data->mouse = (t_mouse *)malloc(sizeof(t_mouse));
-	if(!data->mouse)
+	if (!data->mouse)
 		return (NULL);
 	data->mouse->x = 0;
 	data->mouse->y = 0;
@@ -41,10 +41,10 @@ t_all_data	*init_data(t_all_data *data)
 void	init_mlx(t_all_data *data)
 {
 	data->mlx = mlx_init(WIDTH, HEIGHT, "MLX42", true);
-    if(!data->mlx)
+	if (!data->mlx)
 		print_err("Error: mlx_init failed\n");
 	data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
-	if(!data->img)
+	if (!data->img)
 		print_err("Error: mlx_new_image failed\n");
 }
 

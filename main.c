@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/16 14:01:08 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:11:03 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(int ac, char **av)
 
 	data = NULL;
 	data = init_data(data);
-	if(data == NULL)
+	if (data == NULL)
 	{
 		free_all_data(data);
 		return (EXIT_FAILURE);

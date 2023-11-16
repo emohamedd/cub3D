@@ -6,16 +6,11 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:04:14 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/15 19:02:43 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:18:33 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub.h"
-
-int	get_rgba(int r, int g, int b, int a)
-{
-	return (r << 24 | g << 16 | b << 8 | a);
-}
 
 int32_t	ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a)
 {
@@ -35,12 +30,12 @@ void	draw_ceil_floor(t_all_data *data)
 		{
 			if (i < (HEIGHT) / 2)
 			{
-				mlx_put_pixel(data->img, j, i, get_rgba(data->dir->redc,
+				mlx_put_pixel(data->img, j, i, ft_pixel(data->dir->redc,
 						data->dir->greenc, data->dir->bluec, 255));
 			}
 			else
 			{
-				mlx_put_pixel(data->img, j, i, get_rgba(data->dir->redf,
+				mlx_put_pixel(data->img, j, i, ft_pixel(data->dir->redf,
 						data->dir->greenf, data->dir->bluef, 255));
 			}
 			j++;

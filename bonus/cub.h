@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:27:41 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/15 19:02:35 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:19:10 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,7 +167,6 @@ void				parsing(t_all_data *data, int ac, char **av);
 void				drawing(t_all_data *data);
 float				distance_between_points(float x1, float y1, float x2,
 						float y2);
-void				generate3d_projection(t_all_data *data);
 int32_t				ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void				initialize_player(t_all_data *data);
 void				draw_player(t_all_data *data);
