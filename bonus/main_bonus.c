@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:26:14 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/15 17:02:32 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:02:26 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ int	main(int ac, char **av)
 
 	data = NULL;
 	data = init_data(data);
+	if(data == NULL)
+	{
+		free_all_data(data);
+		return (EXIT_FAILURE);
+	}
 	parsing(data, ac, av);
 	check_valid_width_height(data->map);
 	raycasting(data);

@@ -6,7 +6,7 @@
 /*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 22:06:06 by houattou          #+#    #+#             */
-/*   Updated: 2023/11/15 16:20:47 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:03:22 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,23 @@
 t_all_data	*init_data(t_all_data *data)
 {
 	data = (t_all_data *)malloc(sizeof(t_all_data));
+	if(!data)
+		return (NULL);
 	data->player = (t_player *)malloc(sizeof(t_player));
+	if(!data->player)
+		return (NULL);
 	data->cord = (t_cord *)malloc(sizeof(t_cord));
+	if(!data->cord)
+		return (NULL);
 	data->map = (t_map *)malloc(sizeof(t_map));
+	if(!data->map)
+		return (NULL);
 	data->dir = (t_direc *)malloc(sizeof(t_direc));
+	if(!data->dir)
+		return (NULL);
 	data->mouse = (t_mouse *)malloc(sizeof(t_mouse));
+	if(!data->mouse)
+		return (NULL);
 	data->mouse->x = 0;
 	data->mouse->y = 0;
 	data->player->fov_angle = convert_degree(60);
@@ -29,8 +41,14 @@ t_all_data	*init_data(t_all_data *data)
 void	init_mlx(t_all_data *data)
 {
 	data->mlx = mlx_init(WIDTH, HEIGHT, "MLX42", true);
+	if(!data->mlx)
+		print_err("Error: mlx_init failed\n");
 	data->img = mlx_new_image(data->mlx, WIDTH, HEIGHT);
+	if(!data->img)
+		print_err("Error: mlx_new_image failed\n");
 	data->img_minimap = mlx_new_image(data->mlx, 1000, 900);
+	if(!data->img_minimap)
+		print_err("Error: mlx_new_image failed\n");
 }
 
 void	init(t_all_data *data)

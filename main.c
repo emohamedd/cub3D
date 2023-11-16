@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/16 12:53:07 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:01:08 by houattou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ int	main(int ac, char **av)
 
 	data = NULL;
 	data = init_data(data);
+	if(data == NULL)
+	{
+		free_all_data(data);
+		return (EXIT_FAILURE);
+	}
 	parsing(data, ac, av);
 	raycasting(data);
 	free_all_data(data);
