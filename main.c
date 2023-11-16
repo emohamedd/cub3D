@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: houattou <houattou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:02:58 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/15 16:49:00 by houattou         ###   ########.fr       */
+/*   Updated: 2023/11/16 12:53:07 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	raycasting(t_all_data *data)
 	drawing(data);
 	mlx_key_hook(data->mlx, &my_keyhook, data);
 	mlx_image_to_window(data->mlx, data->img, 0, 0);
-	mlx_image_to_window(data->mlx, data->img_minimap, 0, 0);
 	mlx_loop(data->mlx);
 }
 
@@ -29,8 +28,6 @@ void	free_all_data(t_all_data *data)
 		mlx_terminate(data->mlx);
 	if (data->img)
 		mlx_delete_image(data->mlx, data->img);
-	if (data->img_minimap)
-		mlx_delete_image(data->mlx, data->img_minimap);
 }
 
 int	main(int ac, char **av)

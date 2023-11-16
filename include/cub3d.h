@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 11:15:01 by emohamed          #+#    #+#             */
-/*   Updated: 2023/11/15 16:20:22 by emohamed         ###   ########.fr       */
+/*   Updated: 2023/11/16 13:01:40 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,9 @@
 # define FALSE 0
 # include "../libft/libft.h"
 # include "/Users/emohamed/Desktop/MLX42/include/MLX42/MLX42.h"
-# include <errno.h>
 # include <fcntl.h>
-# include <limits.h>
 # include <math.h>
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
 
 typedef struct s_textrs
@@ -133,9 +129,7 @@ typedef struct s_all_data
 	t_mouse			*mouse;
 	mlx_t			*mlx;
 	mlx_image_t		*img;
-	mlx_image_t		*img_minimap;
 	t_player		*player;
-
 	t_cord			*cord;
 	t_direc			*dir;
 	t_map			*map;
@@ -144,11 +138,8 @@ typedef struct s_all_data
 	int				wall_height;
 	int				y_start;
 	float			ray_angle;
-
 	float			xtx;
-
 	t_textrs		textrs;
-
 	int				y_end;
 
 }					t_all_data;
@@ -157,36 +148,24 @@ typedef struct s_all_data
 float				convert_degree(float degree);
 t_all_data			*init_data(t_all_data *data);
 void				start_raycasting(t_all_data *data);
-void				draw_map(t_all_data *data);
-void				draw_player(t_all_data *data);
 void				init(t_all_data *data);
 void				init_mlx(t_all_data *data);
 void				parsing(t_all_data *data, int ac, char **av);
-void				draw_map(t_all_data *data);
 void				drawing(t_all_data *data);
 float				distance_between_points(float x1, float y1, float x2,
 						float y2);
-void				generate3d_projection(t_all_data *data);
-int32_t				ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void				initialize_player(t_all_data *data);
-void				draw_player(t_all_data *data);
 void				ratate_player(mlx_key_data_t keydata, t_all_data *data);
 void				update_player(t_all_data *mlx, mlx_key_data_t keydata);
 void				my_keyhook(mlx_key_data_t keydata, void *param);
 bool				is_has_wall(t_all_data *mlx, float x, float y);
 bool				check_if_have_wall(t_all_data *data, float x, float y);
 float				normalize_angle(float angle);
-void				render_rays(t_all_data *data);
-
-void				cast_ray(t_all_data *data, float angle_ray, int i);
-t_all_data			*draw_rays(t_all_data *data, int id, float ray_angle);
-
 void				get_horizontal_intersection(t_all_data *mlx,
 						float ray_angle);
 void				get_vertical_intersection(t_all_data *mlx, float ray_angle);
 void				draw_wall_with_texture(t_all_data *data, int id, float xtx,
 						mlx_texture_t *texture);
-void				separ_direc_value(t_all_data *data);
 void				load_textures(t_all_data *data);
 /*---------PARSING functions------------------------------------------------*/
 void				print_err(char *s);
