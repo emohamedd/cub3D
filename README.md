@@ -175,3 +175,4 @@ Replace path_to_map.cub with the path to your map file. The map file contains in
    ## Left Arrow: Rotate camera left
    ## Esc: Exit the game
 
+## ENJOY THE GAME !!
